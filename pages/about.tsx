@@ -1,10 +1,6 @@
-import type { NextPage } from 'next'
-import Hero from '../Components/Hero'
-import Head from 'next/head'
-import Projects from '../Components/Projects'
-import Skills from '../Components/Skills'
+import { NextPage } from "next"
+import Head from "next/head"
 import styles from '../styles/Home.module.css'
-
 const Home: NextPage = () => {
   return (
     <>
@@ -18,9 +14,6 @@ const Home: NextPage = () => {
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
-        <Hero />
-        <Projects />
-        <Skills />
       </main>
 
   </>

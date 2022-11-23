@@ -1,0 +1,33 @@
+.header{
+  display: flex;
+  flex-direction: row;
+
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+
+}
+
+.navItem {
+  border: 2px solid var(--primary);
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease-in-out;
+  list-style: none;
+}
+
+.navItem:hover {
+  filter: invert(1);
+}
+
+.navItem.special{
+  background-color: #f1f1f1;
+}
