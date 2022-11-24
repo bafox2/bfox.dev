@@ -7,33 +7,30 @@ export default function Header() {
   return (
     <div className={styles.header}>
       <div className={styles.headerLeft}>
-        Ben Fox
+        <Link href="/">
+          BFox
+        </Link>
       </div>
-      <div className={styles.nav}>
-        <nav className={styles.navList}>
-          <li className={`${styles.navItem}`}>
-            <Link href="/about"><a>About</a></Link>
-          </li>
-          <li className={styles.navItem}>
+        <nav className={styles.nav}>
+          <div className={`${styles.navItem}`}>
+            <Link href="/ben"><a>About</a></Link>
+         </div>
+          <div className={styles.navItem}>
             <Link href="/writing"><a>Writing</a></Link>
-          </li>
-          <li className={`${styles.navItem} ${styles.special}`}>
-        <a download={true}
-          href="/1122_Resume.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-            >
-              Resume
-            </a>
-          </li>
-          <li className={`${styles.navItem} ${styles.special}`}>
-            <Link href="/resume"><a>Email</a></Link>
-          </li>
-          <li className={`${styles.navItem} ${styles.special}`}>
-            <Link href="/resume"><a>LinkedIn</a></Link>
-          </li>
+         </div>
+         <div className={`${styles.navItem}`}>
+            <Link href="/cv"><a>Resume</a></Link>
+         </div>
+          <div className={`${styles.navItem} ${styles.special}`}>
+            <Link href="/email"><a>Email</a></Link>
+        </div>
+        <div className={`${styles.navItem} ${styles.special}`}>
+            <a target='_blank' rel="noopener noreferrer" href="https://www.linkedin.com/in/ben-fox-dev/">Github</a>
+         </div>
+          <div className={`${styles.navItem} ${styles.special}`}>
+            <a target='_blank' rel="noopener noreferrer" href="https://www.linkedin.com/in/ben-fox-dev/">LinkedIn</a>
+         </div>
         </nav>
       </div>
-    </div>
   )
 }

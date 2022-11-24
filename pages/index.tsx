@@ -15,11 +15,13 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+        <h1 className={styles.bigHeader}>
+          Bfox.dev
         </h1>
         <Hero />
+        <h2 className={styles.bigHeader}>Projects</h2>
         <Projects />
+        <h2 className={styles.bigHeader}>Skills</h2>
         <Skills />
       </main>
 

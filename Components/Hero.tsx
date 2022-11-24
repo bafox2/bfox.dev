@@ -1,6 +1,6 @@
 //sell me, a picture, and a blurb
 import Image from "next/image";
-import photo from "../public/photo.jpg";
+import photo from "../public/images/photo.jpg";
 
 export default function Hero() {
   return (

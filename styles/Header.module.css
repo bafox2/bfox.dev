@@ -1,7 +1,6 @@
 .header{
   display: flex;
-  flex-direction: row;
-
+  flex-direction: column;
 }
 
 .nav {
@@ -10,7 +9,7 @@
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
-
+  gap: 0.10rem
 }
 
 .navItem {
@@ -30,4 +29,26 @@
 
 .navItem.special{
   background-color: #f1f1f1;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 1rem;
+  gap: 1rem;
+  padding: 0.25rem;
+  background-color: var(--primary);
+  color: var(--secondary-dark);
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.footerName{
+  font-size: 1.0rem;
+  font-weight: 300;
 }

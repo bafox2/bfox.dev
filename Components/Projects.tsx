@@ -27,35 +27,35 @@ export default function Projects() {
   const projectList = parsedProjects.map((project: Project) => (
     <div className={styles.cardContainer} key={project.number}>
       <div className={styles.cardRow}>
-        <h2>{project.name}</h2>
+        <h2 className={styles.cardHeader}>{project.name}</h2>
       </div>
       <div className={styles.cardRow}>
         <p className={styles.rowCategory}>description</p>
-        <p className={styles.cardInfo}>{project.description}</p>
+        <p className={styles.rowInfo}>{project.description}</p>
       </div>
       <div className={styles.cardRow}>
         <p className={styles.rowCategory}>built with</p>
-        <p className={styles.cardInfo}>{project.builtWith}</p>
+        <p className={styles.rowInfo}>{project.builtWith}</p>
       </div>
       <div className={styles.cardRow}>
         <p className={styles.rowCategory}>date</p>
-        <p className={styles.cardInfo}>{project.date}</p>
+        <p className={styles.rowInfo}>{project.date}</p>
       </div>
       <div className={styles.cardRow}>
         <p className={styles.rowCategory}>status</p>
-        <p className={styles.cardInfo}>{project.status}</p>
+        <p className={styles.rowInfo}>{project.status}</p>
       </div>
       <div className={styles.cardRow}>
         <p className={styles.rowCategory}>github</p>
-        <p className={styles.cardInfo}><Link href={project.github}><a >{project.github}</a></Link></p>
+        <p className={styles.rowInfo}><Link href={project.github}><a >{project.github}</a></Link></p>
       </div>
       <div className={styles.cardRow}>
         <p className={styles.rowCategory}>website</p>
-        <p className={styles.cardInfo}><Link href={project.website}><a >{project.website}</a></Link></p>
+        <p className={styles.rowInfo}><Link href={project.website}><a >{project.website}</a></Link></p>
       </div>
       <div className={styles.cardRow}>
         <p className={styles.rowCategory}>lessons</p>
-        <p className={styles.cardInfo}>{project.lessons}</p>
+        <p className={styles.rowInfo}>{project.lessons}</p>
       </div>
       <div className={styles.cardPic}>
         <Image src={project.imagePath.src} width={1528} height={875} layout={'responsive'} blurDataURL={'true'} alt={`homepage of ${project.name}`} />
@@ -68,9 +68,6 @@ export default function Projects() {
 
   return (
     <div className={styles.projects}>
-      <div className={styles.projectsHeader}>
-        <h1>Projects</h1>
-      </div>
       <div className={styles.projectsList}>
           {projectList}
       </div>

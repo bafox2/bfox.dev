@@ -2,15 +2,16 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  webpack: (config) => {
+  images: {
+    domains: ['cdn.jsdelivr.net'],
+  },
+  webpack: (config, options) => {
     config.module.rules.push({
-      test: /\.pdf$/,
-      use: {
-        loader: 'file-loader',
-        options: {
-          name: '[path][name].[ext]',
-        },
-      }
+      test: /\.pdf/,
+      type: 'asset/resource',
+      generator: {
+        filename: 'static/[hash][ext]',
+      },
     })
     return config
   }
