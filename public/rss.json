@@ -7,18 +7,18 @@
     "icon": "localhost:3000/logo.png",
     "items": [
         {
-            "id": "localhost:3000/blog/first-post",
-            "url": "localhost:3000/blog/first-post",
-            "title": "The first post",
-            "summary": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-            "date_modified": "2022-08-28T00:00:00.000Z"
-        },
-        {
             "id": "localhost:3000/blog/second-writing",
             "url": "localhost:3000/blog/second-writing",
             "title": "The first post",
             "summary": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-            "date_modified": "2022-08-28T00:00:00.000Z"
+            "date_modified": "2022-10-28T00:00:00.000Z"
+        },
+        {
+            "id": "localhost:3000/blog/first-post",
+            "url": "localhost:3000/blog/first-post",
+            "title": "The second post",
+            "summary": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+            "date_modified": "2022-09-28T00:00:00.000Z"
         }
     ]
 }

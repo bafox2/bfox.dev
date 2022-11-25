@@ -1,6 +1,7 @@
 .header{
   display: flex;
   flex-direction: column;
+  margin: var(--margin);
 }
 
 .nav {
@@ -24,7 +25,7 @@
 }
 
 .navItem:hover {
-  filter: invert(1);
+  filter: invert(0.5);
 }
 
 .navItem.special{
@@ -40,6 +41,7 @@
   padding-left: 1rem;
   gap: 1rem;
   padding: 0.25rem;
+  margin: 0.5rem 0 0 0;
   background-color: var(--primary);
   color: var(--secondary-dark);
   font-size: 1.2rem;

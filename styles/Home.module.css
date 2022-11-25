@@ -1,5 +1,9 @@
 .bigHeader {
   font-size: 10vw;
-  margin: 0 1rem;
+  margin: var(--margin);
   color: var(--primary-dark);
+}
+
+.hero {
+  margin: var(--margin);
 }

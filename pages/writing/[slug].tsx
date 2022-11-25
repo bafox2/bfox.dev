@@ -9,12 +9,12 @@ const SinglePost = ({ mdxSource, frontMatter }) => {
   const { title, featured, date, readingTime } = frontMatter;
 
   return (
-    <article className={styles.single__post}>
+    <article className={styles.post}>
       <header>
         <h1>{title}</h1>
-        <span className={styles.post__meta}>
+        <span className={styles.postMeta}>
           {format(parseISO(date), 'MMMM dd, yyyy')}
-          <span> . </span> {readingTime.text}
+          <span> - </span> {readingTime.text}
         </span>
         {featured && (
           <Image

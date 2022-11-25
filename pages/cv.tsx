@@ -1,6 +1,6 @@
 import { NextPage } from "next"
 import Head from "next/head"
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Resume.module.css'
 
 const Ben: NextPage = () => {
   return (
@@ -11,58 +11,80 @@ const Ben: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <h2>
-        <a href='/resume.pdf'  download>Download more formal</a>
-      </h2>
-      <main className={styles.main}>
+      <main className={styles.resume}>
+        <h2>
+          <a href='/resume.pdf' download>Download more formal</a>
+        </h2>
         <h1>
           Ben Fox
         </h1>
         <p>
           I am Ben
         </p>
-        <section>
-          <h2>
+        <section className={styles.resumeSection}>
+          <h2 className={styles.resumeHeading}>
             Experience
           </h2>
-          <div>
-            <h3>
-              Software Engineer
+          <div className={styles.resumeEntry}>
+            <p className={styles.date}>
+              <em>
+                2017 - 2022
+              </em>
+            </p>
+            <h3 className={styles.resumePosition} >
+              Business Teacher
             </h3>
             <p>
               <a href="https://www.thescore.com">
-                The Score
+                Herndon High School
               </a>
             </p>
             <p>
-              <em>
-                2020 - Present
-              </em>
+              <a href="https://www.thescore.com">
+                Department Lead for Digital Applications, a class teaching English Language learners common tech use in FCPS. Spearheaded Special Education first Special Education course at Herndon High school.Chair of the 'We Are Herndon' committee to integrate community into the school culture. Sponsored a team of students selected by Carnegie Melon Computer Science 'Fall Showcase' for coding in Python. Lead Mentor to students from nontraditional backgrounds, to facilitate setting academic, social, and personal goals. Junior Varsity Basketball coach and school representative liaison for student athletes.
+              </a>
             </p>
           </div>
         </section>
-        <section>
-          <h2>
+        <section className={styles.resumeSection}>
+          <h2 className={styles.resumeHeading}>
             Education
           </h2>
           <div>
-            <h3>
-              Bachelor of Science in Computer Science
-            </h3>
-            <p>
-              <a href="https://www.ualberta.ca">
-                University of Alberta
-              </a>
-            </p>
-            <p>
-              <em>
-                2016 - 2020
-              </em>
-            </p>
+            <div className={styles.resumeEntry}>
+              <p className={styles.date}>
+                <em>
+                  2012 - 2016
+                </em>
+              </p>
+              <h3 className={styles.resumePosition} >
+                Master of Education
+              </h3>
+              <p>
+                <a href="https://www.ualberta.ca">
+                  Virginia Tech
+                </a>
+              </p>
+            </div>
+            <div className={styles.resumeEntry}>
+              <p className={styles.date}>
+                <em>
+                  2016 - 2017
+                </em>
+              </p>
+              <h3 className={styles.resumePosition} >
+                Bachelor of Science in Business Information Technology
+              </h3>
+              <p>
+                <a href="https://www.ualberta.ca">
+                  Virginia Tech
+                </a>
+              </p>
+            </div>
           </div>
         </section>
-        <section>
-          <h2>
+        <section className={styles.resumeSection}>
+          <h2 className={styles.resumeHeading}>
             Skills
           </h2>
           <div>
@@ -71,10 +93,16 @@ const Ben: NextPage = () => {
             </h3>
             <ul>
               <li>
+                TypeScript
+              </li>
+              <li>
                 JavaScript
               </li>
               <li>
-                TypeScript
+                HTML
+              </li>
+              <li>
+                CSS
               </li>
             </ul>
           </div>
@@ -91,6 +119,12 @@ const Ben: NextPage = () => {
               </li>
               <li>
                 Express
+              </li>
+              <li>
+                Node
+              </li>
+              <li>
+                SASS
               </li>
             </ul>
           </div>
@@ -119,41 +153,62 @@ const Ben: NextPage = () => {
                 Docker
               </li>
               <li>
-                AWS
+                Heroku
+              </li>
+              <li>
+                VS Code
               </li>
             </ul>
           </div>
         </section>
-        <section>
-          <h2>
+        <section className={styles.resumeSection}>
+          <h2 className={styles.resumeHeading}>
             Other
           </h2>
           <div>
-            <h3>
-              Interests
-            </h3>
-            <ul>
-              <li>
-                <a href="https://www.youtube.com/watch?v=QH2-TGUlwu4">
-                  Music
+            <div className={styles.resumeEntry}>
+              <p className={styles.date}>
+                <em>
+                  2020 - 2022
+                </em>
+              </p>
+              <h3 className={styles.resumePosition} >
+                Trapeze Artist
+              </h3>
+              <p>
+                <a href="https://www.thescore.com">
+                  Trapeze School New York, DC
                 </a>
-              </li>
-              <li>
-                <a href="https://www.youtube.com/watch?v=QH2-TGUlwu4">
-                  Video Games
+              </p>
+              <p>
+                responsibilities include
+              </p>
+            </div>
+            <div className={styles.resumeEntry}>
+              <p className={styles.date}>
+                <em>
+                  2020 - Present
+                </em>
+              </p>
+
+              <h3 className={styles.resumePosition} >
+                Basketball Coach
+              </h3>
+              <p>
+                <a href="https://www.thescore.com">
+                  The Score
                 </a>
-              </li>
-              <li>
-                <a href="https://www.youtube.com/watch?v=QH2-TGUlwu4">
-                  Sports
-                </a>
-              </li>
-            </ul>
+              </p>
+              <p>
+                responsibilities include
+              </p>
+
+            </div>
           </div>
         </section>
       </main>
 
-  </>
+    </>
   )
 }
 

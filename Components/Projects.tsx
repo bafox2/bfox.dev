@@ -8,6 +8,7 @@ import Image from 'next/image'
 
 interface Project {
   name: string,
+  reason: string,
   description: string,
   builtWith: string,
   date: string,
@@ -15,7 +16,7 @@ interface Project {
   github: string,
   website: string,
   lessons: string,
-  imagePath: {src: string, height: string, width: string, blurDataURL: string, blurWidth: string, blurHeight: string},
+  imagePath: { src: string, height: string, width: string, blurDataURL: string, blurWidth: string, blurHeight: string },
   number: number
 }
 
@@ -64,12 +65,12 @@ export default function Projects() {
     </div>
   ))
 
-  
+
 
   return (
     <div className={styles.projects}>
       <div className={styles.projectsList}>
-          {projectList}
+        {projectList}
       </div>
     </div>
   )

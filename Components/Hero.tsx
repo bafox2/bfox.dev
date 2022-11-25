@@ -1,11 +1,12 @@
 //sell me, a picture, and a blurb
 import Image from "next/image";
 import photo from "../public/images/photo.jpg";
+import styles from "../styles/Home.module.css";
 
 export default function Hero() {
   return (
-    <div className="hero">
-      <div className="heroImage">
+    <div className={styles.hero}>
+      <div className={styles.Image}>
         <Image
           src={photo}
           alt="Picture of the author"
@@ -14,13 +15,18 @@ export default function Hero() {
           quality={100}
         />
       </div>
-      <div className="heroContent">
-        <h2 className="heroContentTitle">Hi, my name is Ryan</h2>
-        <p className="heroContentBlurb">
-        I have loved every moment of teaching. Herndon High School was home and I look back with love. From the first year, with students only 2 years younger than me, to the JV basketball squad meetings after school, then the English Language Learner technology classes where I learned so much. Herndon taught me how to be a professional. To take pride in what I bring to the world. We were lucky to have each other.
-        Lately, between the schooldays, I have been brushing up on what I learned in college to push myself into development. The challenges have been different, but exhilarating. I am looking forward to pouring myself into this new career. While I am in transition, any support or connections to help me find my next home would go a long way.
-        With love,
-        Ben
+      <div className={styles.heroContent}>
+        <h2 className={styles.heroContentTitle}>Hi, my name is Ryan</h2>
+        <p className={styles.heroContentBlurb}>
+          I am a compassionate teacher and developer. Educated at Virginia Tech in Business Information Technology, with a specialization in Decision Support Systems,
+          then back at Tech for a Masters in Education. The past five years I have been teaching at Herndon High School. My classes were Special Education Personal Finance,
+          English Language Learner Computer Skills, and Computer Science.
+          Currently, I am open for work as a Front End Developer, or a Full Stack Developer. Take a look around, see some of my work, look at some of my influences,
+          and get in touch with me if you have any questions.
+
+
+
+
         </p>
       </div>
     </div>

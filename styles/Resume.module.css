@@ -1,0 +1,25 @@
+.resume{
+  margin: var(--margin);
+}
+
+.resumeSection{
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+}
+
+.resumeEntry{
+  width: 70vw;
+}
+
+.resumeHeading{
+  width: 300px;
+  flex: none;
+  padding: 0;
+  margin: 0;
+}
+
+.date{
+  float: right;
+  margin: 0;
+}
