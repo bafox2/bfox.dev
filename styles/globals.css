@@ -18,6 +18,7 @@
   --shadow-transform: 0 0 1rem rgba(0, 0, 0, 0.2);
   --transition: all 0.3s ease-in-out;
   --margin: 0 1rem;
+  --bigFont: 10vw;
 }
 
 html,
@@ -46,6 +47,16 @@ a {
 
 ul {
   list-style: none;
+}
+
+main {
+  flex: 1;
+}
+
+#__next {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 /* @media (prefers-color-scheme: dark) {

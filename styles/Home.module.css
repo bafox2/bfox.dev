@@ -1,9 +1,32 @@
 .bigHeader {
-  font-size: 10vw;
+  font-size: var(--bigFont);
   margin: var(--margin);
   color: var(--primary-dark);
 }
 
 .hero {
   margin: var(--margin);
+}
+
+.returnTop {
+  /* button that will return you to top of screen */
+  cursor: pointer;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  border: none;
+  border-radius: 50%;
+  font-size: 2.4rem;
+  font-weight: 400;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  box-shadow: var(--shadow);
+  padding: 0.5rem;
+  transition: all 0.15s ease 0s;
+  z-index: 100;
+}
+
+.returnTop > * {
+  transform: scaleX(-1);
+  fill: var(--secondary);
 }

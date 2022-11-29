@@ -1,3 +1,28 @@
 .post {
   margin: var(--margin);
 }
+
+.postListHeader {
+  margin: var(--margin);
+  font-size: var(--bigFont);
+}
+
+.postListDescription {
+  width: fit-content;
+  margin: 2vw 0;
+  margin-left: 1rem;
+  border-bottom: solid 2px var(--primary-dark);
+}
+
+.postList {
+  margin: var(--margin);
+  width: fit-content;
+}
+
+.postTitle {
+  font-size: 3vw;
+}
+
+.postMeta {
+  font-size: 1.5vw;
+}
