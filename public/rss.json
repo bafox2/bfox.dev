@@ -1,9 +1,9 @@
 {
     "version": "https://jsonfeed.org/version/1",
-    "title": "Blog posts | RSS Feed",
+    "title": "Ben Fox Writing",
     "home_page_url": "localhost:3000",
     "feed_url": "localhost:3000/rss.json",
-    "description": "Welcome to this blog posts!",
+    "description": "Learn with me as I write about my time trying to become a better developer",
     "icon": "localhost:3000/logo.png",
     "items": [
         {

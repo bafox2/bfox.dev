@@ -30,7 +30,9 @@ const Ben: NextPage = () => {
               <ul className={styles.resumeList}>
                 <li> Department lead for Digital Applications, a English Language Learner tech class</li>{' '}
                 <li>Inaugurated Special Education Personal Finance course</li>
-                <li>Chaired the 'We Are Herndon' committee integrating community into school culture.</li>
+                <li>
+                  Chaired the {"'"}We Are Herndon{"'"} committee integrating community into school culture.
+                </li>
                 <li>
                   Lead Mentor to students from nontraditional backgrounds, focusing on goalsetting in academic, social,
                   and personal areas

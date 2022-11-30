@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>localhost:3000</id>
-    <title>Blog posts | RSS Feed</title>
-    <updated>2022-11-27T21:20:24.979Z</updated>
+    <title>Ben Fox Writing</title>
+    <updated>2022-11-30T02:14:52.320Z</updated>
     <generator>Feed for Node.js</generator>
     <link rel="alternate" href="localhost:3000"/>
     <link rel="self" href="localhost:3000/atom.xml"/>
-    <subtitle>Welcome to this blog posts!</subtitle>
+    <subtitle>Learn with me as I write about my time trying to become a better developer</subtitle>
     <logo>localhost:3000/logo.png</logo>
     <icon>localhost:3000/favicon.png</icon>
     <rights>All rights reserved 2022, Ibas</rights>

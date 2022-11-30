@@ -9,122 +9,157 @@ import letterboxd from 'letterboxd'
 import spotify from 'spotify-web-api-node'
 import strava from 'strava-v3'
 import { Client as PodClient } from 'podcast-api'
+import 'react-responsive-carousel/lib/styles/carousel.min.css'
+import { Carousel } from 'react-responsive-carousel'
 
-const exampleMovies = [
-  {
-    type: 'diary',
-    date: {
-      published: 1669688167000,
-      watched: null,
-    },
-    film: {
-      title: 'Spirited Away',
-      year: '2001',
-      image: {
-        tiny: 'https://a.ltrbxd.com/resized/film-poster/5/1/9/2/1/51921-spirited-away-0-35-0-50-crop.jpg?v=a3ad463c55',
-        small:
-          'https://a.ltrbxd.com/resized/film-poster/5/1/9/2/1/51921-spirited-away-0-70-0-105-crop.jpg?v=a3ad463c55',
-        medium:
-          'https://a.ltrbxd.com/resized/film-poster/5/1/9/2/1/51921-spirited-away-0-150-0-225-crop.jpg?v=a3ad463c55',
-        large:
-          'https://a.ltrbxd.com/resized/film-poster/5/1/9/2/1/51921-spirited-away-0-230-0-345-crop.jpg?v=a3ad463c55',
-      },
-    },
-    rating: {
-      text: '★★★★½',
-      score: 4.5,
-    },
-    review: 'Worth the adoration.',
-    spoilers: false,
-    isRewatch: false,
-    uri: 'https://letterboxd.com/airysoftgoth/film/spirited-away/',
-  },
-  {
-    type: 'diary',
-    date: {
-      published: 1669688108000,
-      watched: null,
-    },
-    film: {
-      title: 'Ginger Snaps',
-      year: '2000',
-      image: {
-        tiny: 'https://a.ltrbxd.com/resized/film-poster/4/6/7/6/2/46762-ginger-snaps-0-35-0-50-crop.jpg?v=89b7114ec9',
-        small: 'https://a.ltrbxd.com/resized/film-poster/4/6/7/6/2/46762-ginger-snaps-0-70-0-105-crop.jpg?v=89b7114ec9',
-        medium:
-          'https://a.ltrbxd.com/resized/film-poster/4/6/7/6/2/46762-ginger-snaps-0-150-0-225-crop.jpg?v=89b7114ec9',
-        large:
-          'https://a.ltrbxd.com/resized/film-poster/4/6/7/6/2/46762-ginger-snaps-0-230-0-345-crop.jpg?v=89b7114ec9',
-      },
-    },
-    rating: {
-      text: '★★½',
-      score: 2.5,
-    },
-    review: 'It took me back to the year 2000 and passed time.',
-    spoilers: false,
-    isRewatch: false,
-    uri: 'https://letterboxd.com/airysoftgoth/film/ginger-snaps/1/',
-  },
-  {
-    type: 'diary',
-    date: {
-      published: 1669688017000,
-      watched: null,
-    },
-    film: {
-      title: 'Ginger Snaps',
-      year: '2000',
-      image: {
-        tiny: 'https://a.ltrbxd.com/resized/film-poster/4/6/7/6/2/46762-ginger-snaps-0-35-0-50-crop.jpg?v=89b7114ec9',
-        small: 'https://a.ltrbxd.com/resized/film-poster/4/6/7/6/2/46762-ginger-snaps-0-70-0-105-crop.jpg?v=89b7114ec9',
-        medium:
-          'https://a.ltrbxd.com/resized/film-poster/4/6/7/6/2/46762-ginger-snaps-0-150-0-225-crop.jpg?v=89b7114ec9',
-        large:
-          'https://a.ltrbxd.com/resized/film-poster/4/6/7/6/2/46762-ginger-snaps-0-230-0-345-crop.jpg?v=89b7114ec9',
-      },
-    },
-    rating: {
-      text: '★★½',
-      score: 2.5,
-    },
-    review: 'Ginger Snaps took me back to the year 2000 and it passed the time.',
-    spoilers: false,
-    isRewatch: false,
-    uri: 'https://letterboxd.com/airysoftgoth/film/ginger-snaps/',
-  },
-  {
-    type: 'list',
-    date: {
-      published: 1635884409000,
-    },
-    title: 'Moon face recs',
-    description: '',
-    ranked: false,
-    films: [
-      {
-        title: 'Final Destination',
-        uri: 'https://letterboxd.com/film/final-destination/',
-      },
-      {
-        title: 'Scream',
-        uri: 'https://letterboxd.com/film/scream/',
-      },
-      {
-        title: 'Spirited Away',
-        uri: 'https://letterboxd.com/film/spirited-away/',
-      },
-    ],
-    totalFilms: 3,
-    uri: 'https://letterboxd.com/airysoftgoth/list/moon-face-recs/',
-  },
-]
+type aboutPageProps = {
+  githubData: {
+    id: string
+    repo: {
+      name: string
+      url: string
+    }
+    created_at: string
+    payload: {
+      commits: {
+        message: string
+        sha: string
+      }[]
+    }
+  }[]
 
-const Ben: NextPage = ({
+  foodData: {
+    items: {
+      id: string
+      value: {
+        id: string
+        title: string
+      }
+    }[]
+  }
+  podData: {
+    items: {
+      title: string
+      data: {
+        title: string
+        podcast: {
+          title: string
+          thumbnail: string
+        }
+      }
+    }[]
+  }
+
+  bookData: {
+    items: {
+      id: string
+      volumeInfo: {
+        title: string
+        authors: string[]
+        imageLinks: {
+          thumbnail: string
+        }
+      }
+    }[]
+  }
+
+  videoData: {
+    items: {
+      id: {
+        videoId: string
+      }
+      snippet: {
+        title: string
+        videoOwnerChannelTitle: string
+        thumbnails: {
+          high: {
+            url: string
+          }
+        }
+      }
+    }[]
+  }
+
+  codewarsData: {
+    data: {
+      id: string
+      name: string
+      completedAt: string
+      completedLanguages: string[]
+    }[]
+  }
+
+  playlistData: {
+    tracks: {
+      items: {
+        track: {
+          id: string
+          name: string
+          artists: {
+            name: string
+          }[]
+          album: {
+            name: string
+            images: {
+              url: string
+            }[]
+          }
+        }
+      }[]
+    }
+  }
+  guitarData: {
+    tracks: {
+      items: {
+        track: {
+          id: string
+          name: string
+          artists: {
+            name: string
+          }[]
+          album: {
+            name: string
+            images: {
+              url: string
+            }[]
+          }
+        }
+      }[]
+    }
+  }
+  runData: {
+    recent_run_totals: {
+      distance: number
+      elapsed_time: number
+      moving_time: number
+    }
+    ytd_run_totals: {
+      distance: number
+      elapsed_time: number
+      moving_time: number
+    }
+  }
+  moviesData: {
+    id: string
+    film: {
+      title: string
+      year: string
+      description: string
+      image: {
+        large: string
+      }
+    }
+    rating?: {
+      text: string
+    }
+  }[]
+}
+
+const Ben: NextPage<aboutPageProps> = ({
   githubData,
   codewarsData,
   foodData,
-  // podData,
+  podData,
   videoData,
   bookData,
   playlistData,
@@ -132,7 +167,19 @@ const Ben: NextPage = ({
   runData,
   moviesData,
 }) => {
-  console.log(guitarData, playlistData, runData, moviesData, 'data')
+  const formatSeconds = (seconds: number) => {
+    const hours = Math.floor(seconds / 3600)
+    const minutes = Math.floor((seconds % 3600) / 60)
+    const secondsLeft = Math.floor(seconds % 60)
+    return `${hours}h ${minutes}m ${secondsLeft}s`
+  }
+
+  const formatMeters = (meters: number) => {
+    //format meters to miles
+    const miles = meters * 0.000621371
+    return `${miles.toFixed(2)} miles`
+  }
+
   return (
     <>
       <Head>
@@ -143,29 +190,107 @@ const Ben: NextPage = ({
 
       <main className={styles.main}>
         <h1 className={styles.title}>Who am I?</h1>
+        <p>I do not keep up with social media, but I do exist. Here are things that I like.</p>
         <p>carousel</p>
+        <Carousel
+          showThumbs={false}
+          emulateTouch={true}
+          showArrows={false}
+          showStatus={false}
+          showIndicators={false}
+          infiniteLoop={true}
+          useKeyboardArrows={true}
+          stopOnHover={true}
+        >
+          <div>
+            <h3>1</h3>
+            <Image src="/images/carousel/1.jpg" width={500} height={500} alt={'picture of ben'} />
+            <p>Circus, specifically trapeze, is one of my most favorite things to do</p>
+          </div>
+          <div>
+            <h3>2</h3>
+            <Image src="/images/carousel/2.jpg" width={500} height={500} alt={'picture of ben'} />
+            <p>Camp is a second home to me, I have spent 5 great summers there</p>
+          </div>
+          <div>
+            <h3>3</h3>
+            <Image src="/images/carousel/3.jpeg" width={500} height={500} alt={'picture of ben'} />
+            <p>Desert landscape makes me feel creative</p>
+          </div>
+          <div>
+            <h3>3</h3>
+            <Image src="/images/carousel/4.jpeg" width={500} height={500} alt={'picture of ben'} />
+            <p>Focus is literally not on me, but the art</p>
+          </div>
+          <div>
+            <h3>3</h3>
+            <Image src="/images/carousel/5.jpeg" width={500} height={500} alt={'picture of ben'} />
+            <p>My younger brother is the best chef, you should try his food</p>
+          </div>
+          <div>
+            <h3>3</h3>
+            <Image src="/images/carousel/6.jpg" width={500} height={500} alt={'picture of ben'} />
+            <p>Children should not know which are your favorite, but it is okay to have a favorite</p>
+          </div>
+          <div>
+            <h3>3</h3>
+            <Image src="/images/carousel/7.jpg" width={500} height={700} alt={'picture of ben'} />
+            <p>This trooper was only dropped once</p>
+          </div>
+          <div>
+            <h3>3</h3>
+            <Image src="/images/carousel/8.jpg" width={500} height={500} alt={'picture of ben'} />
+            <p>Atlantic coast</p>
+          </div>
+          <div>
+            <h3>3</h3>
+            <Image src="/images/carousel/9.jpg" width={500} height={500} alt={'picture of ben'} />
+            <p>The Great Sand Dunes</p>
+          </div>
+          <div>
+            <h3>3</h3>
+            <Image src="/images/carousel/10.jpeg" width={500} height={500} alt={'picture of ben'} />
+            <p>I went to Arizona and stayed in a camper</p>
+          </div>
+          <div>
+            <h3>3</h3>
+            <Image src="/images/carousel/11.jpeg" width={500} height={500} alt={'picture of ben'} />
+            <p>Juggling is my natural talent</p>
+          </div>
+          <div>
+            <h3>3</h3>
+            <Image src="/images/carousel/12.jpeg" width={500} height={500} alt={'picture of ben'} />
+            <p>Eating makes me happy</p>
+          </div>
+        </Carousel>
         <p>Here is what I consume</p>
+        <h2>Podcasts</h2>
+        {podData.items.map((pod) => (
+          <div key={pod.title}>
+            <h3>{pod.data?.title}</h3>
+            <h3>{pod.data.podcast?.title}</h3>
+            <Image src={pod.data.podcast?.thumbnail} width={300} height={300} alt={'podcast thumbnail'} />
+          </div>
+        ))}
         <h2>Letterboxd</h2>
-        use the example data to create a list of movies
         {moviesData.map((movie) => (
           <div key={movie.id}>
             <p>{movie.film?.description}</p>
             <p>
               {movie.film?.title} - {movie.film?.year}
             </p>
-            <img src={movie.film?.image.medium} />
+            <Image src={movie.film.image.large} width={230} height={345} alt={'movie poster'} />
             <p>{movie.rating?.text}</p>
           </div>
         ))}
         <h2>Github</h2>
         {githubData.map((dataEntry) => (
-          //write a function that takes the json from the githubData and returns a div with all the commits in it
           <div key={dataEntry.id}>
             <p>{dataEntry.repo.name}</p>
             <p>{dataEntry.repo.url}</p>
             <p>{dataEntry.created_at}</p>
             {dataEntry.payload.commits?.map((commit) => (
-              <div>
+              <div key={commit.sha}>
                 <p>{commit.message}</p>
               </div>
             ))}
@@ -183,60 +308,62 @@ const Ben: NextPage = ({
         {foodData.items.map((food) => (
           <div key={food.id}>
             <p>{food.value.title}</p>
-            <img src={`https://webknox.com/recipeImages/${food.value.id}-240x150.jpg`} />
+            <Image
+              src={`https://webknox.com/recipeImages/${food.value.id}-240x150.jpg`}
+              width={240}
+              height={150}
+              alt={'food that looks tasty'}
+            />
           </div>
         ))}
         <h2>Videos</h2>
-        {/* map over the data to include the title, the videoOwnerChannel, and the standard thumbnail */}
-        {videoData.items.map((video) => (
+        {videoData.items.map((video: any) => (
           <div key={video.id.videoId}>
             <p>{video.snippet.title}</p>
             <p>{video.snippet.videoOwnerChannelTitle}</p>
-            <img src={video.snippet.thumbnails.high.url} />
+            <Image src={video.snippet.thumbnails.high.url} width={480} height={360} alt={'video thumbnail'} />
           </div>
         ))}
         <h2>Podcasts</h2>
         <h2>Books</h2>
-        {bookData.items.map((book) => (
+        {bookData.items.map((book: any) => (
           <div key={book.id}>
             <p>{book.volumeInfo.title}</p>
             <p>{book.volumeInfo.authors}</p>
-            <img src={book.volumeInfo.imageLinks.thumbnail} />
+            <Image src={book.volumeInfo.imageLinks.thumbnail} alt={'book cover'} width={128} height={190} />
           </div>
         ))}
         <h2>Music</h2>
-        {/* use the spotify api to get the playlist data and list the song, artist, album, and get the album cover */}
         {playlistData.tracks.items.map((track) => (
           <div key={track.track.id}>
             <p>{track.track.name}</p>
             <p>{track.track.artists[0].name}</p>
             <p>{track.track.album.name}</p>
-            <img src={track.track.album.images[0].url} />
+            <Image src={track.track.album.images[0].url} width={640} height={640} alt={'album cover'} />
           </div>
         ))}
         <h2>Guitar</h2>
-        {/* use the spotify api to get the playlist data and list the song, artist, album, and get the album cover */}
         {guitarData.tracks.items.map((track) => (
           <div key={track.track.id}>
             <p>{track.track.name}</p>
             <p>{track.track.artists[0].name}</p>
             <p>{track.track.album.name}</p>
-            <img src={track.track.album.images[0].url} />
+            <Image src={track.track.album.images[0].url} width={640} height={640} alt={'album cover'} />
           </div>
         ))}
         <h2>Running</h2>
-        {
-          <div>
-            <p>{runData.recent_run_totals.distance}</p>
-            <p>{runData.recent_run_totals.moving_time}</p>
-            <p>{runData.recent_run_totals.elapsed_time}</p>
-            <div>
-              <p>{runData.ytd_run_totals.distance}</p>
-              <p>{runData.ytd_run_totals.moving_time}</p>
-              <p>{runData.ytd_run_totals.elapsed_time}</p>
-            </div>{' '}
-          </div>
-        }
+        <div>
+          <h3>Runs this month</h3>
+          <p>Distance: {formatMeters(runData.recent_run_totals.distance)}</p>
+          <p>Elapsed time: {formatSeconds(runData.recent_run_totals.elapsed_time)}</p>
+          <p>Time moving: {formatSeconds(runData.recent_run_totals.moving_time)}</p>
+        </div>
+        <div>
+          <h3>Runs this year</h3>
+          <p>Distance: {formatMeters(runData.ytd_run_totals.distance)}</p>
+          <p>Elapsed time: {formatSeconds(runData.ytd_run_totals.elapsed_time)}</p>
+          <p>Time moving: {formatSeconds(runData.ytd_run_totals.moving_time)}</p>
+        </div>
       </main>
     </>
   )
@@ -245,7 +372,9 @@ const Ben: NextPage = ({
 export default Ben
 export const getStaticProps: GetStaticProps = async () => {
   const githubRes = await fetch('https://api.github.com/users/bafox2/events/public')
-  const githubData = await githubRes.json()
+  const githubDataJSON = await githubRes.json()
+  //only send 10 commits
+  const githubData = githubDataJSON.slice(0, 10)
   const codewars = await fetch('https://www.codewars.com/api/v1/users/bafox2/code-challenges/completed')
   const codewarsData = await codewars.json()
 
@@ -1059,32 +1188,102 @@ export const getStaticProps: GetStaticProps = async () => {
   let token = await Spotify.clientCredentialsGrant()
   Spotify.setAccessToken(token.body.access_token)
 
-  const guitarData = await Spotify.getPlaylist('6hmuDdNOrk4CbQ9qTIMXrP').then((response) => {
+  const guitarData = await Spotify.getPlaylist('6hmuDdNOrk4CbQ9qTIMXrP').then((response: any) => {
     return response.body
   })
 
-  const playlistData = await Spotify.getPlaylist('2hhmhP5sF3f9n9qJwrbOIB').then((response) => {
+  const playlistData = await Spotify.getPlaylist('2hhmhP5sF3f9n9qJwrbOIB').then((response: any) => {
     return response.body
   })
 
   //works
   const moviesData = await letterboxd('airysoftgoth')
-    .then((items) => {
+    .then((items: any) => {
       return items
     })
-    .catch((error) => console.log(error))
+    .catch((error: any) => console.log(error))
   // works
+  // const runData = await strava.athletes
+  //   .stats({
+  //     access_token: process.env.STRAVA_ACCESS_TOKEN,
+  //     id: 108608247,
+  //   })
+  //   .then((data) => {
+  //     console.log('here')
+  //     return data
+  //   })
+  //   .catch((error) => console.log(error))
 
-  const runData = await strava.athletes
-    .stats({
-      access_token: process.env.STRAVA_ACCESS_TOKEN,
-      id: 108608247,
-    })
-    .then((data) => {
-      console.log('here')
-      return data
-    })
-    .catch((error) => console.log(error))
+  const runData = {
+    biggest_ride_distance: null,
+    biggest_climb_elevation_gain: null,
+    recent_ride_totals: {
+      count: 0,
+      distance: 0,
+      moving_time: 0,
+      elapsed_time: 0,
+      elevation_gain: 0,
+      achievement_count: 0,
+    },
+    all_ride_totals: {
+      count: 0,
+      distance: 0,
+      moving_time: 0,
+      elapsed_time: 0,
+      elevation_gain: 0,
+    },
+    recent_run_totals: {
+      count: 1,
+      distance: 933.5999755859375,
+      moving_time: 504,
+      elapsed_time: 598,
+      elevation_gain: 0,
+      achievement_count: 0,
+    },
+    all_run_totals: {
+      count: 1,
+      distance: 934,
+      moving_time: 504,
+      elapsed_time: 598,
+      elevation_gain: 0,
+    },
+    recent_swim_totals: {
+      count: 0,
+      distance: 0,
+      moving_time: 0,
+      elapsed_time: 0,
+      elevation_gain: 0,
+      achievement_count: 0,
+    },
+    all_swim_totals: {
+      count: 0,
+      distance: 0,
+      moving_time: 0,
+      elapsed_time: 0,
+      elevation_gain: 0,
+    },
+    ytd_ride_totals: {
+      count: 0,
+      distance: 0,
+      moving_time: 0,
+      elapsed_time: 0,
+      elevation_gain: 0,
+    },
+    ytd_run_totals: {
+      count: 1,
+      distance: 934,
+      moving_time: 504,
+      elapsed_time: 598,
+      elevation_gain: 0,
+    },
+    ytd_swim_totals: {
+      count: 0,
+      distance: 0,
+      moving_time: 0,
+      elapsed_time: 0,
+      elevation_gain: 0,
+    },
+  }
 
   return {
     props: {

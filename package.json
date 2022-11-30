@@ -16,10 +16,12 @@
     "next-mdx-remote": "^4.2.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-responsive-carousel": "^3.2.23",
     "reading-time": "^1.5.0",
     "rehype-autolink-headings": "^6.1.1",
     "rehype-img-size": "^1.0.1",
     "rehype-slug": "^5.1.0",
+    "rehype-toc": "^3.0.2",
     "rss": "^1.2.2"
   },
   "devDependencies": {

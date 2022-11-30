@@ -26,6 +26,12 @@
   z-index: 100;
 }
 
+.returnTop:hover {
+  transform: translateY(-2px);
+  /* darken the icon slightly */
+  filter: brightness(0.95);
+}
+
 .returnTop > * {
   transform: scaleX(-1);
   fill: var(--secondary);

@@ -3,8 +3,17 @@ import { parseISO, format } from 'date-fns'
 import { getSortedPost } from '../../utils/mdx'
 import styles from '../../styles/Writing.module.css'
 import generateRssFeed from '../../utils/generateRSS'
+type Post = {
+  slug: string
+  title: string
+  description: string
+  date: string
+  readingTime: {
+    text: string
+  }
+}
 
-const Blog = ({ postsData }) => {
+const Blog = ({ postsData }: any) => {
   return (
     <main>
       <h1 className={styles.postListHeader}>Writing</h1>
@@ -12,7 +21,7 @@ const Blog = ({ postsData }) => {
         Usually about the latest tech I have been digging into, sometimes about my feelings when they boil over.
       </p>
       <ul className={styles.postList}>
-        {postsData.map((post) => {
+        {postsData.map((post: Post) => {
           const { slug, title, date, description } = post
           return (
             <li className={styles.post_item} key={slug}>

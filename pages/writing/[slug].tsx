@@ -4,7 +4,7 @@ import MDXComponents from '../../Components/Mdx'
 import { getPostDir, getFileBySlug } from '../../utils/mdx'
 import { parseISO, format } from 'date-fns'
 import styles from '../../styles/Writing.module.css'
-
+//ts-ignore
 const SinglePost = ({ mdxSource, frontMatter }) => {
   const { title, featured, date, readingTime } = frontMatter
 
