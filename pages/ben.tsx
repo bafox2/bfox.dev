@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
 import { GetStaticProps } from 'next'
-import styles from '../styles/Writing.module.css'
+import styles from '../styles/About.module.css'
 import { google } from 'googleapis'
 import letterboxd from 'letterboxd'
 import spotify from 'spotify-web-api-node'
@@ -188,181 +188,232 @@ const Ben: NextPage<aboutPageProps> = ({
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
+      <main className={styles.mainContent}>
         <h1 className={styles.title}>Who am I?</h1>
         <p>I do not keep up with social media, but I do exist. Here are things that I like.</p>
-        <p>carousel</p>
-        <Carousel
-          showThumbs={false}
-          emulateTouch={true}
-          showArrows={false}
-          showStatus={false}
-          showIndicators={false}
-          infiniteLoop={true}
-          useKeyboardArrows={true}
-          stopOnHover={true}
-        >
-          <div>
-            <h3>1</h3>
-            <Image src="/images/carousel/1.jpg" width={500} height={500} alt={'picture of ben'} />
-            <p>Circus, specifically trapeze, is one of my most favorite things to do</p>
-          </div>
-          <div>
-            <h3>2</h3>
-            <Image src="/images/carousel/2.jpg" width={500} height={500} alt={'picture of ben'} />
-            <p>Camp is a second home to me, I have spent 5 great summers there</p>
-          </div>
-          <div>
-            <h3>3</h3>
-            <Image src="/images/carousel/3.jpeg" width={500} height={500} alt={'picture of ben'} />
-            <p>Desert landscape makes me feel creative</p>
-          </div>
-          <div>
-            <h3>3</h3>
-            <Image src="/images/carousel/4.jpeg" width={500} height={500} alt={'picture of ben'} />
-            <p>Focus is literally not on me, but the art</p>
-          </div>
-          <div>
-            <h3>3</h3>
-            <Image src="/images/carousel/5.jpeg" width={500} height={500} alt={'picture of ben'} />
-            <p>My younger brother is the best chef, you should try his food</p>
-          </div>
-          <div>
-            <h3>3</h3>
-            <Image src="/images/carousel/6.jpg" width={500} height={500} alt={'picture of ben'} />
-            <p>Children should not know which are your favorite, but it is okay to have a favorite</p>
-          </div>
-          <div>
-            <h3>3</h3>
-            <Image src="/images/carousel/7.jpg" width={500} height={700} alt={'picture of ben'} />
-            <p>This trooper was only dropped once</p>
-          </div>
-          <div>
-            <h3>3</h3>
-            <Image src="/images/carousel/8.jpg" width={500} height={500} alt={'picture of ben'} />
-            <p>Atlantic coast</p>
-          </div>
-          <div>
-            <h3>3</h3>
-            <Image src="/images/carousel/9.jpg" width={500} height={500} alt={'picture of ben'} />
-            <p>The Great Sand Dunes</p>
-          </div>
-          <div>
-            <h3>3</h3>
-            <Image src="/images/carousel/10.jpeg" width={500} height={500} alt={'picture of ben'} />
-            <p>I went to Arizona and stayed in a camper</p>
-          </div>
-          <div>
-            <h3>3</h3>
-            <Image src="/images/carousel/11.jpeg" width={500} height={500} alt={'picture of ben'} />
-            <p>Juggling is my natural talent</p>
-          </div>
-          <div>
-            <h3>3</h3>
-            <Image src="/images/carousel/12.jpeg" width={500} height={500} alt={'picture of ben'} />
-            <p>Eating makes me happy</p>
-          </div>
-        </Carousel>
+        <div className={styles.carousel}>
+          <Carousel
+            showThumbs={false}
+            emulateTouch={true}
+            showArrows={false}
+            showStatus={false}
+            showIndicators={false}
+            infiniteLoop={true}
+            useKeyboardArrows={true}
+            stopOnHover={true}
+          >
+            <div>
+              <h3>1</h3>
+              <Image src="/images/carousel/1.jpg" width={500} height={500} alt={'picture of ben'} />
+              <p>Circus, specifically trapeze, is one of my most favorite things to do</p>
+            </div>
+            <div>
+              <h3>2</h3>
+              <Image src="/images/carousel/2.jpg" width={500} height={500} alt={'picture of ben'} />
+              <p>Camp is a second home to me, I have spent 5 great summers there</p>
+            </div>
+            <div>
+              <h3>3</h3>
+              <Image src="/images/carousel/3.jpeg" width={500} height={500} alt={'picture of ben'} />
+              <p>Desert landscape makes me feel creative</p>
+            </div>
+            <div>
+              <h3>3</h3>
+              <Image src="/images/carousel/4.jpeg" width={500} height={500} alt={'picture of ben'} />
+              <p>Focus is literally not on me, but the art</p>
+            </div>
+            <div>
+              <h3>3</h3>
+              <Image src="/images/carousel/5.jpeg" width={500} height={500} alt={'picture of ben'} />
+              <p>My younger brother is the best chef, you should try his food</p>
+            </div>
+            <div>
+              <h3>3</h3>
+              <Image src="/images/carousel/6.jpg" width={500} height={500} alt={'picture of ben'} />
+              <p>Children should not know which are your favorite, but it is okay to have a favorite</p>
+            </div>
+            <div>
+              <h3>3</h3>
+              <Image src="/images/carousel/7.jpg" width={500} height={700} alt={'picture of ben'} />
+              <p>This trooper was only dropped once</p>
+            </div>
+            <div>
+              <h3>3</h3>
+              <Image src="/images/carousel/8.jpg" width={500} height={500} alt={'picture of ben'} />
+              <p>Atlantic coast</p>
+            </div>
+            <div>
+              <h3>3</h3>
+              <Image src="/images/carousel/9.jpg" width={500} height={500} alt={'picture of ben'} />
+              <p>The Great Sand Dunes</p>
+            </div>
+            <div>
+              <h3>3</h3>
+              <Image src="/images/carousel/10.jpeg" width={500} height={500} alt={'picture of ben'} />
+              <p>I went to Arizona and stayed in a camper</p>
+            </div>
+            <div>
+              <h3>3</h3>
+              <Image src="/images/carousel/11.jpeg" width={500} height={500} alt={'picture of ben'} />
+              <p>Juggling is my natural talent</p>
+            </div>
+            <div>
+              <h3>3</h3>
+              <Image src="/images/carousel/12.jpeg" width={500} height={500} alt={'picture of ben'} />
+              <p>Eating makes me happy</p>
+            </div>
+          </Carousel>
+        </div>
         <p>Here is what I consume</p>
         <h2>Podcasts</h2>
-        {podData.items.map((pod) => (
-          <div key={pod.title}>
-            <h3>{pod.data?.title}</h3>
-            <h3>{pod.data.podcast?.title}</h3>
-            <Image src={pod.data.podcast?.thumbnail} width={300} height={300} alt={'podcast thumbnail'} />
-          </div>
-        ))}
-        <h2>Letterboxd</h2>
-        {moviesData.map((movie) => (
-          <div key={movie.id}>
-            <p>{movie.film?.description}</p>
-            <p>
-              {movie.film?.title} - {movie.film?.year}
-            </p>
-            <Image src={movie.film.image.large} width={230} height={345} alt={'movie poster'} />
-            <p>{movie.rating?.text}</p>
-          </div>
-        ))}
-        <h2>Github</h2>
-        {githubData.map((dataEntry) => (
-          <div key={dataEntry.id}>
-            <p>{dataEntry.repo.name}</p>
-            <p>{dataEntry.repo.url}</p>
-            <p>{dataEntry.created_at}</p>
-            {dataEntry.payload.commits?.map((commit) => (
-              <div key={commit.sha}>
-                <p>{commit.message}</p>
-              </div>
-            ))}
-          </div>
-        ))}
-        <h2>Codewars</h2>
-        {codewarsData.data.map((challenge) => (
-          <div key={challenge.id}>
-            <p>{challenge.name}</p>
-            <p>{challenge.completedAt}</p>
-            <p>{challenge.completedLanguages[0]}</p>
-          </div>
-        ))}
-        <h2>Food</h2>
-        {foodData.items.map((food) => (
-          <div key={food.id}>
-            <p>{food.value.title}</p>
-            <Image
-              src={`https://webknox.com/recipeImages/${food.value.id}-240x150.jpg`}
-              width={240}
-              height={150}
-              alt={'food that looks tasty'}
-            />
-          </div>
-        ))}
-        <h2>Videos</h2>
-        {videoData.items.map((video: any) => (
-          <div key={video.id.videoId}>
-            <p>{video.snippet.title}</p>
-            <p>{video.snippet.videoOwnerChannelTitle}</p>
-            <Image src={video.snippet.thumbnails.high.url} width={480} height={360} alt={'video thumbnail'} />
-          </div>
-        ))}
-        <h2>Podcasts</h2>
-        <h2>Books</h2>
-        {bookData.items.map((book: any) => (
-          <div key={book.id}>
-            <p>{book.volumeInfo.title}</p>
-            <p>{book.volumeInfo.authors}</p>
-            <Image src={book.volumeInfo.imageLinks.thumbnail} alt={'book cover'} width={128} height={190} />
-          </div>
-        ))}
-        <h2>Music</h2>
-        {playlistData.tracks.items.map((track) => (
-          <div key={track.track.id}>
-            <p>{track.track.name}</p>
-            <p>{track.track.artists[0].name}</p>
-            <p>{track.track.album.name}</p>
-            <Image src={track.track.album.images[0].url} width={640} height={640} alt={'album cover'} />
-          </div>
-        ))}
-        <h2>Guitar</h2>
-        {guitarData.tracks.items.map((track) => (
-          <div key={track.track.id}>
-            <p>{track.track.name}</p>
-            <p>{track.track.artists[0].name}</p>
-            <p>{track.track.album.name}</p>
-            <Image src={track.track.album.images[0].url} width={640} height={640} alt={'album cover'} />
-          </div>
-        ))}
-        <h2>Running</h2>
-        <div>
-          <h3>Runs this month</h3>
-          <p>Distance: {formatMeters(runData.recent_run_totals.distance)}</p>
-          <p>Elapsed time: {formatSeconds(runData.recent_run_totals.elapsed_time)}</p>
-          <p>Time moving: {formatSeconds(runData.recent_run_totals.moving_time)}</p>
+        <div className={styles.cardContainer}>
+          {podData.items.map((pod) => (
+            <div className={styles.card} key={pod.title}>
+              <h3>{pod.data?.title}</h3>
+              <h3>{pod.data.podcast?.title}</h3>
+              <Image
+                src={pod.data.podcast?.thumbnail}
+                width={300}
+                height={300}
+                layout={'fixed'}
+                alt={'podcast thumbnail'}
+              />
+            </div>
+          ))}
         </div>
-        <div>
-          <h3>Runs this year</h3>
-          <p>Distance: {formatMeters(runData.ytd_run_totals.distance)}</p>
-          <p>Elapsed time: {formatSeconds(runData.ytd_run_totals.elapsed_time)}</p>
-          <p>Time moving: {formatSeconds(runData.ytd_run_totals.moving_time)}</p>
+        <h2>Letterboxd</h2>
+        <div className={styles.cardContainer}>
+          {moviesData.map((movie) => (
+            <div className={styles.card} key={movie.id}>
+              <p>{movie.film?.description}</p>
+              <p>
+                {movie.film?.title} - {movie.film?.year}
+              </p>
+              <Image layout={'fixed'} src={movie.film.image.large} width={230} height={345} alt={'movie poster'} />
+              <p>{movie.rating?.text}</p>
+            </div>
+          ))}
+        </div>
+        <h2>Github</h2>
+        <div className={styles.cardContainer}>
+          {githubData.map((dataEntry) => (
+            <div className={styles.card} key={dataEntry.id}>
+              <p>{dataEntry.repo.name}</p>
+              <p>{dataEntry.repo.url}</p>
+              <p>{dataEntry.created_at}</p>
+              {dataEntry.payload.commits?.map((commit) => (
+                <div key={commit.sha}>
+                  <p>{commit.message}</p>
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
+        <h2>Codewars</h2>
+        <div className={styles.cardContainer}>
+          {codewarsData.data.map((challenge) => (
+            <div className={styles.card} key={challenge.id}>
+              <p>{challenge.name}</p>
+              <p>{challenge.completedAt}</p>
+              <p>{challenge.completedLanguages[0]}</p>
+            </div>
+          ))}
+        </div>
+        <h2>Food</h2>
+        <div className={styles.cardContainer}>
+          {foodData.items.map((food) => (
+            <div className={styles.card} key={food.id}>
+              <p>{food.value.title}</p>
+              <Image
+                layout={'fixed'}
+                src={`https://webknox.com/recipeImages/${food.value.id}-240x150.jpg`}
+                width={240}
+                height={150}
+                alt={'food that looks tasty'}
+              />
+            </div>
+          ))}
+        </div>
+        <h2>Videos</h2>
+        <div className={styles.cardContainer}>
+          {videoData.items.map((video: any) => (
+            <div className={styles.card} key={video.id.videoId}>
+              <p>{video.snippet.title}</p>
+              <p>{video.snippet.videoOwnerChannelTitle}</p>
+              <Image
+                layout={'fixed'}
+                src={video.snippet.thumbnails.high.url}
+                width={480}
+                height={360}
+                alt={'video thumbnail'}
+              />
+            </div>
+          ))}
+        </div>
+        <h2>Books</h2>
+        <div className={styles.cardContainer}>
+          {bookData.items.map((book: any) => (
+            <div className={styles.card} key={book.id}>
+              <p>{book.volumeInfo.title}</p>
+              <p>{book.volumeInfo.authors}</p>
+              <Image
+                layout={'fixed'}
+                src={book.volumeInfo.imageLinks.thumbnail}
+                alt={'book cover'}
+                width={128}
+                height={190}
+              />
+            </div>
+          ))}
+        </div>
+        <h2>Music</h2>
+        <div className={styles.cardContainer}>
+          {playlistData.tracks.items.map((track) => (
+            <div className={styles.card} key={track.track.id}>
+              <p>{track.track.name}</p>
+              <p>{track.track.artists[0].name}</p>
+              <p>{track.track.album.name}</p>
+              <Image
+                layout={'fixed'}
+                src={track.track.album.images[0].url}
+                width={640}
+                height={640}
+                alt={'album cover'}
+              />
+            </div>
+          ))}
+        </div>
+        <h2>Guitar</h2>
+        <div className={styles.cardContainer}>
+          {guitarData.tracks.items.map((track) => (
+            <div className={styles.card} key={track.track.id}>
+              <p>{track.track.name}</p>
+              <p>{track.track.artists[0].name}</p>
+              <p>{track.track.album.name}</p>
+              <Image
+                layout={'fixed'}
+                src={track.track.album.images[0].url}
+                width={640}
+                height={640}
+                alt={'album cover'}
+              />
+            </div>
+          ))}
+        </div>
+        <h2>Running</h2>
+        <div className={styles.cardContainer}>
+          <div>
+            <h3>Runs this month</h3>
+            <p>Distance: {formatMeters(runData.recent_run_totals.distance)}</p>
+            <p>Elapsed time: {formatSeconds(runData.recent_run_totals.elapsed_time)}</p>
+            <p>Time moving: {formatSeconds(runData.recent_run_totals.moving_time)}</p>
+          </div>
+          <div>
+            <h3>Runs this year</h3>
+            <p>Distance: {formatMeters(runData.ytd_run_totals.distance)}</p>
+            <p>Elapsed time: {formatSeconds(runData.ytd_run_totals.elapsed_time)}</p>
+            <p>Time moving: {formatSeconds(runData.ytd_run_totals.moving_time)}</p>
+          </div>
         </div>
       </main>
     </>
@@ -524,20 +575,7 @@ export const getStaticProps: GetStaticProps = async () => {
         notes: '',
         added_at_ms: 1655274047437,
       },
-      {
-        id: 764336,
-        data: {
-          id: 'aba7f2dd81a5408f96da8d70dfbefe36',
-          error:
-            'This episode has been deleted from the podcast database. Possible reasons: 1) Podcast producers sometimes delete their old episodes. 2) Copyright issues.',
-          title:
-            'Spotify’s ad-tech acquisitions to take on YouTube with The Verge’s Ashley Carman + Founder University Pitches | E1389',
-          status: 'deleted',
-        },
-        type: 'episode',
-        notes: '',
-        added_at_ms: 1645211291773,
-      },
+
       {
         id: 678931,
         data: {

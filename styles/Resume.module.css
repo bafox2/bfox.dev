@@ -1,10 +1,10 @@
 .resume {
-  margin: var(--margin);
   padding: 1rem 0 1rem 0;
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  width: 70vw;
+  max-width: var(--mainWidth);
+  margin: 0 auto;
 }
 
 .resumeSection {
@@ -68,4 +68,15 @@
   width: 100%;
   text-align: center;
   color: var(--highlight);
+}
+
+/* mobile styling */
+@media (max-width: 780px) {
+  .resumeSection {
+    flex-direction: column;
+  }
+  .resume {
+    width: 93vw;
+    margin: var(--margin);
+  }
 }

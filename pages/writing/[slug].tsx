@@ -4,22 +4,25 @@ import MDXComponents from '../../Components/Mdx'
 import { getPostDir, getFileBySlug } from '../../utils/mdx'
 import { parseISO, format } from 'date-fns'
 import styles from '../../styles/Writing.module.css'
-//ts-ignore
+
 const SinglePost = ({ mdxSource, frontMatter }) => {
   const { title, featured, date, readingTime } = frontMatter
 
   return (
-    <main>
+    <main className={styles.postMain}>
       <article className={styles.post}>
-        <header>
+        <header className={styles.postHeader}>
           <h1>{title}</h1>
           <span className={styles.postMeta}>
             {format(parseISO(date), 'MMMM dd, yyyy')}
             <span> - </span> {readingTime.text}
           </span>
-          {featured && <Image width={800} height={470} src={featured} alt={title} />}
+          <div className={styles.postImage}>
+            {featured && <Image layout={'fill'} className={styles.image} src={featured} alt={title} />}
+          </div>
         </header>
-        <div>
+        <div className={styles.postContent}>
+          <h2>Table of Contents</h2>
           <MDXRemote {...mdxSource} components={{ ...MDXComponents }} />
         </div>
       </article>

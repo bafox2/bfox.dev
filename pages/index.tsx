@@ -19,7 +19,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
+      <main className={styles.mainContent}>
         <button onClick={returnToTop} className={styles.returnTop}>
           <div>
             <Image src="/images/up.svg" height={30} width={40} alt="return to top" />

@@ -19,6 +19,7 @@
   --transition: all 0.3s ease-in-out;
   --margin: 0 1rem;
   --bigFont: 10vw;
+  --mainWidth: 70vw;
 }
 
 html,

@@ -1,5 +1,47 @@
-.post {
+.postMain {
+  max-width: var(--mainWidth);
+  /* center the div */
+  margin: 0 auto;
+}
+
+.postContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex: 1;
+  padding: 1rem;
   margin: var(--margin);
+  gap: 1rem;
+}
+
+.postContent nav {
+  margin: 0;
+}
+
+.postHeader {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex: 1;
+  padding: 1rem;
+  margin: var(--margin);
+  gap: 1rem;
+}
+
+.postImage {
+  width: 100%;
+}
+
+.postImage > span {
+  position: unset !important;
+}
+.image {
+  object-fit: contain;
+  width: 100% !important;
+  position: relative !important;
+  height: unset !important;
 }
 
 .postListHeader {
@@ -11,7 +53,6 @@
   width: fit-content;
   margin: 2vw 0;
   margin-left: 1rem;
-  border-bottom: solid 2px var(--primary-dark);
 }
 
 .postList {
@@ -25,4 +66,21 @@
 
 .postMeta {
   font-size: 1.5vw;
+}
+/* mobile styling */
+.postListHeader {
+  font-size: 3rem;
+}
+.postTitle {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+}
+
+.postMeta {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
 }

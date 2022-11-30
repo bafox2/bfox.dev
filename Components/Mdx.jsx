@@ -17,7 +17,7 @@ const CustomLink = (props) => {
     return (
       <Link href={href}>
         <a className="anchor" {...props}>
-          #
+          {props.children}
         </a>
       </Link>
     )

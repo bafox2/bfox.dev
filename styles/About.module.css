@@ -1,0 +1,33 @@
+.mainContent {
+  max-width: var(--mainWidth);
+  margin: 0 auto;
+}
+
+.carousel {
+  height: 99vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  color: #fff;
+  font-size: 2rem;
+  max-width: 100%;
+}
+
+.cardContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  flex: 1;
+}
+
+.card {
+  flex: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 1rem;
+}

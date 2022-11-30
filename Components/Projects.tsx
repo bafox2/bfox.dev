@@ -43,7 +43,7 @@ export default function Projects() {
             <p className={styles.rowInfo}>{project.description}</p>
           </div>
           <div className={styles.cardRow}>
-            <p className={styles.rowCategory}>Built with</p>
+            <p className={styles.rowCategory}>Stack</p>
             <p className={styles.rowInfo}>{project.builtWith}</p>
           </div>
           <div className={styles.cardRow}>
@@ -54,25 +54,18 @@ export default function Projects() {
             <p className={styles.rowCategory}>Status</p>
             <p className={styles.rowInfo}>{project.status}</p>
           </div>
-          <div className={styles.cardRow}>
-            <p className={styles.rowCategory}>Github</p>
-            <p className={styles.rowInfo}>
-              <Link href={project.github}>
-                <a>{project.github}</a>
-              </Link>
-            </p>
-          </div>
-          <div className={styles.cardRow}>
-            <p className={styles.rowCategory}>Website</p>
-            <p className={styles.rowInfo}>
-              <Link href={project.website}>
-                <a>{project.website}</a>
-              </Link>
-            </p>
-          </div>
+
           <div className={styles.cardRow}>
             <p className={styles.rowCategory}>Lessons</p>
             <p className={styles.rowInfo}>{project.lessons}</p>
+          </div>
+          <div className={styles.cardButtons}>
+            <Link href={project.github}>
+              <a className={styles.projectButton}>Github</a>
+            </Link>
+            <Link href={project.website} className={`${styles.projectButton} ${styles.special}`}>
+              <a className={`${styles.projectButton} ${styles.special}`}>Website</a>
+            </Link>
           </div>
         </div>
       </div>

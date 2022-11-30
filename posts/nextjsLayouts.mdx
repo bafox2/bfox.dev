@@ -1,0 +1,36 @@
+---
+title: 'Configuring Next.js Pages With Alternate Layouts'
+date: '2022-09-28'
+featured: '/images/openailogin.png'
+description: 'Exclude your header, footer, or whatever other components that you can shed.'
+---
+
+If you have worked with Next.js you know that there are many things it helps to make your life easier. The 'Layout' component was a heavy hitter for me when I first started working in Next.js. It allowed me to have a single component that I could use to wrap all of my pages. This was great for things like a header, footer, or any other components that I wanted to be on every page. However, there are times when you want to exclude your header, footer, or whatever other components that you can shed. This is where the 'getLayout' function comes in. Let's discuss it in this article and see come code of this functionality in action.
+
+## The Situation
+
+You are using next-auth and you wanted to make a custom sign in page. Unfortunately, the sign in page is wrapped in the 'Layout' component. This means that you have to sign in to see the sign in page. This is not ideal. You want to be able to see the sign in page without being signed in. This is where the 'getLayout' function comes in.
+
+## Options
+
+Hide the div on your normal layout.
+
+## Solution
+
+The solution is to add a 'getLayout' function to your sign in page. This function will return the page component wrapped in whatever you want. In this case, we want to return the page component without the 'Layout' component. This is a great way to have a single component that you can use to wrap all of your pages. This was great for things like a header, footer, or any other components that I wanted to be on every page. However, there are times when you want to exclude your header, footer, or whatever other components that you can shed. This is where the 'getLayout' function comes in. Let's discuss it in this article and see come code of this functionality in action.
+
+## Docs
+
+Next.js has a great documentation page on this topic. You can find it here: https://nextjs.org/docs/advanced-features/custom-app
+
+## The Code
+
+The code for this is pretty simple. We will add a 'getLayout' function to our sign in page. This function will return the page component wrapped in whatever you want. In this case, we want to return the page component without the 'Layout' component. This is a great way to have a single component that you can use to wrap all of your pages. This was great for things like a header, footer, or any other components that I wanted to be on every page. However, there are times when you want to exclude your header, footer, or whatever other components that you can shed. This is where the 'getLayout' function comes in. Let's discuss it in this article and see come code of this functionality in action.
+
+## Edge Cases
+
+Sometimes you might want to have a page that is wrapped in a different layout than the rest of your pages. This is where the 'getLayout' function comes in. Let's discuss it in this article and see come code of this functionality in action.
+
+## Conclusion
+
+The 'getLayout' function is a function that you can add to your page components. This function will be called by Next.js and will be passed the page component as a parameter. This function will then return the page component wrapped in whatever you want. This is a great way to have a single component that you can use to wrap all of your pages. This was great for things like a header, footer, or any other components that you wanted to be on every page. However, there are times when you want to exclude your header, footer, or whatever other components that you can shed. This is where the 'getLayout' function comes in. Let's discuss it in this article and see come code of this functionality in action.
