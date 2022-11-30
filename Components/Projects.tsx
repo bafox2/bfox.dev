@@ -60,11 +60,11 @@ export default function Projects() {
             <p className={styles.rowInfo}>{project.lessons}</p>
           </div>
           <div className={styles.cardButtons}>
-            <Link href={project.github}>
-              <a className={styles.projectButton}>Github</a>
+            <Link href={project.github} className={styles.projectButton}>
+              Github
             </Link>
             <Link href={project.website} className={`${styles.projectButton} ${styles.special}`}>
-              <a className={`${styles.projectButton} ${styles.special}`}>Website</a>
+              Website
             </Link>
           </div>
         </div>

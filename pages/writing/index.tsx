@@ -25,23 +25,23 @@ const Blog = ({ postsData }: any) => {
           const { slug, title, date, description } = post
           return (
             <li className={styles.post_item} key={slug}>
-              <Link href={`/writing/${slug}`}>
-                <a className={styles.item__link}>
-                  <article className={styles.postEntry}>
-                    <h2 className={styles.postTitle}>{title}</h2>
-                    <div className={styles.postMeta}>
-                      <span className={styles.postMeta}>{format(parseISO(date), 'MMMM dd, yyyy')}</span>{' '}
-                    </div>
-                    <p className={styles.postDescription}>{description}</p>
-                  </article>
-                </a>
+              <Link href={`/writing/${slug}`} className={styles.item__link}>
+
+                <article className={styles.postEntry}>
+                  <h2 className={styles.postTitle}>{title}</h2>
+                  <div className={styles.postMeta}>
+                    <span className={styles.postMeta}>{format(parseISO(date), 'MMMM dd, yyyy')}</span>{' '}
+                  </div>
+                  <p className={styles.postDescription}>{description}</p>
+                </article>
+
               </Link>
             </li>
-          )
+          );
         })}
       </ul>
     </main>
-  )
+  );
 }
 
 export async function getStaticProps() {

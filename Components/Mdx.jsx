@@ -9,18 +9,18 @@ const CustomLink = (props) => {
 
   if (isInternalLink) {
     return (
-      <Link href={href}>
-        <a {...props} />
-      </Link>
-    )
+      (<Link href={href} {...props}>
+
+      </Link>)
+    );
   } else if (isHeadingLink) {
     return (
-      <Link href={href}>
-        <a className="anchor" {...props}>
-          {props.children}
-        </a>
-      </Link>
-    )
+      (<Link href={href} className="anchor" {...props}>
+
+        {props.children}
+
+      </Link>)
+    );
   }
 
   return <a target="_blank" rel="noopener noreferrer" {...props} />

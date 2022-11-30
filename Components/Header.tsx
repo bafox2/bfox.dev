@@ -7,29 +7,29 @@ export default function Header() {
   return (
     <div className={styles.header}>
       <div className={styles.headerLeft}>
-        <Link href="/">
-          <a className={styles.logo}>Ben Fox, Software Developer</a>
+        <Link href="/" className={styles.logo}>
+          Ben Fox, Software Developer
         </Link>
 
         <nav className={styles.nav}>
           <div className={`${styles.navItem}`}>
             <Link href="/ben">
-              <a>About</a>
+              About
             </Link>
           </div>
           <div className={styles.navItem}>
             <Link href="/writing">
-              <a>Writing</a>
+              Writing
             </Link>
           </div>
           <div className={`${styles.navItem}`}>
             <Link href="/cv">
-              <a>Resume</a>
+              Resume
             </Link>
           </div>
           <div className={`${styles.navItem} ${styles.special}`}>
             <Link href="/email">
-              <a>Email</a>
+              Email
             </Link>
           </div>
           <div className={`${styles.navItem} ${styles.special}`}>
@@ -46,5 +46,5 @@ export default function Header() {
       </div>
       <p className={styles.headerRight}> </p>
     </div>
-  )
+  );
 }
