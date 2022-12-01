@@ -1,5 +1,5 @@
 import { MDXRemote } from 'next-mdx-remote'
-import Image from 'next/image'
+import Image from "next/legacy/image";
 import MDXComponents from '../../Components/Mdx'
 import { getPostDir, getFileBySlug } from '../../utils/mdx'
 import { parseISO, format } from 'date-fns'

@@ -1,5 +1,4 @@
-//sell me, a picture, and a blurb
-import Image from "next/image";
+import Image from "next/legacy/image";
 import photo from "../public/images/photo.jpg";
 import styles from "../styles/Home.module.css";
 

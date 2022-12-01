@@ -13,12 +13,16 @@
   color: #fff;
   font-size: 2rem;
   max-width: 100%;
+  user-select: none;
 }
 
 .cardContainer {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+
+  -webkit-overflow-scrolling: touch;
   justify-content: flex-start;
   align-items: center;
   flex: 1;

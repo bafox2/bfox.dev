@@ -1,6 +1,6 @@
 import styles from '../styles/Projects.module.css'
 import skills from '../skills'
-import Image from 'next/image'
+import Image from "next/legacy/image";
 
 interface Skill {
   name: string
