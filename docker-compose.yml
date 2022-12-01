@@ -1,10 +1,11 @@
-version: '3'
-
+version: '3.7'
 services:
   bfox.dev:
     container_name: bfox.dev
     restart: unless-stopped
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
 
   caddy:
     image: caddy/caddy:2.4.3-alpine
@@ -18,3 +19,7 @@ services:
       - ./data:/data
       - ./config:/config
       - ./site:/srv
+
+volumes:
+  caddy_data:
+  caddy_config:
