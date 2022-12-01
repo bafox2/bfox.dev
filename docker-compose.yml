@@ -19,7 +19,3 @@ services:
       - ./data:/data
       - ./config:/config
       - ./site:/srv
-
-volumes:
-  caddy_data:
-  caddy_config:
