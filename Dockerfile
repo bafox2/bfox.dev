@@ -10,6 +10,7 @@ RUN npm ci
 # Rebuild the source code only when needed
 FROM node:16-alpine AS builder
 WORKDIR /app
+RUN ls -la
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
@@ -21,7 +22,7 @@ COPY . .
 # RUN yarn build
 
 # If using npm comment out above and use below instead
-ENV NODE_OPTIONS=--max_old_space_size=768
+# ENV NODE_OPTIONS=--max_old_space_size=768
 RUN npm run build
 
 # Production image, copy all the files and run next
