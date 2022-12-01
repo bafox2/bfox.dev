@@ -45,8 +45,9 @@ COPY --from=builder /app/public ./public
 COPY --from=builder /app/posts ./posts
 COPY --from=builder /app/skills.js ./skills.js
 COPY --from=builder /app/projects.js ./projects.js
+COPY --from=builder /app/next.config.js ./next.config.js
+COPY --from=builder /app/.next ./.next
 
-RUN --from=builder ls -la
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
