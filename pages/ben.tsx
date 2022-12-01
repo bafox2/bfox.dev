@@ -213,7 +213,7 @@ const Ben: NextPage<aboutPageProps> = ({
       <main className={styles.mainContent}>
         <h1 className={styles.title}>Who am I?</h1>
         <p>I do not keep up with social media, but I do exist. Here are things that I like.</p>
-        <div className={styles.carousel}>
+        {/* <div className={styles.carousel}>
           <Carousel
             showThumbs={false}
             emulateTouch={true}
@@ -285,8 +285,7 @@ const Ben: NextPage<aboutPageProps> = ({
               <p>Eating makes me happy</p>
             </div>
           </Carousel>
-        </div>
-        <p>Here is what I consume</p>
+        </div> */}
         <h2>Podcasts</h2>
         <div className={styles.cardContainer}>
           {podData.items.map((pod) => (
