@@ -18,6 +18,7 @@ RUN \
 FROM node:16-alpine AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
+COPY --from=deps /app/.next.config.js ./.next.config.js
 COPY . .
 
 # Next.js collects completely anonymous telemetry data about general usage.
@@ -45,9 +46,8 @@ COPY --from=builder /app/public ./public
 COPY --from=builder /app/posts ./posts
 COPY --from=builder /app/skills.js ./skills.js
 COPY --from=builder /app/projects.js ./projects.js
+COPY --from=builder /app/next.config.js ./next.config.js
 
-# Automatically leverage output traces to reduce image size
-# https://nextjs.org/docs/advanced-features/output-file-tracing
 RUN ls -la
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
