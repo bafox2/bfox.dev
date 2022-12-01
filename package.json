@@ -13,7 +13,7 @@
     "date-fns": "^2.29.3",
     "feed": "^4.2.2",
     "gray-matter": "^4.0.3",
-    "next": "^13.0.5",
+    "next": "latest",
     "next-mdx-remote": "^4.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
