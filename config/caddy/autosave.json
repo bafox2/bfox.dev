@@ -1,1 +1,0 @@
-{"apps":{"http":{"servers":{"srv0":{"listen":[":443"],"routes":[{"handle":[{"handler":"subroute","routes":[{"handle":[{"handler":"reverse_proxy","headers":{"response":{"replace":{"Strict-Transport-Security":[{"replace":";","search_regexp":"max-age=31536000"}]}}},"upstreams":[{"dial":"bfox.dev:5000"}]}]}]}],"match":[{"host":["bfox.dev"]}],"terminal":true}]}}}}}
