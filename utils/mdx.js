@@ -76,6 +76,7 @@ export async function getFileBySlug(slug) {
     mdxSource,
     frontMatter: {
       readingTime: readingTime(content),
+      description: data.description,
       slug: slug || null,
       ...data,
     },

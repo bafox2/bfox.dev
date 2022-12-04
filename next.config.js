@@ -12,6 +12,10 @@ const nextConfig = {
       'i.ytimg.com',
       'books.google.com',
       'i.scdn.co',
+      'cdn.cloudflare.steamstatic.com',
+      'cdnb.artstation.com',
+      'cdna.artstation.com',
+      'cdnc.artstation.com',
     ],
   },
   webpack: (config, options) => {

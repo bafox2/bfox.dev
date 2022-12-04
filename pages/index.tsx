@@ -19,6 +19,8 @@ const Home: NextPage = () => {
             <Image src="/images/up.svg" height={30} width={40} alt="return to top" />
           </div>
         </button>
+        <Hero />
+
         <h2 className={styles.bigHeader}>Projects</h2>
         <Projects />
         <h2 className={styles.bigHeader}>Skills</h2>

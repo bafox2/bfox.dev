@@ -15,7 +15,7 @@ type Post = {
 
 const Blog = ({ postsData }: any) => {
   return (
-    <main>
+    <main className={styles.writingMain}>
       <h1 className={styles.postListHeader}>Writing</h1>
       <p className={styles.postListDescription}>
         Usually about the latest tech I have been digging into, sometimes about my feelings when they boil over.
@@ -25,8 +25,7 @@ const Blog = ({ postsData }: any) => {
           const { slug, title, date, description } = post
           return (
             <li className={styles.post_item} key={slug}>
-              <Link href={`/writing/${slug}`} className={styles.item__link}>
-
+              <Link href={`/writing/${slug}`} className={styles.postLink}>
                 <article className={styles.postEntry}>
                   <h2 className={styles.postTitle}>{title}</h2>
                   <div className={styles.postMeta}>
@@ -34,14 +33,13 @@ const Blog = ({ postsData }: any) => {
                   </div>
                   <p className={styles.postDescription}>{description}</p>
                 </article>
-
               </Link>
             </li>
-          );
+          )
         })}
       </ul>
     </main>
-  );
+  )
 }
 
 export async function getStaticProps() {

@@ -8,43 +8,31 @@ export default function Header() {
     <div className={styles.header}>
       <div className={styles.headerLeft}>
         <Link href="/" className={styles.logo}>
-          Ben Fox, Software Developer
+          Ben Fox, Developer
         </Link>
 
         <nav className={styles.nav}>
-          <div className={`${styles.navItem}`}>
-            <Link href="/ben">
-              About
-            </Link>
-          </div>
-          <div className={styles.navItem}>
-            <Link href="/writing">
-              Writing
-            </Link>
-          </div>
-          <div className={`${styles.navItem}`}>
-            <Link href="/cv">
-              Resume
-            </Link>
-          </div>
-          <div className={`${styles.navItem} ${styles.special}`}>
-            <Link href="/email">
-              Email
-            </Link>
-          </div>
-          <div className={`${styles.navItem} ${styles.special}`}>
-            <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/ben-fox-dev/">
-              Github
-            </a>
-          </div>
-          <div className={`${styles.navItem} ${styles.special}`}>
-            <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/ben-fox-dev/">
-              LinkedIn
-            </a>
-          </div>
+          <Link href="/ben">
+            <div className={`${styles.navItem}`}>About</div>
+          </Link>
+          <Link href="/writing">
+            <div className={styles.navItem}>Writing</div>
+          </Link>
+          <Link href="/cv">
+            <div className={`${styles.navItem}`}>Resume</div>
+          </Link>
+          <Link href="/email">
+            <div className={`${styles.navItem} ${styles.special}`}>Email</div>
+          </Link>
+          <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/ben-fox-dev/">
+            <div className={`${styles.navItem} ${styles.special}`}>Github</div>
+          </a>
+          <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/ben-fox-dev/">
+            <div className={`${styles.navItem} ${styles.special}`}>LinkedIn</div>
+          </a>
         </nav>
       </div>
       <p className={styles.headerRight}> </p>
     </div>
-  );
+  )
 }

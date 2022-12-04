@@ -1,6 +1,6 @@
 import styles from '../styles/Projects.module.css'
 import skills from '../skills'
-import Image from "next/legacy/image";
+import Image from 'next/legacy/image'
 
 interface Skill {
   name: string
@@ -27,9 +27,5 @@ export default function Skills() {
     </div>
   ))
 
-  return (
-    <div className={styles.skillsContainer}>
-      <div className={styles.skillsList}>{skillsList}</div>
-    </div>
-  )
+  return <div className={styles.skillsList}>{skillsList}</div>
 }

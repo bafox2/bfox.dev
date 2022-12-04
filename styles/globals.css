@@ -57,6 +57,13 @@ main {
   min-height: 100vh;
 }
 
+/* make it reponsive */
+@media (max-width: 768px) {
+  :root {
+    --mainWidth: 95vw;
+  }
+}
+
 /* @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

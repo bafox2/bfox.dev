@@ -5,6 +5,8 @@ featured: '/images/openailogin.png'
 description: 'Exclude your header, footer, or whatever other components that you can shed.'
 ---
 
+---
+
 # Per Page Layouts in Nextjs
 
 If you have worked with Next.js you know that there are many things it helps to make your life easier. The 'Layout' component was a heavy hitter for me when I first started working in Next.js. It allowed me to have a single component that I could use to wrap all of my pages. This was great for things like a header, footer, or any other components that I wanted to be on every page. However, there are times when you want to exclude your header, footer, or whatever other components that you can shed. This is where the 'getLayout' function comes in. Let's discuss it in this article and see come code of this functionality in action.
@@ -17,7 +19,7 @@ You are using next-auth and you wanted to make a custom sign in page. Unfortunat
 
 We are going to consider a few options before we talk about the solution we are going with. We want to respect DRY principles and we will favor a declarative solution over an imperative one. With that said, let's look at three options.
 
-#### Good old CSS
+### Good old CSS
 
 Our first attempt at the solution is probably the most simple, but ultimately, this isn't going to be what we choose.
 
@@ -33,7 +35,7 @@ footer {
 
 This would probably work with your setup, but it isn't extensible, and we don't want to waste any computational resources on generating a DOM object, even if they are relatively inexpensive.
 
-#### Using the Router in our .\_app file
+### Using the Router in our .\_app file
 
 Next.js is wonderful and one of the wonderful this about it is the router object.
 
@@ -54,7 +56,7 @@ function MyApp({ Component, pageProps, ...appProps }: AppProps) {
 
 You would have '/login' instead of '/dashboard', or whatever page you were wanting to change. The ternary returns the layout, or a fragment, and the return statement gives your component. This isn't the most extensible option, so we are going to skip.
 
-#### Using .getLayout
+### Using .getLayout
 
 Our hero of the day is .getLayout. It requires a little setup, but it lets us define what type of layout we want in the page itself.
 

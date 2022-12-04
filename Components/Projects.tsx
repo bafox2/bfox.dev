@@ -4,7 +4,7 @@
 import styles from '../styles/Projects.module.css'
 import projects from '../projects'
 import Link from 'next/link'
-import Image from "next/legacy/image";
+import Image from 'next/legacy/image'
 
 interface Project {
   name: string
@@ -24,6 +24,10 @@ export default function Projects() {
   const parsedProjects = JSON.parse(JSON.stringify(projects))
   const projectList = parsedProjects.map((project: Project) => (
     <div className={styles.cardContainer} key={project.number}>
+      <div className={styles.cardHeader}>
+        <h2 className={styles.cardHeaderTitle}>{project.name}</h2>
+        <p className={styles.rowInfo}>{project.description}</p>
+      </div>
       <div className={styles.cardBody}>
         <div className={styles.cardLeft}>
           <div className={styles.cardPic}>
@@ -37,11 +41,6 @@ export default function Projects() {
           </div>
         </div>
         <div className={styles.cardRight}>
-          <h2 className={styles.cardHeader}>{project.name}</h2>
-          <div className={styles.cardRow}>
-            <p className={styles.rowCategory}>Description</p>
-            <p className={styles.rowInfo}>{project.description}</p>
-          </div>
           <div className={styles.cardRow}>
             <p className={styles.rowCategory}>Stack</p>
             <p className={styles.rowInfo}>{project.builtWith}</p>
@@ -70,7 +69,7 @@ export default function Projects() {
         </div>
       </div>
 
-      <p>{project.number}</p>
+      <p className={styles.cardNumber}>{project.number}</p>
     </div>
   ))
 

@@ -7,11 +7,11 @@ import styles from '../styles/About.module.css'
 import { google } from 'googleapis'
 import letterboxd from 'letterboxd'
 import spotify from 'spotify-web-api-node'
-import strava from 'strava-v3'
 import { Client as PodClient } from 'podcast-api'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
-import { Carousel } from 'react-responsive-carousel'
-import { Bodoni_Moda } from '@next/font/google'
+import Marquee from 'react-fast-marquee'
+import art from '../utils/art.json'
+import games from '../utils/steam.json'
 
 type aboutPageProps = {
   githubData: {
@@ -31,14 +31,17 @@ type aboutPageProps = {
   }[]
 
   foodData: {
-    items: {
-      id: string
-      value: {
+    days: {
+      items: {
         id: string
-        title: string
-      }
+        value: {
+          id: string
+          title: string
+        }
+      }[]
     }[]
   }
+
   podData: {
     items: {
       title: string
@@ -85,13 +88,11 @@ type aboutPageProps = {
   }
 
   codewarsData: {
-    data: {
-      id: string
-      name: string
-      completedAt: string
-      completedLanguages: string[]
-    }[]
-  }
+    id: string
+    name: string
+    completedAt: string
+    completedLanguages: string[]
+  }[]
 
   playlistData: {
     tracks: {
@@ -191,220 +192,305 @@ const Ben: NextPage<aboutPageProps> = ({
     return `${miles.toFixed(2)} miles`
   }
 
+  //extract the time from a Date
+  const formatTime = (time: string) => {
+    const date = new Date(time)
+    const hours = date.getHours()
+    const minutes = date.getMinutes()
+    const seconds = date.getSeconds()
+    //add a 0 to the front of the time if it's less than 10
+    const formattedHours = hours < 10 ? `0${hours}` : hours
+    const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes
+    const formattedSeconds = seconds < 10 ? `0${seconds}` : seconds
+    return `${formattedHours}:${formattedMinutes}:${formattedSeconds}`
+  }
+
   const formatDate = (date: string) => {
     //format the date and time
     const d = new Date(date)
     const year = d.getFullYear()
     const month = d.getMonth() + 1
     const day = d.getDate()
-    const hour = d.getHours()
     const min = d.getMinutes()
-    const mins = min < 10 ? '0' + min : min
     const secs = d.getSeconds()
-    const sec: string | number = secs < 10 ? `0${secs}` : secs
-    const time = `${hour}:${mins}:${sec}`
-    return `${month}/${day}/${year} @${time}`
+    return `${month}/${day}/${year}`
   }
 
-  console.log(githubData)
+  const returnToTop = () => {
+    window.scrollTo(0, 0)
+  }
+
+  console.log(videoData)
 
   return (
     <>
       <main className={styles.mainContent}>
+        <button onClick={returnToTop} className={styles.returnTop}>
+          <div>
+            <Image src="/images/up.svg" height={30} width={40} alt="return to top" />
+          </div>
+        </button>
         <h1 className={styles.title}>Who am I?</h1>
         <p>I do not keep up with social media, but I do exist. Here are things that I like.</p>
-        {/* <div className={styles.carousel}>
-          <Carousel
-            showThumbs={false}
-            emulateTouch={true}
-            showArrows={false}
-            showStatus={false}
-            showIndicators={false}
-            infiniteLoop={true}
-            useKeyboardArrows={true}
-            stopOnHover={true}
-          >
-            <div>
-              <h3>1</h3>
-              <Image src="/images/carousel/1.jpg" width={500} height={500} alt={'picture of ben'} />
-              <p>Circus, specifically trapeze, is one of my most favorite things to do</p>
+
+        <h2 className={styles.title}>Games</h2>
+        <Marquee
+          gradient={false}
+          speed={100}
+          direction={'right'}
+          className={`${styles.steam}`}
+          pauseOnHover={true}
+          pauseOnClick={true}
+        >
+          {games.map((game, index) => (
+            <div key={index} className={styles.steamGame}>
+              <Image src={game.src} alt={game.name} width={450} height={150} />
+              <p>{game.name}</p>
             </div>
-            <div>
-              <h3>2</h3>
-              <Image src="/images/carousel/2.jpg" width={500} height={500} alt={'picture of ben'} />
-              <p>Camp is a second home to me, I have spent 5 great summers there</p>
+          ))}
+        </Marquee>
+        <h2 className={styles.title}>Art</h2>
+        <Marquee gradient={false} speed={100} pauseOnHover={true} pauseOnClick={true}>
+          {art.map((art, index) => (
+            <div key={index}>
+              <Image src={art.thumb_url} alt={art.title} width={600} height={600} />
+              <p>{art.title}</p>
+              <p>
+                {art.username} from {art.country}, {art.city}
+              </p>
             </div>
-            <div>
-              <h3>3</h3>
-              <Image src="/images/carousel/3.jpeg" width={500} height={500} alt={'picture of ben'} />
-              <p>Desert landscape makes me feel creative</p>
-            </div>
-            <div>
-              <h3>3</h3>
-              <Image src="/images/carousel/4.jpeg" width={500} height={500} alt={'picture of ben'} />
-              <p>Focus is literally not on me, but the art</p>
-            </div>
-            <div>
-              <h3>3</h3>
-              <Image src="/images/carousel/5.jpeg" width={500} height={500} alt={'picture of ben'} />
-              <p>My younger brother is the best chef, you should try his food</p>
-            </div>
-            <div>
-              <h3>3</h3>
-              <Image src="/images/carousel/6.jpg" width={500} height={500} alt={'picture of ben'} />
-              <p>Children should not know which are your favorite, but it is okay to have a favorite</p>
-            </div>
-            <div>
-              <h3>3</h3>
-              <Image src="/images/carousel/7.jpg" width={500} height={700} alt={'picture of ben'} />
-              <p>This trooper was only dropped once</p>
-            </div>
-            <div>
-              <h3>3</h3>
-              <Image src="/images/carousel/8.jpg" width={500} height={500} alt={'picture of ben'} />
-              <p>Atlantic coast</p>
-            </div>
-            <div>
-              <h3>3</h3>
-              <Image src="/images/carousel/9.jpg" width={500} height={500} alt={'picture of ben'} />
-              <p>The Great Sand Dunes</p>
-            </div>
-            <div>
-              <h3>3</h3>
-              <Image src="/images/carousel/10.jpeg" width={500} height={500} alt={'picture of ben'} />
-              <p>I went to Arizona and stayed in a camper</p>
-            </div>
-            <div>
-              <h3>3</h3>
-              <Image src="/images/carousel/11.jpeg" layout={'fill'} alt={'picture of ben'} />
-              <p>Juggling is my natural talent</p>
-            </div>
-            <div>
-              <h3>3</h3>
-              <Image src="/images/carousel/12.jpeg" width={500} height={500} alt={'picture of ben'} />
-              <p>Eating makes me happy</p>
-            </div>
-          </Carousel>
-        </div> */}
+          ))}
+        </Marquee>
+
+        <Marquee speed={100} pauseOnHover={true} gradient={false} direction={'right'}>
+          <div>
+            <h3>1</h3>
+            <Image src="/images/carousel/1.jpg" width={600} height={500} alt={'picture of ben'} />
+            <p>Circus, specifically trapeze, is one of my most favorite things to do</p>
+          </div>
+          <div>
+            <h3>2</h3>
+            <Image src="/images/carousel/2.jpg" width={500} height={500} alt={'picture of ben'} />
+            <p>Camp is a second home to me, I have spent 5 great summers there</p>
+          </div>
+          <div>
+            <h3>3</h3>
+            <Image src="/images/carousel/3.jpeg" width={500} height={500} alt={'picture of ben'} />
+            <p>Desert landscape makes me feel creative</p>
+          </div>
+          <div>
+            <h3>3</h3>
+            <Image src="/images/carousel/4.jpeg" width={500} height={500} alt={'picture of ben'} />
+            <p>Focus is literally not on me, but the art</p>
+          </div>
+          <div>
+            <h3>3</h3>
+            <Image src="/images/carousel/5.jpeg" width={500} height={500} alt={'picture of ben'} />
+            <p>My younger brother is the best chef, you should try his food</p>
+          </div>
+          <div>
+            <h3>3</h3>
+            <Image src="/images/carousel/6.jpg" width={600} height={500} alt={'picture of ben'} />
+            <p>Hope these guys are well</p>
+          </div>
+          <div>
+            <h3>3</h3>
+            <Image src="/images/carousel/7.jpg" width={500} height={700} alt={'picture of ben'} />
+            <p>This trooper was only dropped once</p>
+          </div>
+          <div>
+            <h3>3</h3>
+            <Image src="/images/carousel/8.jpg" width={400} height={500} alt={'picture of ben'} />
+            <p>Atlantic coast</p>
+          </div>
+          <div>
+            <h3>3</h3>
+            <Image src="/images/carousel/9.jpg" width={500} height={500} alt={'picture of ben'} />
+            <p>The Great Sand Dunes</p>
+          </div>
+          <div>
+            <h3>3</h3>
+            <Image src="/images/carousel/10.jpeg" width={700} height={500} alt={'picture of ben'} />
+            <p>I went to Arizona and stayed in a camper</p>
+          </div>
+          <div>
+            <h3>3</h3>
+            <Image src="/images/carousel/11.jpeg" width={700} height={500} alt={'picture of ben'} />
+            <p>Juggling is my natural talent</p>
+          </div>
+          <div>
+            <h3>3</h3>
+            <Image src="/images/carousel/12.jpeg" width={500} height={500} alt={'picture of ben'} />
+            <p>Eating makes me happy</p>
+          </div>
+        </Marquee>
         <h2>Podcasts</h2>
-        <div className={styles.cardContainer}>
+        <Marquee speed={40} pauseOnHover={true} gradient={false}>
           {podData.items.map((pod) => (
             <div className={styles.card} key={pod.data.id}>
               <Link href={pod.data.link}>
-                <h3>{pod.data?.title}</h3>
-                <h3>{pod.data.podcast?.title}</h3>
+                <div className={styles.glassEffect}>
+                  <h3>{pod.data?.title}</h3>
+                  <h3>{pod.data.podcast?.title}</h3>
+                </div>
                 <Image
                   src={pod.data.podcast?.thumbnail}
                   width={300}
                   height={300}
-                  layout={'fixed'}
+                  layout={'responsive'}
                   alt={'podcast thumbnail'}
                 />
               </Link>
             </div>
           ))}
-        </div>
+        </Marquee>
         <h2>Letterboxd</h2>
         <div className={styles.cardContainer}>
-          {moviesData.map((movie) => (
-            <div className={styles.card} key={movie.id}>
-              <Link href={movie.uri}>
-                <p>{movie.film?.description}</p>
-                <p>
-                  {movie.film?.title} - {movie.film?.year}
-                </p>
-                <Image layout={'fixed'} src={movie.film.image.large} width={230} height={345} alt={'movie poster'} />
-                <p>{movie.rating?.text}</p>
-              </Link>
-            </div>
-          ))}
+          <Marquee speed={40} pauseOnHover={true} gradient={false} direction={'right'}>
+            {moviesData.map((movie) => (
+              <div className={styles.card} key={movie.id}>
+                <Link href={movie.uri}>
+                  <p>{movie.film?.description}</p>
+                  <p>
+                    {movie.film?.title} - {movie.film?.year}
+                  </p>
+                  <Image layout={'fixed'} src={movie.film.image.large} width={230} height={345} alt={'movie poster'} />
+                  <p>{movie.rating?.text}</p>
+                </Link>
+              </div>
+            ))}
+          </Marquee>
         </div>
         <h2>Github</h2>
         <div className={styles.cardContainer}>
-          {githubData.map((dataEntry) => (
-            <div className={styles.card} key={dataEntry.id}>
+          <Marquee speed={1000} pauseOnHover={true} gradient={false}>
+            {githubData.map((dataEntry) => (
               <Link href={`https://github.com/${dataEntry.repo.name}`}>
-                <p>{dataEntry.repo.name}</p>
-                <p>{formatDate(dataEntry.created_at)}</p>
-                {dataEntry.payload.commits?.map((commit) => (
-                  <div key={commit.sha}>
-                    <p>{commit.message}</p>
-                  </div>
-                ))}
+                <div className={styles.cardGithub} key={dataEntry.id}>
+                  <p>Repo: {dataEntry.repo.name.substring(7)}</p>
+                  <p>Day: {formatDate(dataEntry.created_at)}</p>
+                  <p>Time: {formatTime(dataEntry.created_at)}</p>
+                  {dataEntry.payload.commits?.map((commit) => (
+                    <div key={commit.sha}>
+                      <p>Message: {commit.message}</p>
+                    </div>
+                  ))}
+                </div>
               </Link>
-            </div>
-          ))}
+            ))}
+          </Marquee>
         </div>
         <h2>Codewars</h2>
         <div className={styles.cardContainer}>
-          {codewarsData.data.map((challenge) => (
-            <div className={styles.card} key={challenge.id}>
-              <Link href={`https://www.codewars.com/kata/${challenge.id}`}>
-                <p>{challenge.name}</p>
-                <p>{formatDate(challenge.completedAt)}</p>
-                <p>{challenge.completedLanguages[0]}</p>
-              </Link>
-            </div>
-          ))}
+          <Marquee
+            speed={600}
+            pauseOnHover={true}
+            gradient={false}
+            direction={'right'}
+            className={styles.marqueeSpecial}
+            pauseOnClick={true}
+          >
+            {codewarsData.map((challenge) => (
+              <div>
+                <div className={styles.card} key={challenge.id}>
+                  <Link href={`https://www.codewars.com/kata/${challenge.id}`}>
+                    <p>{challenge.name}</p>
+                    <p>{formatDate(challenge.completedAt)}</p>
+                    <p>{challenge.completedLanguages[0]}</p>
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </Marquee>
         </div>
         <h2>Food</h2>
         <div className={styles.cardContainer}>
-          {foodData.items.map((food) => (
-            <div className={styles.card} key={food.id}>
-              <Link href={`https://spoonacular.com/${food.value.title}`}>
-                <p>{food.value.title}</p>
-                <Image
-                  layout={'fixed'}
-                  src={`https://webknox.com/recipeImages/${food.value.id}-240x150.jpg`}
-                  width={240}
-                  height={150}
-                  alt={'food that looks tasty'}
-                />
-              </Link>
-            </div>
-          ))}
+          <Marquee speed={40} pauseOnHover={true} gradient={false}>
+            {foodData.days.map((day: any) =>
+              day.items.map((item: any) => (
+                <div className={styles.card} key={item.id}>
+                  <p>{item.value.title}</p>
+                  <Image
+                    layout={'fixed'}
+                    src={`https://webknox.com/recipeImages/${item.value.id}-240x150.jpg`}
+                    width={240}
+                    height={150}
+                    alt={`picture of ${item.value.title}`}
+                  />
+                </div>
+              ))
+            )}
+          </Marquee>
         </div>
         <h2>Videos</h2>
         <div className={styles.cardContainer}>
-          {videoData.items.map((video: any) => (
-            <div className={styles.card} key={video.id.videoId}>
-              <Link href={`https://www.youtube.com/watch?v=${video.snippet.resourceId.videoId}`}>
-                <p>{video.snippet.title}</p>
-                <p>{video.snippet.videoOwnerChannelTitle}</p>
-                <Image
-                  layout={'fixed'}
-                  src={video.snippet.thumbnails.high.url}
-                  width={480}
-                  height={360}
-                  alt={'video thumbnail'}
-                />
-              </Link>
-            </div>
-          ))}
+          <Marquee speed={40} pauseOnHover={true} gradient={false} direction={'right'}>
+            {videoData.items.map((video: any) => (
+              <div className={styles.card} key={video.id.videoId}>
+                <Link href={`https://www.youtube.com/watch?v=${video.snippet.resourceId.videoId}`}>
+                  <p>{video.snippet.title}</p>
+                  <p>{video.snippet.videoOwnerChannelTitle}</p>
+                  <Image
+                    layout={'fixed'}
+                    src={video.snippet.thumbnails.standard.url}
+                    width={480}
+                    height={360}
+                    alt={'video thumbnail'}
+                  />
+                </Link>
+              </div>
+            ))}
+          </Marquee>
         </div>
         <h2>Books</h2>
         <div className={styles.cardContainer}>
-          {bookData.items.map((book: any) => (
-            <div className={styles.card} key={book.id}>
-              <Link href={book.volumeInfo.canonicalVolumeLink}>
-                <p>{book.volumeInfo.title}</p>
-                <p>{book.volumeInfo.authors}</p>
-                <Image
-                  layout={'fixed'}
-                  src={book.volumeInfo.imageLinks.thumbnail}
-                  alt={'book cover'}
-                  width={128}
-                  height={190}
-                />
-              </Link>
-            </div>
-          ))}
+          <Marquee speed={400} pauseOnHover={true} gradient={false} className={styles.marqueeBook}>
+            {bookData.items.map((book: any) => (
+              <div>
+                <div className={styles.card} key={book.id}>
+                  <Link href={book.volumeInfo.canonicalVolumeLink}>
+                    <p>{book.volumeInfo.title}</p>
+                    <p>{book.volumeInfo.authors}</p>
+                    <Image
+                      layout={'fixed'}
+                      src={book.volumeInfo.imageLinks.thumbnail}
+                      alt={'book cover'}
+                      width={128}
+                      height={190}
+                    />
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </Marquee>
         </div>
         <h2>Music</h2>
+
         <div className={styles.cardContainer}>
-          {playlistData.tracks.items.map((track) => (
-            <div className={styles.card} key={track.track.id}>
-              <Link href={track.track.external_urls.spotify}>
+          <Marquee speed={40} pauseOnHover={true} gradient={false} direction={'right'}>
+            {playlistData.tracks.items.map((track) => (
+              <div className={styles.card} key={track.track.id}>
+                <Link href={track.track.external_urls.spotify}>
+                  <p>{track.track.name}</p>
+                  <p>{track.track.artists[0].name}</p>
+                  <p>{track.track.album.name}</p>
+                  <Image
+                    layout={'fixed'}
+                    src={track.track.album.images[0].url}
+                    width={640}
+                    height={640}
+                    alt={'album cover'}
+                  />
+                </Link>
+              </div>
+            ))}
+          </Marquee>
+        </div>
+        <h2>Guitar</h2>
+        <div className={styles.cardContainer}>
+          <Marquee speed={40} pauseOnHover={true} gradient={false}>
+            {guitarData.tracks.items.map((track) => (
+              <div className={styles.card} key={track.track.id}>
                 <p>{track.track.name}</p>
                 <p>{track.track.artists[0].name}</p>
                 <p>{track.track.album.name}</p>
@@ -415,26 +501,9 @@ const Ben: NextPage<aboutPageProps> = ({
                   height={640}
                   alt={'album cover'}
                 />
-              </Link>
-            </div>
-          ))}
-        </div>
-        <h2>Guitar</h2>
-        <div className={styles.cardContainer}>
-          {guitarData.tracks.items.map((track) => (
-            <div className={styles.card} key={track.track.id}>
-              <p>{track.track.name}</p>
-              <p>{track.track.artists[0].name}</p>
-              <p>{track.track.album.name}</p>
-              <Image
-                layout={'fixed'}
-                src={track.track.album.images[0].url}
-                width={640}
-                height={640}
-                alt={'album cover'}
-              />
-            </div>
-          ))}
+              </div>
+            ))}
+          </Marquee>
         </div>
         <h2>Running</h2>
         <div className={styles.cardContainer}>
@@ -465,13 +534,14 @@ export const getStaticProps: GetStaticProps = async () => {
   const githubRes = await fetch('https://api.github.com/users/bafox2/events/public')
   const githubDataJSON = await githubRes.json()
   //only send 10 commits
-  const githubData = githubDataJSON.slice(0, 10)
+  const githubData = githubDataJSON.slice(0, 15)
   const codewars = await fetch('https://www.codewars.com/api/v1/users/bafox2/code-challenges/completed')
-  const codewarsData = await codewars.json()
-
+  const codewarsRes = await codewars.json()
+  //only send 15 entries
+  const codewarsData = codewarsRes.data.slice(0, 15)
   //works - just need to put the id into a webknox.com/recipeImages/{id} url
   const apiFood = await fetch(
-    `https://api.spoonacular.com/mealplanner/bfox/day/2022-11-28?hash=6bdf691c3f03c8bcfde559be3c7120ef5fe73e3c&apiKey=${process.env.SPOONACULAR_API_KEY}`,
+    `https://api.spoonacular.com/mealplanner/bfox/week/2022-11-28?hash=6bdf691c3f03c8bcfde559be3c7120ef5fe73e3c&apiKey=${process.env.SPOONACULAR_API_KEY}`,
     {
       headers: {
         Authorization: `Bearer ${process.env.SPOONACULAR_API_KEY}`,
@@ -1249,7 +1319,7 @@ export const getStaticProps: GetStaticProps = async () => {
   const bookData = await googleBookshelf.bookshelves.volumes
     .list({
       userId: '106145325458311565501',
-      shelf: '3',
+      shelf: '4',
     })
     .then((response) => {
       return response.data
