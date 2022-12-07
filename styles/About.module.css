@@ -68,7 +68,6 @@
 }
 
 .steamGame {
-  margin-left: 1.5rem;
 }
 
 /* .marqueeBook:first-child {
@@ -77,10 +76,32 @@
 
 .glassEffect {
   color: #fff;
-  width: auto;
-  padding: 50px;
+  width: 100%;
+  height: min-content;
   text-align: center;
-  backdrop-filter: blur(100px);
+  backdrop-filter: blur(10px);
   box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.5);
   background: rgba(0, 0, 0, 0.25);
+}
+
+.cardFixed {
+  position: relative;
+  display: flex;
+
+  width: 300px;
+  height: 300px;
+}
+
+.cardPicDiv {
+  /* this is the text that will be positioned in .cardPicTogether */
+  align-self: flex-end;
+}
+
+.cardPicTogether {
+  /* this is going to be the div that has the image that .cardPicDiv has the text */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
 }

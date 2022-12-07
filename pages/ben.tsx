@@ -230,10 +230,14 @@ const Ben: NextPage<aboutPageProps> = ({
             <Image src="/images/up.svg" height={30} width={40} alt="return to top" />
           </div>
         </button>
+
         <h1 className={styles.title}>Who am I?</h1>
         <p>I do not keep up with social media, but I do exist. Here are things that I like.</p>
 
-        <h2 className={styles.title}>Games</h2>
+        <div className={styles.categoryHeader}>
+          <h2>Games</h2>
+          <Image src={'/logos/steam.svg'} width={100} height={100} />
+        </div>
         <Marquee
           gradient={false}
           speed={100}
@@ -244,24 +248,33 @@ const Ben: NextPage<aboutPageProps> = ({
         >
           {games.map((game, index) => (
             <div key={index} className={styles.steamGame}>
-              <Image src={game.src} alt={game.name} width={450} height={150} />
-              <p>{game.name}</p>
+              <Link href={`https://steamcommunity.com/app/${game.src.split('/')[5]}/`}>
+                <Image src={game.src} alt={game.name} width={300} height={100} />
+                {/* <p>{game.name}</p> */}
+              </Link>
             </div>
           ))}
         </Marquee>
-        <h2 className={styles.title}>Art</h2>
+        <div className={styles.categoryHeader}>
+          <h2>Art</h2>
+          <Image src={'/logos/art2.svg'} width={100} height={100} />
+        </div>
         <Marquee gradient={false} speed={100} pauseOnHover={true} pauseOnClick={true}>
           {art.map((art, index) => (
             <div key={index}>
               <Image src={art.thumb_url} alt={art.title} width={600} height={600} />
               <p>{art.title}</p>
               <p>
-                {art.username} from {art.country}, {art.city}
+                {/* make the first letter uppercase */}
+                {`${art.username.charAt(0).toUpperCase()}${art.username.slice(1, -1)}`} from {art.country}, {art.city}
               </p>
             </div>
           ))}
         </Marquee>
-
+        <div className={styles.categoryHeader}>
+          <h2>Pictures</h2>
+          <Image src={'/logos/pic.svg'} width={100} height={100} />
+        </div>
         <Marquee speed={100} pauseOnHover={true} gradient={false} direction={'right'}>
           <div>
             <h3>1</h3>
@@ -324,27 +337,26 @@ const Ben: NextPage<aboutPageProps> = ({
             <p>Eating makes me happy</p>
           </div>
         </Marquee>
-        <h2>Podcasts</h2>
+        <div className={styles.categoryHeader}>
+          <h2>Podcasts</h2>
+          <Image src={'/logos/pod.svg'} width={100} height={100} />
+        </div>
         <Marquee speed={40} pauseOnHover={true} gradient={false}>
           {podData.items.map((pod) => (
-            <div className={styles.card} key={pod.data.id}>
+            <div className={styles.cardFixed} key={pod.data.id}>
               <Link href={pod.data.link}>
-                <div className={styles.glassEffect}>
+                <Image src={pod.data.podcast?.thumbnail} objectFit="cover" layout="fill" alt={'podcast thumbnail'} />
+                <div className={`${styles.glassEffect} ${styles.cardPicDiv}`}>
                   <h3>{pod.data?.title}</h3>
-                  <h3>{pod.data.podcast?.title}</h3>
                 </div>
-                <Image
-                  src={pod.data.podcast?.thumbnail}
-                  width={300}
-                  height={300}
-                  layout={'responsive'}
-                  alt={'podcast thumbnail'}
-                />
               </Link>
             </div>
           ))}
         </Marquee>
-        <h2>Letterboxd</h2>
+        <div className={styles.categoryHeader}>
+          <h2>Letterboxd</h2>
+          <Image src={'/logos/letterboxd.svg'} width={100} height={100} />
+        </div>
         <div className={styles.cardContainer}>
           <Marquee speed={40} pauseOnHover={true} gradient={false} direction={'right'}>
             {moviesData.map((movie) => (
@@ -361,7 +373,10 @@ const Ben: NextPage<aboutPageProps> = ({
             ))}
           </Marquee>
         </div>
-        <h2>Github</h2>
+        <div className={styles.categoryHeader}>
+          <h2>Github</h2>
+          <Image src={'/logos/github.svg'} width={100} height={100} />
+        </div>
         <div className={styles.cardContainer}>
           <Marquee speed={1000} pauseOnHover={true} gradient={false}>
             {githubData.map((dataEntry) => (
@@ -380,7 +395,10 @@ const Ben: NextPage<aboutPageProps> = ({
             ))}
           </Marquee>
         </div>
-        <h2>Codewars</h2>
+        <div className={styles.categoryHeader}>
+          <h2>Codewars</h2>
+          <Image src={'/logos/codewars.svg'} width={100} height={100} />
+        </div>
         <div className={styles.cardContainer}>
           <Marquee
             speed={600}
@@ -403,7 +421,10 @@ const Ben: NextPage<aboutPageProps> = ({
             ))}
           </Marquee>
         </div>
-        <h2>Food</h2>
+        <div className={styles.categoryHeader}>
+          <h2>Food</h2>
+          <Image src={'/logos/food.svg'} width={100} height={100} />
+        </div>
         <div className={styles.cardContainer}>
           <Marquee speed={40} pauseOnHover={true} gradient={false}>
             {foodData.days.map((day: any) =>
@@ -422,7 +443,10 @@ const Ben: NextPage<aboutPageProps> = ({
             )}
           </Marquee>
         </div>
-        <h2>Videos</h2>
+        <div className={styles.categoryHeader}>
+          <h2>Youtube</h2>
+          <Image src={'/logos/youtube.svg'} width={100} height={100} />
+        </div>
         <div className={styles.cardContainer}>
           <Marquee speed={40} pauseOnHover={true} gradient={false} direction={'right'}>
             {videoData.items.map((video: any) => (
@@ -442,7 +466,10 @@ const Ben: NextPage<aboutPageProps> = ({
             ))}
           </Marquee>
         </div>
-        <h2>Books</h2>
+        <div className={styles.categoryHeader}>
+          <h2>Books</h2>
+          <Image src={'/logos/books.png'} width={100} height={100} />
+        </div>
         <div className={styles.cardContainer}>
           <Marquee speed={400} pauseOnHover={true} gradient={false} className={styles.marqueeBook}>
             {bookData.items.map((book: any) => (
@@ -464,7 +491,10 @@ const Ben: NextPage<aboutPageProps> = ({
             ))}
           </Marquee>
         </div>
-        <h2>Music</h2>
+        <div className={styles.categoryHeader}>
+          <h2>Music</h2>
+          <Image src={'/logos/spotify.svg'} width={100} height={100} />
+        </div>
 
         <div className={styles.cardContainer}>
           <Marquee speed={40} pauseOnHover={true} gradient={false} direction={'right'}>
@@ -486,7 +516,11 @@ const Ben: NextPage<aboutPageProps> = ({
             ))}
           </Marquee>
         </div>
-        <h2>Guitar</h2>
+
+        <div className={styles.categoryHeader}>
+          <h2>Guitar</h2>
+          <Image src={'/logos/guitar.svg'} width={100} height={100} />
+        </div>
         <div className={styles.cardContainer}>
           <Marquee speed={40} pauseOnHover={true} gradient={false}>
             {guitarData.tracks.items.map((track) => (
@@ -505,7 +539,10 @@ const Ben: NextPage<aboutPageProps> = ({
             ))}
           </Marquee>
         </div>
-        <h2>Running</h2>
+        <div className={styles.categoryHeader}>
+          <h2>Running</h2>
+          <Image src={'/logos/strava.svg'} width={100} height={100} />
+        </div>
         <div className={styles.cardContainer}>
           <div>
             <Link href={'https://www.strava.com/athletes/108608247'}>
@@ -648,268 +685,7 @@ export const getStaticProps: GetStaticProps = async () => {
         notes: 'Listen Notes API powers this app :) Awesome to see another success story of our podcast api!',
         added_at_ms: 1655882791242,
       },
-      {
-        id: 827612,
-        data: {
-          id: '202d91e59bd8460492a220886d177eea',
-          link: 'https://www.vox.com/recode-media-podcast?utm_source=listennotes.com&utm_campaign=Listen+Notes&utm_medium=website',
-          audio: 'https://www.listennotes.com/e/p/202d91e59bd8460492a220886d177eea/',
-          image:
-            'https://production.listennotes.com/podcasts/recode-media-recode-h9zPK_1UkdB-1iPwTajLXlS.1400x1400.jpg',
-          title: 'Bill Simmons on podcasts, celebrity interviews and life at Spotify',
-          podcast: {
-            id: '2aba49dc3fc04e3e96fe89f79a261798',
-            image:
-              'https://production.listennotes.com/podcasts/recode-media-recode-h9zPK_1UkdB-1iPwTajLXlS.1400x1400.jpg',
-            title: 'Recode Media',
-            publisher: 'Recode',
-            thumbnail:
-              'https://production.listennotes.com/podcasts/recode-media-recode-eHTVnkiXyu9-1iPwTajLXlS.300x300.jpg',
-            listen_score: 54,
-            listennotes_url: 'https://www.listennotes.com/c/2aba49dc3fc04e3e96fe89f79a261798/',
-            listen_score_global_rank: '0.5%',
-          },
-          thumbnail:
-            'https://production.listennotes.com/podcasts/recode-media-recode-eHTVnkiXyu9-1iPwTajLXlS.300x300.jpg',
-          description:
-            '<p>The Bill Simmons Podcast is, by its own description, "the most downloaded sports podcast of all time." This week, it hits its 1,000th episode.</p><p>Bill Simmons began his career as a Boston sportswriter and went on to found ESPN\'s sports and pop culture blog Grantland. After ESPN shut down the site, Simmons started the Ringer — which he sold to Spotify in 2020.</p><p>In this wide-ranging conversation, Recode’s Peter Kafka talks to Simmons about how he became a podcasting pioneer, and when he realized nerditry about the NBA and Game of Thrones could both live under the same roof. Simmons also reflects on what he learned from his time as an employee of The Walt Disney Corporation and how things are different at Spotify. Plus, he reveals the number one dream guest he’d love to have on his show.</p><p><br /></p><p><strong>Featuring</strong>: Bill Simmons (<a href="https://twitter.com/BillSimmons">@BillSimmons</a>), Founder of The Ringer</p><p><strong>Host</strong>: Peter Kafka (<a href="https://twitter.com/pkafka">@pkafka</a>), Senior Editor at Recode</p><p><strong>More to explore</strong>: <a href="https://pod.link/1080467174">Subscribe for free to Recode Media</a>, Peter Kafka, one of the media industry\'s most acclaimed reporters, talks to business titans, journalists, comedians, and more to get their take on today\'s media landscape.</p><p><strong>About Recode by Vox</strong>: Recode by Vox helps you understand how tech is changing the world — and changing us.</p><p> </p><p>Learn more about your ad choices. Visit <a href="https://podcastchoices.com/adchoices">podcastchoices.com/adchoices</a></p>',
-          pub_date_ms: 1655266568008,
-          guid_from_rss: '72fffa04-5221-11ec-ae31-23e900b8cde4',
-          listennotes_url: 'https://www.listennotes.com/e/202d91e59bd8460492a220886d177eea/',
-          audio_length_sec: 3626,
-          explicit_content: false,
-          maybe_audio_invalid: false,
-          listennotes_edit_url: 'https://www.listennotes.com/e/202d91e59bd8460492a220886d177eea/#edit',
-        },
-        type: 'episode',
-        notes: '',
-        added_at_ms: 1655274047437,
-      },
 
-      {
-        id: 678931,
-        data: {
-          id: 'af19ceda98d84d3c92eafe7e7f63b6dd',
-          link: 'https://tim.blog/podcast?utm_source=listennotes.com&utm_campaign=Listen+Notes&utm_medium=website',
-          audio: 'https://www.listennotes.com/e/p/af19ceda98d84d3c92eafe7e7f63b6dd/',
-          image:
-            'https://production.listennotes.com/podcasts/the-tim-ferriss-show-tim-ferriss-7NwMpUz5o0S.1400x1400.jpg',
-          title:
-            '#538: How I Built The Tim Ferriss Show to 700+ Million Downloads — An Immersive Explanation of All Aspects and Key Decisions (Featuring Chris Hutchins)',
-          podcast: {
-            id: '25212ac3c53240a880dd5032e547047b',
-            image:
-              'https://production.listennotes.com/podcasts/the-tim-ferriss-show-tim-ferriss-7NwMpUz5o0S.1400x1400.jpg',
-            title: 'The Tim Ferriss Show',
-            publisher: 'Tim Ferriss: Bestselling Author, Human Guinea Pig',
-            thumbnail:
-              'https://production.listennotes.com/podcasts/the-tim-ferriss-show-tim-ferriss-7NwMpUz5o0S.300x300.jpg',
-            listen_score: 82,
-            listennotes_url: 'https://www.listennotes.com/c/25212ac3c53240a880dd5032e547047b/',
-            listen_score_global_rank: '0.01%',
-          },
-          thumbnail:
-            'https://production.listennotes.com/podcasts/the-tim-ferriss-show-tim-ferriss-7NwMpUz5o0S.300x300.jpg',
-          description:
-            '<p><strong>How I Built The Tim Ferriss Show to 700+ Million Downloads — An Immersive Explanation of All Aspects and Key Decisions (Featuring Chris Hutchins) | Brought to you by </strong><a href="http://linkedin.com/tim" rel="noopener noreferrer" target="_blank"><strong>LinkedIn Jobs</strong></a><strong> recruitment platform with 770M+ users</strong>, <a href="http://athleticgreens.com/tim" rel="noopener noreferrer" target="_blank"><strong>Athletic Greens</strong></a><strong> all-in-one nutritional supplement, and </strong><a href="http://helixsleep.com/tim" rel="noopener noreferrer" target="_blank"><strong>Helix Sleep</strong></a><strong> premium mattresses. More on all three below.</strong></p><p><strong>Chris Hutchins</strong> (<a href="https://twitter.com/hutchins" rel="noopener noreferrer" target="_blank">@hutchins</a>) is an avid life hacker and financial optimizer. He’s the host of <a href="https://www.allthehacks.com/" rel="noopener noreferrer" target="_blank"><strong><em>All the Hacks</em></strong></a> podcast and the Head of New Product Strategy at <a href="https://www.wealthfront.com/tim" rel="noopener noreferrer" target="_blank">Wealthfront</a>.</p><p>Previously, Chris was co-founder and CEO of Grove (acquired by <a href="https://www.wealthfront.com/tim" rel="noopener noreferrer" target="_blank">Wealthfront</a>), co-founder of Milk (acquired by Google), and a partner at <a href="https://www.gv.com/" rel="noopener noreferrer" target="_blank">Google Ventures</a>, where he focused on seed and early stage investments.</p><p>Chris reached out with many questions about podcasting. He had already read much of <a href="https://tim.blog/2016/04/11/tim-ferriss-podcast-business/" rel="noopener noreferrer" target="_blank">what I had written</a> and <a href="https://rolfpotts.com/podcast/tim-ferriss/" rel="noopener noreferrer" target="_blank">listened to several interviews</a>, and this is intended to be an updated guide to all things podcasting.</p><p>Please enjoy!</p><p><strong>This episode is brought to you by </strong><a href="https://www.athleticgreens.com/tim" rel="noopener noreferrer" target="_blank"><strong>Athletic Greens</strong></a><strong>.</strong> I get asked all the time, “If you could only use one supplement, what would it be?” My answer is usually <a href="https://www.athleticgreens.com/tim" rel="noopener noreferrer" target="_blank">Athletic Greens</a>, my all-in-one nutritional insurance. I recommended it in <em>The 4-Hour Body</em> in 2010 and did not get paid to do so. I do my best with nutrient-dense meals, of course, but <a href="https://www.athleticgreens.com/tim" rel="noopener noreferrer" target="_blank">AG</a> further covers my bases with vitamins, minerals, and whole-food-sourced micronutrients that support gut health and the immune system. </p><p><strong>Right now, </strong><a href="https://www.athleticgreens.com/tim" rel="noopener noreferrer" target="_blank"><strong>Athletic Greens</strong></a><strong> is offering you their Vitamin D Liquid Formula free with your first subscription purchase</strong>—a vital nutrient for a strong immune system and strong bones. <strong>Visit </strong><a href="https://www.athleticgreens.com/tim" rel="noopener noreferrer" target="_blank"><strong>AthleticGreens.com/Tim</strong></a><strong> to claim this special offer today and receive the free Vitamin D Liquid Formula (and five free travel packs) with your first subscription purchase! </strong>That’s up to a one-year supply of Vitamin D as added value when you try their delicious and comprehensive all-in-one daily greens product.</p><p>*</p><p><strong>This episode is also brought to you by </strong><a href="http://helixsleep.com/tim" rel="noopener noreferrer" target="_blank"><strong>Helix Sleep</strong></a><strong>! </strong>Helix was selected as the #1 overall mattress of 2020 by <em>GQ </em>magazine<em>, Wired, </em>Apartment Therapy, and many others. With <a href="http://helixsleep.com/tim" rel="noopener noreferrer" target="_blank">Helix</a>, there’s a specific mattress to meet each and every body’s unique comfort needs. Just take their quiz—<a href="http://helixsleep.com/tim" rel="noopener noreferrer" target="_blank">only two minutes to complete</a>—that matches your body type and sleep preferences to the perfect mattress for you. They have a 10-year warranty, and you get to try it out for a hundred nights, risk free. They’ll even pick it up from you if you don’t love it. </p><p><strong>And now, to my dear listeners, Helix is offering up to 200 dollars off all mattress orders plus two free pillows at </strong><a href="http://helixsleep.com/tim" rel="noopener noreferrer" target="_blank"><strong>HelixSleep.com/Tim</strong></a><strong>.</strong></p><p><strong>*</strong></p><p><strong>This episode is also brought to you by </strong><a href="https://linkedin.com/Tim" rel="noopener noreferrer" target="_blank"><strong>LinkedIn Jobs</strong></a><strong>.</strong> Whether you are looking to hire now for a critical role or thinking about needs that you may have in the future, <a href="https://linkedin.com/Tim" rel="noopener noreferrer" target="_blank">LinkedIn Jobs</a> can help. LinkedIn screens candidates for the hard and soft skills you’re looking for and puts your job in front of candidates looking for job opportunities that match what you have to offer.</p><p>Using LinkedIn’s active community of more than 770 million professionals worldwide, <a href="https://linkedin.com/Tim" rel="noopener noreferrer" target="_blank"><strong>LinkedIn Jobs</strong></a> can help you find and hire the right person faster. <strong>When your business is ready to make that next hire, find the right person with LinkedIn Jobs. And now, you can post a job for free.</strong> <a href="https://linkedin.com/Tim" rel="noopener noreferrer" target="_blank"><strong>Just visit LinkedIn.com/Tim</strong></a><strong>.</strong></p><p><strong>*</strong></p><p><strong>If you enjoy the podcast, would you please consider </strong><a href="https://podcasts.apple.com/us/podcast/the-tim-ferriss-show/id863897795?mt=2" rel="noopener noreferrer" target="_blank"><strong>leaving a short review on Apple Podcasts</strong></a><strong>?</strong> It takes less than 60 seconds, and it really makes a difference in helping to convince hard-to-get guests. I also love reading the reviews!</p><p><strong>For show notes and past guests, please visit</strong> <a href="https://tim.blog/podcast/?utm_source=podcast&utm_medium=podcast&utm_campaign=podcast-description" rel="noopener noreferrer" target="_blank"><strong>tim.blog/podcast</strong></a><strong>.</strong></p><p><strong>Sign up for Tim’s email newsletter (“5-Bullet Friday”) at </strong><a href="https://go.tim.blog/5-bullet-friday-1/" rel="noopener noreferrer" target="_blank"><strong>tim.blog/friday</strong></a><strong>.</strong></p><p><strong>For transcripts of episodes, go to </strong><a href="http://tim.blog/transcripts" rel="noopener noreferrer" target="_blank"><strong>tim.blog/transcripts</strong></a><strong>.</strong></p><p><strong>Discover Tim’s books: </strong><a href="http://tim.blog/books" rel="noopener noreferrer" target="_blank"><strong>tim.blog/books</strong></a><strong>.</strong></p><p><strong>Follow Tim:</strong></p><p><strong>Twitter</strong>: <a href="https://twitter.com/tferriss" rel="noopener noreferrer" target="_blank">twitter.com/tferriss</a> </p><p><strong>Instagram</strong>: <a href="https://instagram.com/timferriss/" rel="noopener noreferrer" target="_blank">instagram.com/timferriss</a></p><p><strong>Facebook</strong>: <a href="https://www.facebook.com/TimFerriss/" rel="noopener noreferrer" target="_blank">facebook.com/timferriss</a> </p><p><strong>YouTube</strong>: <a href="https://www.youtube.com/timferriss" rel="noopener noreferrer" target="_blank">youtube.com/timferriss</a></p><p>Past guests on <a href="http://tim.blog/podcast" rel="noopener noreferrer" target="_blank"><strong><em>The Tim Ferriss Show</em></strong></a> include <a href="https://tim.blog/2020/12/08/jerry-seinfeld/" rel="noopener noreferrer" target="_blank">Jerry Seinfeld</a>, <a href="https://tim.blog/2020/06/26/hugh-jackman/" rel="noopener noreferrer" target="_blank">Hugh Jackman</a>, <a href="https://tim.blog/2020/04/16/jane-goodall/" rel="noopener noreferrer" target="_blank">Dr. Jane Goodall</a>, <a href="https://tim.blog/2018/11/27/lebron-james-mike-mancias/" rel="noopener noreferrer" target="_blank">LeBron James</a>, <a href="https://tim.blog/2020/05/20/kevin-hart/" rel="noopener noreferrer" target="_blank">Kevin Hart</a>, <a href="https://tim.blog/2018/09/07/doris-kearns-goodwin-leadership/" rel="noopener noreferrer" target="_blank">Doris Kearns Goodwin</a>, <a href="https://tim.blog/2015/12/06/jamie-foxx/" rel="noopener noreferrer" target="_blank">Jamie Foxx</a>, <a href="https://tim.blog/2020/10/19/matthew-mcconaughey/" rel="noopener noreferrer" target="_blank">Matthew McConaughey</a>, <a href="https://tim.blog/2017/05/21/esther-perel/" rel="noopener noreferrer" target="_blank">Esther Perel</a>, <a href="https://tim.blog/2020/05/08/elizabeth-gilbert/" rel="noopener noreferrer" target="_blank">Elizabeth Gilbert</a>, <a href="https://tim.blog/2017/12/20/terry-crews-how-to-have-do-and-be-all-you-want/" rel="noopener noreferrer" target="_blank">Terry Crews</a>, <a href="https://tim.blog/2020/08/12/sia/" rel="noopener noreferrer" target="_blank">Sia</a>, <a href="https://tim.blog/2020/10/27/yuval-noah-harari/" rel="noopener noreferrer" target="_blank">Yuval Noah Harari</a>, <a href="https://tim.blog/2016/06/21/malcolm-gladwell/" rel="noopener noreferrer" target="_blank">Malcolm Gladwell</a>, <a href="https://tim.blog/2020/05/27/secretary-madeleine-albright/" rel="noopener noreferrer" target="_blank">Madeleine Albright</a>, <a href="https://tim.blog/2017/03/30/cheryl-strayed/" rel="noopener noreferrer" target="_blank">Cheryl Strayed</a>, <a href="https://tim.blog/2019/02/18/jim-collins/" rel="noopener noreferrer" target="_blank">Jim Collins</a>, <a href="https://tim.blog/2020/11/11/mary-karr/" rel="noopener noreferrer" target="_blank">Mary Karr,</a> <a href="https://tim.blog/2014/10/21/brain-pickings/" rel="noopener noreferrer" target="_blank">Maria Popova</a>, <a href="https://tim.blog/2020/05/15/sam-harris-2/" rel="noopener noreferrer" target="_blank">Sam Harris</a>, <a href="https://tim.blog/2021/01/21/michael-phelps-grant-hackett/" rel="noopener noreferrer" target="_blank">Michael Phelps</a>, <a href="https://tim.blog/2020/01/16/bob-iger/" rel="noopener noreferrer" target="_blank">Bob Iger</a>, <a href="https://tim.blog/2019/10/31/edward-norton-motherless-brooklyn/" rel="noopener noreferrer" target="_blank">Edward Norton</a>, <a href="https://tim.blog/2015/02/02/arnold-schwarzenegger/" rel="noopener noreferrer" target="_blank">Arnold Schwarzenegger</a>, <a href="https://tim.blog/2014/06/24/neil-strauss/" rel="noopener noreferrer" target="_blank">Neil Strauss</a>, <a href="https://tim.blog/2019/09/12/ken-burns/" rel="noopener noreferrer" target="_blank">Ken Burns</a>, <a href="https://tim.blog/2017/08/26/maria-sharapova/" rel="noopener noreferrer" target="_blank">Maria Sharapova</a>, <a href="https://tim.blog/2016/05/29/marc-andreessen/" rel="noopener noreferrer" target="_blank">Marc Andreessen</a>, <a href="https://tim.blog/2019/03/28/neil-gaiman/" rel="noopener noreferrer" target="_blank">Neil Gaiman</a>, <a href="https://tim.blog/2019/10/03/neil-degrasse-tyson/" rel="noopener noreferrer" target="_blank">Neil de Grasse Tyson</a>, <a href="https://tim.blog/2016/09/21/jocko-willink-on-discipline-leadership-and-overcoming-doubt/" rel="noopener noreferrer" target="_blank">Jocko Willink</a>, <a href="https://tim.blog/2020/12/03/daniel-ek/" rel="noopener noreferrer" target="_blank">Daniel Ek</a>, <a href="https://tim.blog/2020/09/08/kelly-slater/" rel="noopener noreferrer" target="_blank">Kelly Slater</a>, <a href="https://tim.blog/2019/11/27/peter-attia-fasting-metformin-longevity/" rel="noopener noreferrer" target="_blank">Dr. Peter Attia</a>, <a href="https://tim.blog/2016/02/10/seth-godin/" rel="noopener noreferrer" target="_blank">Seth Godin</a>, <a href="https://tim.blog/2018/09/25/howard-marks/" rel="noopener noreferrer" target="_blank">Howard Marks</a>, <a href="https://tim.blog/2020/02/06/brene-brown-striving-self-acceptance-saving-marriages/" rel="noopener noreferrer" target="_blank">Dr. Brené Brown</a>, <a href="https://tim.blog/2019/04/09/eric-schmidt/" rel="noopener noreferrer" target="_blank">Eric Schmidt</a>, <a href="https://tim.blog/2020/05/01/michael-lewis/" rel="noopener noreferrer" target="_blank">Michael Lewis</a>, <a href="https://tim.blog/2018/03/08/joe-gebbia-co-founder-of-airbnb/" rel="noopener noreferrer" target="_blank">Joe Gebbia</a>, <a href="https://tim.blog/2018/05/06/michael-pollan-how-to-change-your-mind/" rel="noopener noreferrer" target="_blank">Michael Pollan</a>, <a href="https://tim.blog/2021/03/01/jordan-peterson/" rel="noopener noreferrer" target="_blank">Dr. Jordan Peterson</a>, <a href="https://tim.blog/2017/05/31/vince-vaughn/" rel="noopener noreferrer" target="_blank">Vince Vaughn</a>, <a href="https://tim.blog/2020/04/23/brian-koppelman/" rel="noopener noreferrer" target="_blank">Brian Koppelman</a>, <a href="https://tim.blog/2019/05/07/ramit-sethi/" rel="noopener noreferrer" target="_blank">Ramit Sethi</a>, <a href="https://tim.blog/2020/11/18/dax-shepard/" rel="noopener noreferrer" target="_blank">Dax Shepard</a>, <a href="https://tim.blog/2014/10/15/money-master-the-game/" rel="noopener noreferrer" target="_blank">Tony Robbins</a>, <a href="https://tim.blog/2020/05/18/jim-dethmer/" rel="noopener noreferrer" target="_blank">Jim Dethmer</a>, <a href="https://tim.blog/2020/11/19/dan-harris/" rel="noopener noreferrer" target="_blank">Dan Harris</a>, <a href="https://tim.blog/2017/09/13/ray-dalio/" rel="noopener noreferrer" target="_blank">Ray Dalio</a>, <a href="https://tim.blog/2015/08/18/the-evolutionary-angel-naval-ravikant/" rel="noopener noreferrer" target="_blank">Naval Ravikant</a>, <a href="https://tim.blog/2021/03/08/vitalik-buterin-naval-ravikant/" rel="noopener noreferrer" target="_blank">Vitalik Buterin</a>, <a href="https://tim.blog/2021/03/16/elizabeth-lesser/" rel="noopener noreferrer" target="_blank">Elizabeth Lesser</a>, <a href="https://tim.blog/2019/04/18/amanda-palmer-2/" rel="noopener noreferrer" target="_blank">Amanda Palmer</a>, <a href="https://tim.blog/2021/02/18/katie-haun/" rel="noopener noreferrer" target="_blank">Katie Haun</a>, <a href="https://tim.blog/2017/10/09/richard-branson/" rel="noopener noreferrer" target="_blank">Sir Richard Branson</a>, <a href="https://tim.blog/2020/09/02/chuck-palahniuk/" rel="noopener noreferrer" target="_blank">Chuck Palahniuk</a>, <a href="https://tim.blog/2017/10/18/arianna-huffington/" rel="noopener noreferrer" target="_blank">Arianna Huffington</a>, <a href="https://tim.blog/2015/08/31/the-oracle-of-silicon-valley-reid-hoffman-plus-michael-mccullough/" rel="noopener noreferrer" target="_blank">Reid Hoffman</a>, <a href="https://tim.blog/2017/09/17/bill-burr/" rel="noopener noreferrer" target="_blank">Bill Burr</a>, <a href="https://tim.blog/2015/06/26/whitney-cummings/" rel="noopener noreferrer" target="_blank">Whitney Cummings</a>, <a href="https://tim.blog/2015/05/15/rick-rubin/" rel="noopener noreferrer" target="_blank">Rick Rubin</a>, <a href="https://tim.blog/2020/03/26/vivek-murthy/" rel="noopener noreferrer" target="_blank">Dr. Vivek Murthy</a>, <a href="https://tim.blog/2017/09/09/darren-aronofsky/" rel="noopener noreferrer" target="_blank">Darren Aronofsky</a>, and many more.</p><p>See Privacy Policy at <a href="https://art19.com/privacy" rel="noopener noreferrer" target="_blank">https://art19.com/privacy</a> and California Privacy Notice at <a href="https://art19.com/privacy#do-not-sell-my-info" rel="noopener noreferrer" target="_blank">https://art19.com/privacy#do-not-sell-my-info</a>.</p>',
-          pub_date_ms: 1634222633073,
-          guid_from_rss: 'gid://art19-episode-locator/V0/BtqNd8i7Fya-HhzGx_0SKu-ZiX1V8AB2Te4M0bCkakQ',
-          listennotes_url: 'https://www.listennotes.com/e/af19ceda98d84d3c92eafe7e7f63b6dd/',
-          audio_length_sec: 10927,
-          explicit_content: false,
-          maybe_audio_invalid: false,
-          listennotes_edit_url: 'https://www.listennotes.com/e/af19ceda98d84d3c92eafe7e7f63b6dd/#edit',
-        },
-        type: 'episode',
-        notes: '',
-        added_at_ms: 1634779096596,
-      },
-      {
-        id: 580202,
-        data: {
-          id: '463b7db874c04c3ca66cefda3e9d4679',
-          link: 'https://exponent.fm/episode-194-back-on-spotify/?utm_source=listennotes.com&utm_campaign=Listen+Notes&utm_medium=website',
-          audio: 'https://www.listennotes.com/e/p/463b7db874c04c3ca66cefda3e9d4679/',
-          image:
-            'https://production.listennotes.com/podcasts/exponent-ben-thompson-james-allworth-L8QBusAiaXq-OaJSjb4xQv3.1400x1400.jpg',
-          title: 'Episode 194 — Back on Spotify',
-          podcast: {
-            id: '37589a3e121e40debe4cef3d9638932a',
-            image:
-              'https://production.listennotes.com/podcasts/exponent-ben-thompson-james-allworth-L8QBusAiaXq-OaJSjb4xQv3.1400x1400.jpg',
-            title: 'Exponent',
-            publisher: 'Ben Thompson / James Allworth',
-            thumbnail:
-              'https://production.listennotes.com/podcasts/exponent-ben-thompson-james-allworth-IrgMw5cPALF-OaJSjb4xQv3.300x300.jpg',
-            listen_score: 59,
-            listennotes_url: 'https://www.listennotes.com/c/37589a3e121e40debe4cef3d9638932a/',
-            listen_score_global_rank: '0.1%',
-          },
-          thumbnail:
-            'https://production.listennotes.com/podcasts/exponent-ben-thompson-james-allworth-IrgMw5cPALF-OaJSjb4xQv3.300x300.jpg',
-          description:
-            '<p>Ben and James discuss the history of podcasts and why Spotify’s recent announcements are so compelling for creators.</p>\n<p><strong>Links</strong></p>\n<ul>\n<li>Ben Thompson: Spotify’s Surprise — <a href="https://stratechery.com/2021/spotifys-surprise/">Stratechery</a></li>\n<li>Episode 185 — Open, Free, and Spotify — <a href="https://exponent.fm/episode-185-open-free-and-spotify/">Exponent</a></li>\n<li>Ben Thompson: Podcasts, Analytics, and Centralization — <a href="https://stratechery.com/2017/podcasts-analytics-and-centralization/">Stratechery</a></li>\n<li>Ben Thompson: Spotify’s Podcast Aggregation Play — <a href="https://stratechery.com/2019/spotifys-podcast-aggregation-play/">Stratechery</a></li>\n<li>Ben Thompson: Dithering and Open Versus Free — <a href="https://stratechery.com/2020/dithering-and-the-open-web/">Stratechery</a></li>\n<li>Ben Thompson: Spotify Earnings, Podcasts and Lifetime Value, The Ringer Acquisition — <a href="https://stratechery.com/2020/spotifys-earnings-podcasts-and-lifetime-value-the-ringer-acquisition/">Stratechery</a></li>\n<li>Ben Thompson: The European Super League, Apple Music’s Letter to Artists — <a href="https://stratechery.com/2021/the-european-super-league-apple-musics-letter-to-artists/">Stratechery</a></li>\n<li>Ben Thompson: Podcast Subscriptions vs. the App Store — <a href="https://stratechery.com/2021/podcast-subscriptions-vs-the-app-store/">Stratechery</a></li>\n<li>Ben Thompson: Fearing Spotify?, Apple’s Earnings, Margins and Chips — <a href="https://stratechery.com/2021/fearing-spotify-apples-earnings-margins-and-chips/">Stratechery</a></li>\n</ul>\n<p><strong>Hosts</strong></p>\n<p> </p>\n<ul>\n<li>Ben Thompson, <a href="http://twitter.com/benthompson">@benthompson</a>, <a href="http://stratechery.com">Stratechery</a></li>\n<li>James Allworth, <a href="http://twitter.com/jamesallworth">@jamesallworth</a>, <a href="https://hbr.org/search?term=James+Allworth&sort=popularity_score">Harvard Business Review</a></li>\n</ul>\n<p> </p>\n<p><strong>Podcast Information</strong></p>\n<p> </p>\n<ul>\n<li><a href="https://exponent.fm/feed/">Feed</a></li>\n<li><a href="https://itunes.apple.com/us/podcast/exponent/id826420969">iTunes</a></li>\n<li><a href="https://soundcloud.com/exponentfm">SoundCloud</a></li>\n<li><a href="http://twitter.com/exponentfm">Twitter</a></li>\n<li><a href="http://stratechery.com/exponent-feedback/">Feedback</a></h2>\n</li>\n</ul>',
-          pub_date_ms: 1619771580002,
-          guid_from_rss: 'https://exponent.fm/?p=429',
-          listennotes_url: 'https://www.listennotes.com/e/463b7db874c04c3ca66cefda3e9d4679/',
-          audio_length_sec: 3978,
-          explicit_content: false,
-          maybe_audio_invalid: false,
-          listennotes_edit_url: 'https://www.listennotes.com/e/463b7db874c04c3ca66cefda3e9d4679/#edit',
-        },
-        type: 'episode',
-        notes: '',
-        added_at_ms: 1619799889806,
-      },
-      {
-        id: 475797,
-        data: {
-          id: '4c72c4dfac004ffca0867a70361f77ab',
-          link: 'https://jas.simplecast.com/episodes/side-hustle-friday-why-should-you-start-a-podcast-and-monetize-your-podcast-through-ads-and-patreon-bY620w_A?utm_source=listennotes.com&utm_campaign=Listen+Notes&utm_medium=website',
-          audio: 'https://www.listennotes.com/e/p/4c72c4dfac004ffca0867a70361f77ab/',
-          image:
-            'https://production.listennotes.com/podcasts/the-james-altucher/side-hustle-friday-why-x-OdlkHPweS-jDmTs6Nl-tr.1400x1400.jpg',
-          title:
-            'Side Hustle Friday: Why should you START a podcast and MONETIZE your podcast through Ads and Patreon!',
-          podcast: {
-            id: '6dabf2f65c384e1f897bb606859309f4',
-            image:
-              'https://production.listennotes.com/podcasts/the-james-altucher-show-james-altucher-50EFuIdlcY4-sSHocv8YjIe.1400x1400.jpg',
-            title: 'The James Altucher Show',
-            publisher: 'James Altucher',
-            thumbnail:
-              'https://production.listennotes.com/podcasts/the-james-altucher-show-james-altucher-6q58dRHpmvW-sSHocv8YjIe.300x300.jpg',
-            listen_score: 67,
-            listennotes_url: 'https://www.listennotes.com/c/6dabf2f65c384e1f897bb606859309f4/',
-            listen_score_global_rank: '0.05%',
-          },
-          thumbnail:
-            'https://production.listennotes.com/podcasts/the-james-altucher/side-hustle-friday-why-BpGUVA-oL_v-jDmTs6Nl-tr.300x300.jpg',
-          description:
-            '<p>Another Side Hustle Friday! I sat down with Jay Yow, the Sound Engineer/ Producer of The James Altucher, to discuss ways to monetize a podcast, we spoke about why this is the best time to launch a podcast and our equipment set up for remote recording and interview. In this episode, we break down that\'s the different ways you can monetize through Ads, sponsors, affiliate deals, and Patreon! Part 2 will be coming soon Monday!</p>\n<hr />\n<p><strong>I write about all my podcasts! Check out the full post and learn what I learned at <a href="https://www.jamesaltucher.com/podcast">jamesaltucher.com/podcast</a>.</strong></p>\n<p><strong>Thanks so much for listening! If you like this episode, please subscribe to “The James Altucher Show” and rate and review wherever you get your podcasts:</strong></p>\n<p><a href="https://itunes.apple.com/us/podcast/the-james-altucher-show/id794030859?mt=2">Apple Podcasts</a></p>\n<p><a href="https://www.stitcher.com/podcast/stansberry-radio-network/the-james-altucher-show/e/52735033">Stitcher</a></p>\n<p><a href="https://www.iheart.com/podcast/232-The-James-Altucher-Show-27085086/episode/ep-298-ryan-holiday-competition-28789411/">iHeart Radio</a></p>\n<p><a href="https://open.spotify.com/episode/0ABi9w3Qrb2EFNDeeXlHyz">Spotify</a></p>\n<p> </p>\n<p><strong>Follow me on Social Media:</strong></p>\n<p><a href="https://www.youtube.com/channel/UCRQlx2klE_aNrPhz2OyKRdg">YouTube</a></p>\n<p><a href="https://twitter.com/jaltucher">Twitter</a></p>\n<p><a href="https://www.facebook.com/JAltucher.Blog/">Facebook</a></p>\n<p><a href="https://www.linkedin.com/in/jamesaltucher">Linkedin</a></p>',
-          pub_date_ms: 1602831600335,
-          guid_from_rss: 'fae163b1-dcc2-4600-b040-ac5600102349',
-          listennotes_url: 'https://www.listennotes.com/e/4c72c4dfac004ffca0867a70361f77ab/',
-          audio_length_sec: 3007,
-          explicit_content: false,
-          maybe_audio_invalid: false,
-          listennotes_edit_url: 'https://www.listennotes.com/e/4c72c4dfac004ffca0867a70361f77ab/#edit',
-        },
-        type: 'episode',
-        notes: '',
-        added_at_ms: 1603256538471,
-      },
-      {
-        id: 475796,
-        data: {
-          id: 'd5e2112643ac4d01baaa8eab6c7b7cae',
-          link: 'https://jas.simplecast.com/episodes/side-hustle-friday-monetize-your-podcast-right-now-LY_D4F1p?utm_source=listennotes.com&utm_campaign=Listen+Notes&utm_medium=website',
-          audio: 'https://www.listennotes.com/e/p/d5e2112643ac4d01baaa8eab6c7b7cae/',
-          image:
-            'https://production.listennotes.com/podcasts/the-james-altucher/side-hustle-friday-monetize-nJaycZ39zdH-vZt0gi5hoDN.1400x1400.jpg',
-          title: 'Side Hustle Friday: Monetize your podcast right now!',
-          podcast: {
-            id: '6dabf2f65c384e1f897bb606859309f4',
-            image:
-              'https://production.listennotes.com/podcasts/the-james-altucher-show-james-altucher-50EFuIdlcY4-sSHocv8YjIe.1400x1400.jpg',
-            title: 'The James Altucher Show',
-            publisher: 'James Altucher',
-            thumbnail:
-              'https://production.listennotes.com/podcasts/the-james-altucher-show-james-altucher-6q58dRHpmvW-sSHocv8YjIe.300x300.jpg',
-            listen_score: 67,
-            listennotes_url: 'https://www.listennotes.com/c/6dabf2f65c384e1f897bb606859309f4/',
-            listen_score_global_rank: '0.05%',
-          },
-          thumbnail:
-            'https://production.listennotes.com/podcasts/the-james-altucher/side-hustle-friday-monetize-TGCj-9qP0Nw-vZt0gi5hoDN.300x300.jpg',
-          description:
-            '<p>Part 2 on monetizing your podcast! In this episode, we talked about ways to monetize your podcast via merchandising, getting hired as a consultant through your podcast, speaking gigs, on and on! Also, enjoy Jay\'s episodic debut on the podcast! (Technically a second since this is a part of Friday\'s podcast!)</p>\n<hr />\n<p><strong>I write about all my podcasts! Check out the full post and learn what I learned at <a href="https://www.jamesaltucher.com/podcast">jamesaltucher.com/podcast</a>.</strong></p>\n<p><strong>Thanks so much for listening! If you like this episode, please subscribe to “The James Altucher Show” and rate and review wherever you get your podcasts:</strong></p>\n<p><a href="https://itunes.apple.com/us/podcast/the-james-altucher-show/id794030859?mt=2">Apple Podcasts</a></p>\n<p><a href="https://www.stitcher.com/podcast/stansberry-radio-network/the-james-altucher-show/e/52735033">Stitcher</a></p>\n<p><a href="https://www.iheart.com/podcast/232-The-James-Altucher-Show-27085086/episode/ep-298-ryan-holiday-competition-28789411/">iHeart Radio</a></p>\n<p><a href="https://open.spotify.com/episode/0ABi9w3Qrb2EFNDeeXlHyz">Spotify</a></p>\n<p> </p>\n<p><strong>Follow me on Social Media:</strong></p>\n<p><a href="https://www.youtube.com/channel/UCRQlx2klE_aNrPhz2OyKRdg">YouTube</a></p>\n<p><a href="https://twitter.com/jaltucher">Twitter</a></p>\n<p><a href="https://www.facebook.com/JAltucher.Blog/">Facebook</a></p>\n<p><a href="https://www.linkedin.com/in/jamesaltucher">Linkedin</a></p>',
-          pub_date_ms: 1603090800333,
-          guid_from_rss: '7e70863f-ebf1-4641-b151-ac5800ea8773',
-          listennotes_url: 'https://www.listennotes.com/e/d5e2112643ac4d01baaa8eab6c7b7cae/',
-          audio_length_sec: 2617,
-          explicit_content: false,
-          maybe_audio_invalid: false,
-          listennotes_edit_url: 'https://www.listennotes.com/e/d5e2112643ac4d01baaa8eab6c7b7cae/#edit',
-        },
-        type: 'episode',
-        notes: '',
-        added_at_ms: 1603256526157,
-      },
-      {
-        id: 434674,
-        data: {
-          id: '3c311c8cf83448dea0463c69bfe61c75',
-          link: 'https://anchor.fm/this-week-in-startups/episodes/E1096-Podcasting-State-of-the-Union-featuring-Overcasts-Marco-Arment--Oxford-Roads-Dan-Granger-e1cgtk4?utm_source=listennotes.com&utm_campaign=Listen+Notes&utm_medium=website',
-          audio: 'https://www.listennotes.com/e/p/3c311c8cf83448dea0463c69bfe61c75/',
-          image:
-            'https://production.listennotes.com/podcasts/this-week-in-startups-jason-calacanis-x2RL7ujsCWm-EKckR36zrnA.1400x1400.jpg',
-          title: 'E1096: Podcasting State of the Union featuring Overcast’s Marco Arment & Oxford Road’s Dan Granger',
-          podcast: {
-            id: '9a62e2581908415185dee35d2d19f9b5',
-            image:
-              'https://production.listennotes.com/podcasts/this-week-in-startups-jason-calacanis-x2RL7ujsCWm-EKckR36zrnA.1400x1400.jpg',
-            title: 'This Week in Startups',
-            publisher: 'Jason Calacanis',
-            thumbnail:
-              'https://production.listennotes.com/podcasts/this-week-in-startups-jason-calacanis-e9OjnJ3rBt_-EKckR36zrnA.300x300.jpg',
-            listen_score: 63,
-            listennotes_url: 'https://www.listennotes.com/c/9a62e2581908415185dee35d2d19f9b5/',
-            listen_score_global_rank: '0.05%',
-          },
-          thumbnail:
-            'https://production.listennotes.com/podcasts/this-week-in-startups-jason-calacanis-e9OjnJ3rBt_-EKckR36zrnA.300x300.jpg',
-          description:
-            'Follow Marco: https://twitter.com/marcoarment<br />\n<br />\nDownload Overcast: https://overcast.fm<br />\n<br />\nFollow Oxford Road: https://twitter.com/Oxford_Road<br />\n<br />\nFollow Jason: https://linktr.ee/calacanis<br />\n<br />\nThanks to our partners...<br />\nSendPro Online from Pitney Bowes - Try it free for 30 days and get a free 10-pound scale at https://pb.com/twist<br />\nLinkedIn Marketing - Get $100 off your first advertising campaign at https://linkedin.com/thisweekinstartups<br />\nVanta - $1k off your SOC 2 at https://vanta.com/twist',
-          pub_date_ms: 1597416466467,
-          guid_from_rss: 'https://thisweekinstartups.com/?p=41080',
-          listennotes_url: 'https://www.listennotes.com/e/3c311c8cf83448dea0463c69bfe61c75/',
-          audio_length_sec: 5249,
-          explicit_content: false,
-          maybe_audio_invalid: false,
-          listennotes_edit_url: 'https://www.listennotes.com/e/3c311c8cf83448dea0463c69bfe61c75/#edit',
-        },
-        type: 'episode',
-        notes: '',
-        added_at_ms: 1597421395248,
-      },
-      {
-        id: 424141,
-        data: {
-          id: '50d0110bec79414eac61cb472c3c1de2',
-          link: 'https://anchor.fm/caseyadams/episodes/Elise-Hu---Hosting-TED-Talks-Daily--The-Future-of-Podcasting-ecfp5b?utm_source=listennotes.com&utm_campaign=Listen+Notes&utm_medium=website',
-          audio: 'https://www.listennotes.com/e/p/50d0110bec79414eac61cb472c3c1de2/',
-          image:
-            'https://production.listennotes.com/podcasts/the-casey-adams-show/elise-hu-hosting-ted-talks-Y6q40Ejr-ZX-wUV0p1Rd3zs.1400x1400.jpg',
-          title: 'Elise Hu - Hosting "TED Talks Daily" & The Future of Podcasting',
-          podcast: {
-            id: '11362a0682e744b29ce5ea73c920132e',
-            image:
-              'https://production.listennotes.com/podcasts/the-casey-adams-show-casey-adams-gZ74W6otfKC-YuarHs5lfDI.1400x1400.jpg',
-            title: 'The Casey Adams Show',
-            publisher: 'Casey Adams',
-            thumbnail:
-              'https://production.listennotes.com/podcasts/the-casey-adams-show-casey-adams-xcAJz4tX0Gg-YuarHs5lfDI.300x300.jpg',
-            listen_score: 53,
-            listennotes_url: 'https://www.listennotes.com/c/11362a0682e744b29ce5ea73c920132e/',
-            listen_score_global_rank: '0.5%',
-          },
-          thumbnail:
-            'https://production.listennotes.com/podcasts/the-casey-adams-show/elise-hu-hosting-ted-talks-FbSdafYDC9N-wUV0p1Rd3zs.300x300.jpg',
-          description:
-            '<p>Elise Hu is a host-at-large based at NPR West in Culver City, Calif. Previously, she explored the future with her video series, <a href="https://www.npr.org/2019/05/06/716414780/videos-future-you"><em>Future You with Elise Hu</em></a>, and served as the founding bureau chief and International Correspondent for NPR\'s Seoul office. She was based in Seoul for nearly four years, responsible for the network\'s coverage of both Koreas and Japan, and filed from a dozen countries across Asia. Before joining NPR, she was one of the founding reporters at <a href="http://www.texastribune.org/">The Texas Tribune</a>, a non-profit digital news startup devoted to politics and public policy. While at the Tribune, Hu oversaw television partnerships and multimedia projects, contributed to <em>The New York Times</em>\' expanded Texas coverage, and pushed for editorial innovation across platforms.Her work at NPR has earned a DuPont-Columbia award and a Gracie Award from the Alliance for Women in Media for her video series, <em>Elise Tries</em>. Her previous work has earned a Gannett Foundation Award for Innovation in Watchdog Journalism, a National Edward R. Murrow award for best online video, and beat reporting awards from the Texas Associated Press. <em>The Austin Chronicle</em> once dubiously named her the "<a href="http://www.austinchronicle.com/gyrobase/Awards/BestOfAustin?Award=660138">Best TV Reporter Who Can Write</a>."</p>\n<p>Follow Elise Hu on Instagram: <a href="https://www.instagram.com/elisewho/?hl=en">https://www.instagram.com/elisewho/?hl=en</a></p>\n<p>Learn more about Elise Hu: <a href="https://elisehu.com/">https://elisehu.com/</a></p>\n<p>Listen to "TED Talks Daily" <a href="https://podcasts.apple.com/us/podcast/ted-talks-daily/id160904630">https://podcasts.apple.com/us/podcast/ted-talks-daily/id160904630</a></p>\n<p> </p><p>Learn more about your ad choices. Visit <a href="https://podcastchoices.com/adchoices">podcastchoices.com/adchoices</a></p>',
-          pub_date_ms: 1586266731135,
-          guid_from_rss: '9aeee818-e72c-4928-8149-7cae42595d82',
-          listennotes_url: 'https://www.listennotes.com/e/50d0110bec79414eac61cb472c3c1de2/',
-          audio_length_sec: 2520,
-          explicit_content: false,
-          maybe_audio_invalid: false,
-          listennotes_edit_url: 'https://www.listennotes.com/e/50d0110bec79414eac61cb472c3c1de2/#edit',
-        },
-        type: 'episode',
-        notes: '',
-        added_at_ms: 1595791871517,
-      },
       {
         id: 423865,
         data: {
