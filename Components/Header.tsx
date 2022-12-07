@@ -15,9 +15,9 @@ export default function Header() {
           <Link href="/ben">
             <div className={`${styles.navItem}`}>About</div>
           </Link>
-          <Link href="/writing">
+          {/* <Link href="/writing">
             <div className={styles.navItem}>Writing</div>
-          </Link>
+          </Link> */}
           <Link href="/cv">
             <div className={`${styles.navItem}`}>Resume</div>
           </Link>
