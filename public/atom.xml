@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>localhost:3000</id>
     <title>Ben Fox Writing</title>
-    <updated>2022-12-07T14:01:46.715Z</updated>
+    <updated>2022-12-07T18:05:19.729Z</updated>
     <generator>Feed for Node.js</generator>
     <link rel="alternate" href="localhost:3000"/>
     <link rel="self" href="localhost:3000/atom.xml"/>
@@ -11,17 +11,17 @@
     <icon>localhost:3000/favicon.png</icon>
     <rights>All rights reserved 2022, Ibas</rights>
     <entry>
-        <title type="html"><![CDATA[Why I Left Teaching]]></title>
-        <id>localhost:3000/blog/leftTeaching</id>
-        <link href="localhost:3000/blog/leftTeaching"/>
-        <updated>2022-10-28T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[My despairs, triumphs, and reflections on my roots in education.]]></summary>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Configuring Next.js Pages With Alternate Layouts]]></title>
         <id>localhost:3000/blog/nextjsLayouts</id>
         <link href="localhost:3000/blog/nextjsLayouts"/>
-        <updated>2022-09-28T00:00:00.000Z</updated>
+        <updated>2022-12-02T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Exclude your header, footer, or whatever other components that you can shed.]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Why I Am Leaving Teaching]]></title>
+        <id>localhost:3000/blog/leftTeaching</id>
+        <link href="localhost:3000/blog/leftTeaching"/>
+        <updated>2022-11-28T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[My despairs, triumphs, and reflections on my roots in education.]]></summary>
     </entry>
 </feed>

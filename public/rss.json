@@ -7,18 +7,18 @@
     "icon": "localhost:3000/logo.png",
     "items": [
         {
-            "id": "localhost:3000/blog/leftTeaching",
-            "url": "localhost:3000/blog/leftTeaching",
-            "title": "Why I Left Teaching",
-            "summary": "My despairs, triumphs, and reflections on my roots in education.",
-            "date_modified": "2022-10-28T00:00:00.000Z"
-        },
-        {
             "id": "localhost:3000/blog/nextjsLayouts",
             "url": "localhost:3000/blog/nextjsLayouts",
             "title": "Configuring Next.js Pages With Alternate Layouts",
             "summary": "Exclude your header, footer, or whatever other components that you can shed.",
-            "date_modified": "2022-09-28T00:00:00.000Z"
+            "date_modified": "2022-12-02T00:00:00.000Z"
+        },
+        {
+            "id": "localhost:3000/blog/leftTeaching",
+            "url": "localhost:3000/blog/leftTeaching",
+            "title": "Why I Am Leaving Teaching",
+            "summary": "My despairs, triumphs, and reflections on my roots in education.",
+            "date_modified": "2022-11-28T00:00:00.000Z"
         }
     ]
 }

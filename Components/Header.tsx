@@ -8,22 +8,24 @@ export default function Header() {
     <div className={styles.header}>
       <div className={styles.headerLeft}>
         <Link href="/" className={styles.logo}>
-          Ben Fox, Developer
+          Ben Fox
         </Link>
-
+      </div>
+      <div className={styles.headerRight}>
+        {' '}
         <nav className={styles.nav}>
-          <Link href="/ben">
+          {/* <Link href="/ben">
             <div className={`${styles.navItem}`}>About</div>
-          </Link>
-          {/* <Link href="/writing">
-            <div className={styles.navItem}>Writing</div>
           </Link> */}
+          <Link legacyBehavior href="/writing">
+            <div className={styles.navItem}>Writing</div>
+          </Link>
           <Link href="/cv">
             <div className={`${styles.navItem}`}>Resume</div>
           </Link>
-          <Link href="/email">
-            <div className={`${styles.navItem} ${styles.special}`}>Email</div>
-          </Link>
+          <div className={`${styles.navItem} ${styles.special}`}>
+            <a href="mailto:benfox11@vt.edu">Email</a>
+          </div>
           <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/ben-fox-dev/">
             <div className={`${styles.navItem} ${styles.special}`}>Github</div>
           </a>
@@ -32,7 +34,6 @@ export default function Header() {
           </a>
         </nav>
       </div>
-      <p className={styles.headerRight}> </p>
     </div>
   )
 }

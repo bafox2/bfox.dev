@@ -6,10 +6,19 @@ const Ben: NextPage = () => {
   return (
     <>
       <main className={styles.resume}>
+        <div className={styles.download}>
+          <a href="/resume.pdf" download>
+            Download more formal resume
+          </a>
+        </div>
         <h1>Resume</h1>
-        <p>
-          I am a teacher turned developer looking to join a team of passionate developers to build worthwhile products.
-        </p>
+        <br></br>
+        <div className={styles.resumeSection}>
+          <p style={{ marginTop: '-20px' }}>
+            I am a teacher turned developer looking to join a team of passionate developers to build worthwhile
+            products.
+          </p>
+        </div>
         <section className={styles.resumeSection}>
           <h2 className={styles.resumeHeading}>Experience</h2>
           <div className={styles.resumeVertical}>
@@ -133,11 +142,6 @@ const Ben: NextPage = () => {
             </div>
           </div>
         </section>
-        <div className={styles.download}>
-          <a href="/resume.pdf" download>
-            Download more formal resume
-          </a>
-        </div>
       </main>
     </>
   )
