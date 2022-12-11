@@ -51,11 +51,18 @@ main {
   flex: 1;
 }
 
-#__next {
-  display: flex;
-  flex-direction: column;
+.layout {
+ display: grid; 
+ grid-auto-columns: 1fr 1fr 1fr 1fr 1fr; 
+ grid-template-columns: 1fr 2fr 1fr; 
+ grid-template-rows: 1fr 2fr 0.1fr; 
+ gap: 0px 0px; 
+ grid-template-areas: 
+   "header main main"
+   "header main main"
+   "footer footer footer"; 
   min-height: 100vh;
-}
+} 
 
 /* make it reponsive */
 @media (max-width: 768px) {

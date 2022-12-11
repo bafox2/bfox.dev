@@ -1,4 +1,5 @@
 .writingMain {
+  grid-area: main;
   max-width: var(--mainWidth);
   margin: 0 auto;
 }
