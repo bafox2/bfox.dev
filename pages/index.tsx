@@ -3,6 +3,7 @@ import Hero from '../Components/Hero'
 import Head from 'next/head'
 import Image from 'next/legacy/image'
 import Projects from '../Components/Projects'
+import Minis from '../Components/Minis'
 import Skills from '../Components/Skills'
 import styles from '../styles/Home.module.css'
 
@@ -23,6 +24,8 @@ const Home: NextPage = () => {
         <Hero />
         <h2 className={styles.bigHeader}>Projects</h2>
         <Projects />
+        <h2 className={styles.bigHeader}>Minis</h2>
+        <Minis />
         <h2 className={styles.bigHeader}>Skills</h2>
         <Skills />
       </main>
