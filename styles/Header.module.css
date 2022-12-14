@@ -17,6 +17,7 @@
 }
 
 .header:hover > .nav > .logo {
+  transition: all 0.4s ease-in-out;
   color: var(--highlight-dark);
 }
 
@@ -37,6 +38,7 @@
   width: fit-content;
   color: var(--primary-dark);
   transition: all 0.4s ease-in-out;
+  /* light box shadow */
 }
 
 .nav {
