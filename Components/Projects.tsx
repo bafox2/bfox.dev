@@ -1,6 +1,3 @@
-//projects section, will have a header then a list of projects
-//projects are imported from projects.json
-
 import styles from '../styles/Projects.module.css'
 import projects from '../projects'
 import Link from 'next/link'

@@ -2,28 +2,41 @@
   grid-area: header;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 98px;
+  padding: 1rem 0 0 0.8rem;
+  border-right: 4px solid var(--primary);
+  transition: all 0.4s ease-in-out;
+  overflow-x: hidden;
+}
+
+.header:hover {
+  border-right: 5px solid var(--highlight-dark);
+  width: 290px;
+}
+
+.header:hover > .nav > .logo {
+  color: var(--highlight-dark);
+}
+
+.headerRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
   align-items: center;
-  margin: var(--margin);
-  padding-bottom: 1rem;
-}
-
-.headerLeft {
-  display: flex;
-  flex-direction: column;
-}
-
-.headerRight {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
+  transition: all 0.4s ease-in-out;
+  overflow-x: hidden;
+  gap: 0.9rem;
 }
 
 .logo {
-  font-size: 5vw;
+  font-size: 6rem;
   font-weight: 1000;
   width: fit-content;
   color: var(--primary-dark);
+  transition: all 0.4s ease-in-out;
 }
 
 .nav {
@@ -31,28 +44,39 @@
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.5rem;
 }
 
 .navItem {
-  border: 2px solid var(--primary);
-  font-size: 1.2rem;
+  font-size: 2rem;
   font-weight: 600;
-  text-decoration: none;
+  width: 200px;
+  text-decoration: underline;
   padding: 0.5rem 1rem;
   transition: all 0.2s ease-in-out;
   list-style: none;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-  transition: all 0.15s ease 0s;
-  border-radius: 5px;
+  transition: all 0.4s ease 0s;
+  /* light box shadow on bottom and right */
+  box-shadow: 2px 1px 8px 0px rgba(0, 0, 0, 0.24);
 }
 
 .navItem:hover {
   transform: scale(0.95);
-  /* Scaling button to 0.98 to its original size */
-  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
-  /* Lowering the shadow */
+  transition: all 0.4s ease 0s;
+}
+
+.navItem:hover:after {
+  transition: all 0.4s ease 0s;
+  content: ' ';
+  position: absolute;
+  top: 9px;
+  right: 20px;
+  width: 0;
+  height: 0;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 15px solid var(--primary-dark);
 }
 
 .navItem:active {
@@ -72,10 +96,6 @@
   color: var(--primary-dark);
 }
 
-.navItem.special {
-  background-color: #f1f1f1;
-}
-
 .footer {
   grid-area: footer;
   display: flex;
@@ -86,7 +106,6 @@
   padding-left: 1rem;
   gap: 1rem;
   padding: 0.25rem;
-  margin: 0.5rem 0 0 0;
   background-color: var(--primary);
   color: var(--secondary-dark);
   font-size: 1.2rem;
