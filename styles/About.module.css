@@ -1,0 +1,107 @@
+.mainContent {
+  max-width: var(--mainWidth);
+  margin: 0 auto;
+}
+
+.carousel {
+  height: 99vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  color: #fff;
+  font-size: 2rem;
+  max-width: 100%;
+  user-select: none;
+}
+
+.cardContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+
+  -webkit-overflow-scrolling: touch;
+  justify-content: flex-start;
+  align-items: center;
+  flex: 1;
+}
+
+.card {
+  flex: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 1rem;
+}
+
+.cardGithub {
+  flex: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 1rem;
+  margin: 0 1rem;
+  gap: 1rem;
+  border-radius: 10px;
+  border: 2px solid green;
+  height: 200px;
+}
+
+.returnTop {
+  /* button that will return you to top of screen */
+  cursor: pointer;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  border: none;
+  border-radius: 50%;
+  font-size: 2.4rem;
+  font-weight: 400;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  box-shadow: var(--shadow);
+  padding: 0.5rem;
+  transition: all 0.15s ease 0s;
+  z-index: 100;
+}
+
+.steamGame {
+}
+
+/* .marqueeBook:first-child {
+  width: fit-content;
+} */
+
+.glassEffect {
+  color: #fff;
+  width: 100%;
+  height: min-content;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.cardFixed {
+  position: relative;
+  display: flex;
+
+  width: 300px;
+  height: 300px;
+}
+
+.cardPicDiv {
+  /* this is the text that will be positioned in .cardPicTogether */
+  align-self: flex-end;
+}
+
+.cardPicTogether {
+  /* this is going to be the div that has the image that .cardPicDiv has the text */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+}

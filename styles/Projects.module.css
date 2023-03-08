@@ -3,51 +3,136 @@
   flex-direction: column;
   padding: 1rem;
   margin: 1rem;
-  border-radius: var(--border-radius);
   background-color: #fff;
-  box-shadow: var(--shadow)
+  box-shadow: var(--shadow);
 }
 
-.cardPic{
-  width: 90%;
-  height: 90%;
-}
-
-.cardHeader{
+.cardHeaderTitle {
   margin: 0;
   padding: 0;
+  font-size: 1.5rem;
+  align-self: center;
+  flex: 1;
+  font-style: italic;
+  color: var(--primary);
 }
 
-.cardRow{
+.cardRow {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: flex-start;
-  border-bottom: 1px solid var(--primary)
+  justify-content: space-around;
+  align-items: center;
+  flex: 1;
 }
 
-.rowCategory{
+.cardBody {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 1rem;
+}
+
+.cardButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex: 1;
+  margin-top: 1rem;
+}
+
+.projectsList .cardContainer:nth-child(odd) .cardBody {
+  flex-direction: row-reverse;
+}
+
+.post:nth-child(odd) h2 a {
+  color: red;
+}
+.post:nth-child(even) h2 a {
+  color: green;
+}
+
+.cardRight {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 1rem;
+}
+
+.cardLeft {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 1rem;
+}
+
+.rowCategory {
   width: 30%;
   margin: 0;
   padding: 0;
 }
-.rowInfo{
-  width: 30%;
+.rowInfo {
   margin: 0;
   padding: 0;
+  flex: 1;
+}
+
+.projectButton {
+  border: 2px solid var(--primary);
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.25rem 0.5rem;
+  transition: all 0.2s ease-in-out;
+  list-style: none;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.15s ease 0s;
+}
+
+.projectButton:hover {
+  transform: scale(0.95);
+  /* Scaling button to 0.98 to its original size */
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+  /* Lowering the shadow */
+}
+
+.projectButton:active {
+  transform: scale(0.9);
+  /* Scaling button to 0.98 to its original size */
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+  /* Lowering the shadow */
+}
+
+.projectButton:hover {
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+}
+
+.projectButton.special:hover {
+  background-color: var(--highlight-light);
+  color: var(--primary-dark);
+}
+
+.projectButton.special {
+  background-color: #f1f1f1;
 }
 
 .skillsList {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.5rem;
+  /* make a responsive grid that will default to 3 columns */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-gap: 1rem;
+  padding: 0;
+  margin-bottom: 2rem;
 }
 
-.skillDiv{
+.skillDiv {
+  max-width: 450px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
   gap: 2rem;
@@ -57,97 +142,106 @@
   margin: var(--margin);
   background-color: var(--primary);
   box-shadow: var(--shadow);
-  max-width: 20%;
   transition: var(--transition);
 
-  --c: var(--primary); /* the color */
-  --b: .15em;    /* border length*/
-  --d: 15px;    /* the cube depth */
-  
-  --_s: calc(var(--d) + var(--b));
-  color: var(--c);
+  --color: var(--primary); /* the color */
+  --borderLength: 0.15em; /* border length*/
+  --depth: 15px; /* the cube depth */
+
+  --_s: calc(var(--depth) + var(--borderLength));
+  color: var(--color);
   border: solid #0000;
-  border-width: var(--b) var(--b) var(--_s) var(--_s);
-  background:
-    conic-gradient(at left var(--d)  bottom var(--d),
-      #0000 90deg, rgb(255 255 255 /0.3) 0 225deg,rgb(255 255 255 /0.6) 0) border-box,
-    conic-gradient(at left var(--_s) bottom var(--_s),
-      #0000 90deg,var(--c) 0) 0 100%/calc(100% - var(--b)) calc(100% - var(--b))  border-box;
-  transform: translate(calc(var(--d)/-1),var(--d));
-  clip-path: 
-    polygon(
-     var(--d) 0%, 
-     var(--d) 0%, 
-     100% 0%, 
-     100% calc(100% - var(--d)),
-     100% calc(100% - var(--d)),
-     var(--d) calc(100% - var(--d))
-    );
+  border-width: var(--borderLength) var(--borderLength) var(--_s) var(--_s);
+  background: conic-gradient(
+        at left var(--depth) bottom var(--depth),
+        #0000 90deg,
+        rgb(255 255 255 /0.3) 0 225deg,
+        rgb(255 255 255 /0.6) 0
+      )
+      border-box,
+    conic-gradient(at left var(--_s) bottom var(--_s), #0000 90deg, var(--color) 0) 0 100% /
+      calc(100% - var(--borderLength)) calc(100% - var(--borderLength)) border-box;
+  transform: translate(calc(var(--depth) / -1), var(--depth));
+  clip-path: polygon(
+    var(--depth) 0%,
+    var(--depth) 0%,
+    100% 0%,
+    100% calc(100% - var(--depth)),
+    100% calc(100% - var(--depth)),
+    var(--depth) calc(100% - var(--depth))
+  );
   transition: 0.5s;
+
+  /* make it responsive */
+  @media (max-width: 768px) {
+    max-width: 250px;
+  }
 }
 
-.skillDiv::after{
-  content: "__";
+.skillHeader::after {
+  content: '__';
+  align-self: flex-start;
   display: block;
+  flex: 1;
 }
 
-.skillDiv:hover{
+.skillDiv:hover {
   background-color: var(--secondark-light);
-  color: var(--primary-dark); 
+  color: var(--primary-dark);
   box-shadow: var(--shadow-transform);
 
-  transform: translate(0,0);
-  clip-path: 
-    polygon(
-     0% var(--d), 
-     var(--d) 0%, 
-     100% 0%, 
-     100% calc(100% - var(--d)), 
-     calc(100% - var(--d)) 100%, 
-     0% 100%
-   );
+  transform: translate(0, 0);
+  clip-path: polygon(
+    0% var(--depth),
+    var(--depth) 0%,
+    100% 0%,
+    100% calc(100% - var(--depth)),
+    calc(100% - var(--depth)) 100%,
+    0% 100%
+  );
 }
 
-.skillTitle{
-  word-break: break-all;
+.skillTitle {
+  justify-self: center;
+  align-self: flex-start;
+  text-decoration: underline;
   max-width: 85%;
 }
 
-.d-1 {
-  --c: #1095c1; /* the color */
-  --b: .1em;    /* border length*/
-  --d: 20px;    /* the cube depth */
-  
-  --_s: calc(var(--d) + var(--b));
-  color: var(--c);
-  border: solid #0000;
-  border-width: var(--b) var(--b) var(--_s) var(--_s);
-  background:
-    conic-gradient(at left var(--d)  bottom var(--d),
-      #0000 90deg, rgb(255 255 255 /0.3) 0 225deg,rgb(255 255 255 /0.6) 0) border-box,
-    conic-gradient(at left var(--_s) bottom var(--_s),
-      #0000 90deg,var(--c) 0) 0 100%/calc(100% - var(--b)) calc(100% - var(--b))  border-box;
-  transform: translate(calc(var(--d)/-1),var(--d));
-  clip-path: 
-    polygon(
-     var(--d) 0%, 
-     var(--d) 0%, 
-     100% 0%, 
-     100% calc(100% - var(--d)),
-     100% calc(100% - var(--d)),
-     var(--d) calc(100% - var(--d))
-    );
-  transition: 0.5s;
+.skillHeader {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
 }
-.d-1:hover {
-  transform: translate(0,0);
-  clip-path: 
-    polygon(
-     0% var(--d), 
-     var(--d) 0%, 
-     100% 0%, 
-     100% calc(100% - var(--d)), 
-     calc(100% - var(--d)) 100%, 
-     0% 100%
-   );
+
+.skillBody {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@media (max-width: 768px) {
+  /* .skillDiv {
+    max-width: 100%;
+  } */
+  /* project divs all vertical when on small screen */
+  .cardContainer {
+    flex-direction: column;
+    padding: 0;
+    margin: 0.35rem;
+  }
+  .cardBody {
+    flex-direction: column !important;
+  }
+  .cardRow {
+    flex-direction: column;
+  }
+  .cardLeft {
+    width: 100%;
+  }
+  .cardRight {
+    width: 100%;
+  }
 }

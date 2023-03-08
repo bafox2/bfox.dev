@@ -1,24 +1,24 @@
 {
     "version": "https://jsonfeed.org/version/1",
-    "title": "Blog posts | RSS Feed",
+    "title": "Ben Fox Writing",
     "home_page_url": "localhost:3000",
     "feed_url": "localhost:3000/rss.json",
-    "description": "Welcome to this blog posts!",
+    "description": "Learn with me as I write about my time trying to become a better developer",
     "icon": "localhost:3000/logo.png",
     "items": [
         {
-            "id": "localhost:3000/blog/second-writing",
-            "url": "localhost:3000/blog/second-writing",
-            "title": "The first post",
-            "summary": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-            "date_modified": "2022-10-28T00:00:00.000Z"
+            "id": "localhost:3000/blog/nextjsLayouts",
+            "url": "localhost:3000/blog/nextjsLayouts",
+            "title": "Configuring Next.js Pages With Alternate Layouts",
+            "summary": "Exclude your header, footer, or whatever other components that you can shed.",
+            "date_modified": "2022-12-02T00:00:00.000Z"
         },
         {
-            "id": "localhost:3000/blog/first-post",
-            "url": "localhost:3000/blog/first-post",
-            "title": "The second post",
-            "summary": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-            "date_modified": "2022-09-28T00:00:00.000Z"
+            "id": "localhost:3000/blog/leftTeaching",
+            "url": "localhost:3000/blog/leftTeaching",
+            "title": "Why I Am Leaving Teaching",
+            "summary": "My despairs, triumphs, and reflections on my roots in education.",
+            "date_modified": "2022-11-28T00:00:00.000Z"
         }
     ]
 }

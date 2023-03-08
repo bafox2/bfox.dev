@@ -1,3 +1,163 @@
-.post {
+.writingMain {
+  grid-area: main;
+  max-width: var(--mainWidth);
+  margin: 0 auto;
+}
+
+.postMain {
+  max-width: var(--mainWidth);
+  /* center the div */
+  margin: 0 auto;
+}
+
+.postContent {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex: 1;
+  padding: 1rem;
   margin: var(--margin);
+  gap: 0.5rem;
+}
+
+.postContent > p {
+  line-height: 1.1rem;
+}
+
+.postContent > pre {
+  padding: 2rem;
+  margin: 1rem auto;
+  width: 80%;
+  border-radius: 0.5rem;
+  font-size: 0.8rem;
+  border: 1px solid black;
+}
+
+.postContent > hr {
+  width: 100%;
+  margin: 1rem auto;
+  border: 1px solid black;
+}
+
+.postAbout {
+  width: 160px;
+  height: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: right;
+  flex-direction: column;
+  margin-left: auto;
+  margin-bottom: -2rem;
+}
+
+.postAboutImage {
+  border-radius: 50%;
+  overflow: visible;
+}
+
+.postAboutMe {
+  font-size: 0.99rem;
+  text-align: center;
+}
+
+.postAboutImageContainer {
+  padding-top: 2.5rem;
+  border-radius: 50%;
+  overflow: visible;
+}
+
+.postContent nav {
+  margin: 0;
+  padding: 0;
+}
+
+.postContent > nav {
+  margin: 0;
+  padding: 0;
+}
+
+.postHeader {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex: 1;
+  padding: 1rem;
+  margin: var(--margin);
+  gap: 1rem;
+}
+
+.postImage {
+  width: 100%;
+}
+
+.postImage > span {
+  position: unset !important;
+}
+.image {
+  object-fit: contain;
+  width: 1000% !important;
+  position: relative !important;
+  height: unset !important;
+}
+
+.postListHeader {
+  margin: var(--margin);
+  font-size: var(--bigFont);
+}
+
+.postListDescription {
+  width: fit-content;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+}
+
+.postListDescription::after {
+  content: '';
+  width: 100%;
+  display: block;
+  height: 1px;
+  background: var(--highlight);
+  margin-top: 1rem;
+}
+@media (max-width: 768px) {
+  .postListDescription::after {
+    max-width: 90%;
+  }
+}
+
+.postList {
+  margin: var(--margin);
+  width: fit-content;
+}
+
+.postEntry {
+  margin-bottom: 1rem;
+}
+
+.postTitle {
+  font-size: 3vw;
+}
+
+.postMeta {
+  font-size: 1.5vw;
+}
+
+.postListHeader {
+  font-size: 3rem;
+}
+.postTitle {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+}
+
+.postMeta {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
 }

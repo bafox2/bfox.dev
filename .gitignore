@@ -39,3 +39,10 @@ next-env.d.ts
 # hardcoded data
 projects.ts
 skills.ts
+
+# docker
+Dockerfile
+docker-compose.yml
+caddy/Caddyfile
+config/
+data/
