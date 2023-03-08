@@ -1,7 +1,7 @@
 import '../styles/globals.css'
 import Layout from '../Components/Layout'
 import type { AppProps } from 'next/app'
-import { Archivo } from '@next/font/google'
+import { Archivo } from 'next/font/google'
 import Head from 'next/head'
 
 const archivo = Archivo({ subsets: ['latin'] })

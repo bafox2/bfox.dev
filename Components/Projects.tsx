@@ -65,7 +65,6 @@ export default function Projects() {
           </div>
         </div>
       </div>
-<<<<<<< HEAD
       <div className={styles.cardRow}>
         <p className={styles.rowCategory}>date</p>
         <p className={styles.rowInfo}>{project.date}</p>
@@ -76,24 +75,31 @@ export default function Projects() {
       </div>
       <div className={styles.cardRow}>
         <p className={styles.rowCategory}>github</p>
-        <p className={styles.rowInfo}><Link href={project.github}>{project.github}</Link></p>
+        <p className={styles.rowInfo}>
+          <Link href={project.github}>{project.github}</Link>
+        </p>
       </div>
       <div className={styles.cardRow}>
         <p className={styles.rowCategory}>website</p>
-        <p className={styles.rowInfo}><Link href={project.website}>{project.website}</Link></p>
+        <p className={styles.rowInfo}>
+          <Link href={project.website}>{project.website}</Link>
+        </p>
       </div>
       <div className={styles.cardRow}>
         <p className={styles.rowCategory}>lessons</p>
         <p className={styles.rowInfo}>{project.lessons}</p>
       </div>
       <div className={styles.cardPic}>
-        <Image src={project.imagePath.src} width={1528} height={875} layout={'responsive'} blurDataURL={'true'} alt={`homepage of ${project.name}`} />
+        <Image
+          src={project.imagePath.src}
+          width={1528}
+          height={875}
+          layout={'responsive'}
+          blurDataURL={'true'}
+          alt={`homepage of ${project.name}`}
+        />
       </div>
       <p>{project.number}</p>
-=======
-
-      <p className={styles.cardNumber}>{project.number}</p>
->>>>>>> 40903d458950b4e64f9ceee0552a89799d4115aa
     </div>
   ))
 

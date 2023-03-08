@@ -12,32 +12,6 @@ export default function Header() {
         <Link href="/" className={styles.logo}>
           BFox
         </Link>
-<<<<<<< HEAD
-      </div>
-        <nav className={styles.nav}>
-          <div className={`${styles.navItem}`}>
-            <Link href="/ben">About</Link>
-         </div>
-          <div className={styles.navItem}>
-            <Link href="/writing">Writing</Link>
-         </div>
-         <div className={`${styles.navItem}`}>
-            <Link href="/cv">Resume</Link>
-         </div>
-          <div className={`${styles.navItem} ${styles.special}`}>
-            <Link href="/email">Email</Link>
-        </div>
-        <div className={`${styles.navItem} ${styles.special}`}>
-            <a target='_blank' rel="noopener noreferrer" href="https://www.linkedin.com/in/ben-fox-dev/">Github</a>
-         </div>
-          <div className={`${styles.navItem} ${styles.special}`}>
-            <a target='_blank' rel="noopener noreferrer" href="https://www.linkedin.com/in/ben-fox-dev/">LinkedIn</a>
-         </div>
-        </nav>
-      </div>
-  );
-}
-=======
         {/* <Link href="/ben">
             <div className={`${styles.navItem}`}>About</div>
           </Link> */}
@@ -81,4 +55,3 @@ export default function Header() {
     </div>
   )
 }
->>>>>>> 40903d458950b4e64f9ceee0552a89799d4115aa
