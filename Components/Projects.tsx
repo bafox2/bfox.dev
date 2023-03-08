@@ -48,11 +48,11 @@ export default function Projects() {
       </div>
       <div className={styles.cardRow}>
         <p className={styles.rowCategory}>github</p>
-        <p className={styles.rowInfo}><Link href={project.github}><a >{project.github}</a></Link></p>
+        <p className={styles.rowInfo}><Link href={project.github}>{project.github}</Link></p>
       </div>
       <div className={styles.cardRow}>
         <p className={styles.rowCategory}>website</p>
-        <p className={styles.rowInfo}><Link href={project.website}><a >{project.website}</a></Link></p>
+        <p className={styles.rowInfo}><Link href={project.website}>{project.website}</Link></p>
       </div>
       <div className={styles.cardRow}>
         <p className={styles.rowCategory}>lessons</p>

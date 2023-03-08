@@ -13,16 +13,16 @@ export default function Header() {
       </div>
         <nav className={styles.nav}>
           <div className={`${styles.navItem}`}>
-            <Link href="/ben"><a>About</a></Link>
+            <Link href="/ben">About</Link>
          </div>
           <div className={styles.navItem}>
-            <Link href="/writing"><a>Writing</a></Link>
+            <Link href="/writing">Writing</Link>
          </div>
          <div className={`${styles.navItem}`}>
-            <Link href="/cv"><a>Resume</a></Link>
+            <Link href="/cv">Resume</Link>
          </div>
           <div className={`${styles.navItem} ${styles.special}`}>
-            <Link href="/email"><a>Email</a></Link>
+            <Link href="/email">Email</Link>
         </div>
         <div className={`${styles.navItem} ${styles.special}`}>
             <a target='_blank' rel="noopener noreferrer" href="https://www.linkedin.com/in/ben-fox-dev/">Github</a>
@@ -32,5 +32,5 @@ export default function Header() {
          </div>
         </nav>
       </div>
-  )
+  );
 }

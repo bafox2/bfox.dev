@@ -9,16 +9,16 @@ const CustomLink = (props) => {
 
   if (isInternalLink) {
     return (
-      <Link href={href}>
-        <a {...props} />
-      </Link>
+      (<Link href={href} {...props}>
+
+      </Link>)
     );
   } else if (isHeadingLink) {
     return (
-      <Link href={href}>
-        <a className="anchor" {...props}>
+      <Link href={href} className="anchor" {...props}>
+        
           #
-        </a>
+        
       </Link>
     );
   }
