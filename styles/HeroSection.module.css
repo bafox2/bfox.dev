@@ -1,0 +1,16 @@
+.heroSection {
+  /* this is a component that will take up 100vh and announce information */
+  height: calc(100vh - var(--navHeight));
+  background: #000;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  position: relative;
+  overflow: hidden;
+}

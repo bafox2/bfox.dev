@@ -48,6 +48,33 @@ const projects = [
     imagePath: blogPic,
     number: 3,
   },
+  {
+    name: 'Chat-dle',
+    reason: 'I have watched twitch all my life and I wanted to give back to all the chats that have given me joy through my years.',
+    description: 'A wordle-like game that uses the chat from twitch streams.',
+    builtWith: 'Nextjs, Tailwind, Twitch API, Socket.io, Node.js',
+    date: 'February 2023 - Present',
+    status: 'Deployed and iterating on features',
+    github: 'github.com/bafox2/chat-dle',
+    website: 'https://chat-dle.vercel.app/',
+    lessons:
+      'I have not worked with sockets before, and I am so thankful that they exist. I have also not worked with a UI library before, and I am so thankful that they exist.',
+    imagePath: 'chatdlePic',
+    number: 4,
+  },
+  {
+    name: 'Oyo Farms',
+    reason: 'I wanted to help my friend with his business.',
+    description: 'A website for a local farm.',
+    builtWith: 'Nextjs, Tailwind, Node.js, MongoDB',
+    date: 'December 2021 - Present',
+    status: 'Deployed and iterating on features',
+    github: 'github.com/bafox2/oyo-farms',
+    website: 'https://oyo-farms.vercel.app/',
+    lessons: 'I have not worked with a UI library before, and I am so thankful that they exist.',
+    imagePath: 'oyoPic',
+    number: 5,
+  }
 ]
 
 export default projects

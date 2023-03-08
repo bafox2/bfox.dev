@@ -5,78 +5,53 @@ import Image from "next/image";
 
 //b expands to bfox on hover
 export default function Header() {
-  //navbar with 'home', 'about', 'writing', 'resume'
   return (
-    <div className={styles.header}>
-      <nav className={styles.nav}>
-        <Link href="/" className={styles.logo}>
+    <>
+      <div className={styles.header}>
+        <Link href="/" className={`${styles.logo} ${styles.hoverable}`}>
           Fox
         </Link>
-        {/* <Link href="/ben">
-            <div className={`${styles.navItem}`}>About</div>
-          </Link> */}
-        <Link href="/writing" className={styles.headerRow}>
-          <Image
-            src="/logos/rss2.svg"
-            alt="Writing Icon"
-            width={68}
-            height={68}
-          />
-          <div className={styles.navItem}>Writing</div>
-        </Link>
+        <nav className={styles.nav}>
+          <Link href="/writing" className={styles.headerRow}>
+            Writing
+          </Link>
 
-        <Link href="/cv" className={styles.headerRow}>
-          <Image
-            src="/logos/resume1.svg"
-            alt="Resume Icon"
-            width={68}
-            height={68}
-          />
-          <div className={`${styles.navItem}`}>Resume</div>
-        </Link>
+          <Link href="/cv" className={styles.headerRow}>
+            Resume
+          </Link>
 
-        <a className={styles.headerRow} href="mailto:benfox11@vt.edu">
-          <Image
-            src="/logos/mail.svg"
-            alt="Email Icon"
-            width={68}
-            height={68}
-          />
-          <div className={`${styles.navItem} ${styles.special}`}>
-            <p>Email</p>
-          </div>
-        </a>
+          <a className={""} href="mailto:benfox11@vt.edu">
+            Email
+          </a>
 
-        <a
-          className={styles.headerRow}
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://www.linkedin.com/in/ben-fox-dev/"
-        >
-          <Image
-            src="/logos/github.svg"
-            alt="Github Icon"
-            width={68}
-            height={68}
-          />
-          <div className={`${styles.navItem} ${styles.special}`}>Github</div>
-        </a>
+          <a
+            className={""}
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.linkedin.com/in/ben-fox-dev/"
+          >
+            LinkedIn
+          </a>
+        </nav>
 
-        <a
-          className={styles.headerRow}
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://www.linkedin.com/in/ben-fox-dev/"
-        >
-          <Image
-            src="/logos/linkedin.svg"
-            alt="LinkedIn Icon"
-            width={68}
-            height={68}
-          />
-          <div className={`${styles.navItem} ${styles.special}`}>LinkedIn</div>
-        </a>
-      </nav>
-    </div>
+        <div className={styles.folderTab}>
+          <a
+            className={styles.headerRow}
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.linkedin.com/in/ben-fox-dev/"
+          >
+            <Image
+              src="/logos/github.svg"
+              alt="Github Icon"
+              width={24}
+              height={24}
+            />
+            <div className={styles.folderTabText}>Github</div>
+          </a>
+        </div>
+      </div>
+      <div className={styles.headerMask} />
+    </>
   );
 }

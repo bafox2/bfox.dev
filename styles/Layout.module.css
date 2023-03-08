@@ -1,0 +1,6 @@
+.layout {
+  max-width: var(--mainWidth);
+  /* center horizontally */
+  margin: 0 auto;
+  padding: 0;
+}

@@ -1,6 +1,4 @@
 .mainContent {
-  max-width: var(--mainWidth);
-  margin: 0 auto;
 }
 
 .carousel {

@@ -9,6 +9,17 @@
   --highlight-light: #65657e;
   --highlight-dark: #191831;
   --background: #f0ece1;
+
+  --sand: #EECCB2;
+  --green: #81E0A0;
+  --yellow: #FCEF7F;
+  --darkGreen:#1C4939;
+  --purple: #E4C7FF;
+  --blue: #544CF8;
+  --gray: #d3ded4;
+  --white: #ffffff;
+  --black: #000000;
+
   --border-radius: 10px;
   --padding-card: 10px
   --border: 2px solid #000;
@@ -19,7 +30,8 @@
   --transition: all 0.3s ease-in-out;
   --margin: 0 1rem;
   --bigFont: 10vw;
-  --mainWidth: 70vw;
+  --mainWidth: 1440px;
+  --navHeight: 85px;
 }
 
 html,
@@ -32,12 +44,14 @@ body {
 h1, h2, h3, h4, h5, h6, p, ul, li {
   margin: 0;
   padding: 0;
+
 }
 
 a {
   color: inherit;
   text-decoration: none;
 }
+
 
 * {
   box-sizing: border-box;
@@ -51,18 +65,9 @@ main {
   flex: 1;
 }
 
-.layout {
- display: grid; 
- grid-auto-columns: 1fr 1fr 1fr 1fr 1fr; 
- grid-template-columns: 1fr 30fr 1fr; 
- grid-template-rows: 1fr 2fr 0.01fr; 
- gap: 0px 0px; 
- grid-template-areas: 
-   "header main main"
-   "header main main"
-   "footer footer footer"; 
-  min-height: 100vh;
-} 
+/* hover class that extends a ling under any content like a link */
+/* transition: transform 1s cubic-bezier(.16,1.08,.38,.98),-webkit-transform 1s cubic-bezier(.16,1.08,.38,.98); */
+
 
 /* make it reponsive */
 @media (max-width: 768px) {

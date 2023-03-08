@@ -1,8 +1,4 @@
 .mainContent {
-  grid-area: main;
-  max-width: var(--mainWidth);
-  /* center the div */
-  margin: 0 auto;
 }
 
 .bigHeader {
