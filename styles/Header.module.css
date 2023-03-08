@@ -9,6 +9,7 @@
   border-right: 4px solid var(--primary);
   transition: all 0.4s ease-in-out;
   overflow-x: hidden;
+  font-family: var(--bitter-font);
 }
 
 .header:hover {
@@ -70,7 +71,7 @@
 
 .navItem:hover:after {
   transition: all 0.4s ease 0s;
-  content: ' ';
+  content: " ";
   position: absolute;
   top: 9px;
   right: 20px;
