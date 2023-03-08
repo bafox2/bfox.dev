@@ -159,8 +159,13 @@
         rgb(255 255 255 /0.6) 0
       )
       border-box,
-    conic-gradient(at left var(--_s) bottom var(--_s), #0000 90deg, var(--color) 0) 0 100% /
-      calc(100% - var(--borderLength)) calc(100% - var(--borderLength)) border-box;
+    conic-gradient(
+        at left var(--_s) bottom var(--_s),
+        #0000 90deg,
+        var(--color) 0
+      )
+      0 100% / calc(100% - var(--borderLength)) calc(100% - var(--borderLength))
+      border-box;
   transform: translate(calc(var(--depth) / -1), var(--depth));
   clip-path: polygon(
     var(--depth) 0%,
@@ -179,7 +184,7 @@
 }
 
 .skillHeader::after {
-  content: '__';
+  content: "__";
   align-self: flex-start;
   display: block;
   flex: 1;

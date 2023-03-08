@@ -1,4 +1,6 @@
 .header {
+  margin: 0 auto;
+  max-width: var(--mainWidth);
   position: sticky;
   top: 0;
   grid-area: header;

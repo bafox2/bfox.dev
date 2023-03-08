@@ -1,4 +1,7 @@
 .mainContent {
+  margin: 0 auto;
+  width: var(--mainWidth);
+  font-family: var(--assistant-font);
 }
 
 .bigHeader {
@@ -37,5 +40,4 @@
 
 .returnTop > * {
   transform: scaleX(-1);
-  fill: var(--secondary);
 }

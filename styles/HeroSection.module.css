@@ -1,5 +1,7 @@
 .heroSection {
   /* this is a component that will take up 100vh and announce information */
+  margin: 0 auto;
+  width: var(--mainWidth);
   height: calc(100vh - var(--navHeight));
   background: #000;
   color: #fff;

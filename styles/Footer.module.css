@@ -1,4 +1,6 @@
-.footerLogo {
+.footerBranding {
+  margin: 0 auto;
+  width: var(--mainWidth);
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -13,9 +15,14 @@
   font-weight: 600;
   text-decoration: none;
   transition: all 0.2s ease-in-out;
+  font-family: var(--assistant-font);
 }
 
 .footerName {
   font-size: 1rem;
   font-weight: 300;
+}
+
+.footer__container {
+  background-color: var(--primary-dark);
 }
