@@ -1,27 +1,27 @@
-:root{
+:root {
   --primary: #472423;
   --primary-light: #907b7b;
   --primary-dark: #2a1515;
   --secondary: #f0ece1;
   --secondary-light: #f6f3ed;
   --secondary-dark: #817f7a;
-  --highlight:  	#242347;
+  --highlight: #242347;
   --highlight-light: #65657e;
   --highlight-dark: #191831;
   --background: #f0ece1;
 
-  --sand: #EECCB2;
-  --green: #81E0A0;
-  --yellow: #FCEF7F;
-  --darkGreen:#1C4939;
-  --purple: #E4C7FF;
-  --blue: #544CF8;
+  --sand: #eeccb2;
+  --green: #81e0a0;
+  --yellow: #fcef7f;
+  --darkGreen: #1c4939;
+  --purple: #e4c7ff;
+  --blue: #544cf8;
   --gray: #d3ded4;
   --white: #ffffff;
   --black: #000000;
 
   --border-radius: 10px;
-  --padding-card: 10px
+  --padding-card: 10px;
   --border: 2px solid #000;
   --font-title: 1.5rem;
   --font-description: 1.2rem;
@@ -38,32 +38,38 @@ html,
 body {
   padding: 0;
   margin: 0;
-  background-color: var(--background);
 }
 
-h1, h2, h3, h4, h5, h6, p, ul, li {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li {
   margin: 0;
   padding: 0;
-
 }
 
 a {
   color: inherit;
-  
+
   text-decoration: none;
   position: relative;
   z-index: 1;
 }
 
-a::before {  
-  content: '';
-  background-color: hsla(196, 61%, 58%, .75);
+a::before {
+  content: "";
+  background-color: hsla(196, 61%, 58%, 0.75);
   position: absolute;
   left: 0;
   bottom: 2px;
   width: 100%;
   height: 3px;
-  transition: bottom .3s ease-in-out, height .3s ease-in-out;
+  transition: bottom 0.3s ease-in-out, height 0.3s ease-in-out;
 }
 
 a:hover::before {
@@ -85,7 +91,6 @@ main {
 
 /* hover class that extends a ling under any content like a link */
 /* transition: transform 1s cubic-bezier(.16,1.08,.38,.98),-webkit-transform 1s cubic-bezier(.16,1.08,.38,.98); */
-
 
 /* make it reponsive */
 @media (max-width: 768px) {

@@ -6,7 +6,9 @@ import Projects from "../Components/Projects";
 import Minis from "../Components/Minis";
 import Skills from "../Components/Skills";
 import HeroSection from "../Components/HeroSection";
+import Stats from "../Components/Stats";
 import styles from "../styles/Home.module.css";
+import stats from "../stats.js";
 
 const Home: NextPage = () => {
   const returnToTop = () => {
@@ -36,6 +38,8 @@ const Home: NextPage = () => {
         <Hero />
         <h2 className={styles.bigHeader}>Projects</h2>
         <Projects />
+        <h2 className={styles.bigHeader}>Stats</h2>
+        <Stats stats={stats} />
         <h2 className={styles.bigHeader}>Minis</h2>
         <Minis />
         <h2 className={styles.bigHeader}>Skills</h2>
