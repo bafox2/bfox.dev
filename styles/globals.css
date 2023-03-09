@@ -31,7 +31,7 @@
   --margin: 0 1rem;
   --bigFont: 10vw;
   --mainWidth: 1440px;
-  --navHeight: 85px;
+  --navHeight: 75px;
 }
 
 html,
@@ -49,9 +49,27 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
 
 a {
   color: inherit;
+  
   text-decoration: none;
+  position: relative;
+  z-index: 1;
 }
 
+a::before {  
+  content: '';
+  background-color: hsla(196, 61%, 58%, .75);
+  position: absolute;
+  left: 0;
+  bottom: 2px;
+  width: 100%;
+  height: 3px;
+  transition: bottom .3s ease-in-out, height .3s ease-in-out;
+}
+
+a:hover::before {
+  bottom: 0;
+  height: 45%;
+}
 
 * {
   box-sizing: border-box;

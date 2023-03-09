@@ -11,26 +11,28 @@
   border-bottom: 4px solid var(--primary);
   transition: all 0.4s ease-in-out;
   font-family: var(--bitter-font);
-  z-index: 1;
+  z-index: 1000;
   height: var(--navHeight);
   font-family: var(--assistant-font);
 }
 
-.headerMask {
+.header:after {
   content: "";
-  height: var(--navHeight);
-  width: 100%;
   position: absolute;
   top: 0;
   left: 0;
-  backdrop-filter: blur(20px);
-  mask: linear-gradient(transparent, black 60%);
+  right: 0;
+  bottom: 0;
+  opacity: 1;
+  backdrop-filter: blur(12px);
+  mask: linear-gradient(transparent, black 20%);
   transition: 1s;
+  z-index: -1;
 }
 
-.headerMask:hover:after {
-  opacity: 1;
-}
+/* .header:hover:after {
+  opacity: 0;
+} */
 
 .headerRow {
   display: flex;
