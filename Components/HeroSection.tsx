@@ -11,7 +11,10 @@ export default function HeroSection({
   background: string;
 }) {
   return (
-    <div className={styles.heroSection} style={{ backgroundImage: background }}>
+    <div
+      className={styles.heroSection}
+      style={{ backgroundImage: `background` }}
+    >
       {children}
     </div>
   );

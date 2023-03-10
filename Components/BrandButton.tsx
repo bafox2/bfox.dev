@@ -1,4 +1,4 @@
-import styles from "Util.module.css";
+import styles from "../styles/Util.module.css";
 import Image from "next/image";
 import arrow from "../public/logos/art2.svg";
 
@@ -22,7 +22,7 @@ export default function BrandButton({
       >
         {arrow ? (
           <div className={styles.brandButton__arrow}>
-            <Image src={"/images/up.svg"} alt="arrow" />
+            <Image src={"/images/up.svg"} alt="arrow" width={100} height={50} />
           </div>
         ) : null}
       </button>

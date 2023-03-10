@@ -1,6 +1,9 @@
 import styles from "../styles/Project.module.css";
 import Image from "next/image";
 import BrandButton from "./BrandButton";
+import TagTech from "./TagTech";
+import TagStatus from "./TagStatus";
+import { StaticImageData } from "next/image";
 
 //a function that returns a project component with a name, description, Built With, a status, links to github/live, lessions, and an image
 
@@ -19,7 +22,7 @@ export default function Project({
   github,
   website,
   lessons,
-  imagePath,
+  imagePathURL,
 }: {
   name: string;
   description: string;
@@ -29,26 +32,22 @@ export default function Project({
   github: string;
   website: string;
   lessons: string;
-  imagePath: string;
+  imagePathURL: StaticImageData;
 }) {
   return (
     <div className={styles.project__container}>
       <div className={styles.project__left}>
         <div className={styles.project__image}>
           <Image
-            src={imagePath}
+            src={imagePathURL}
             width={1060}
             height={600}
             blurDataURL={"true"}
             alt={`homepage of ${name}`}
           />
         </div>
-        <div className={styles.project__tech}>
-          <p className={styles.project__tech__text}>{builtWith}</p>
-        </div>
-        <div className={styles.project__status}>
-          <p className={styles.project__status__text}>{status}</p>
-        </div>
+        <TagTech text={builtWith} url={"https://google.com"} />
+        <TagStatus text={status} color={"red"} />
       </div>
       <div className={styles.project__right}>
         <div className={styles.project__name}>

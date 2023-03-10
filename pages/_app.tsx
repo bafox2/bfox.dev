@@ -6,10 +6,12 @@ import Head from "next/head";
 
 const bitter = Bitter({
   variable: "--bitter-font",
+  subsets: ["latin-ext"],
 });
 
 const assistant = Assistant({
   variable: "--assistant-font",
+  subsets: ["latin-ext"],
 });
 
 // import Header from "./Header";

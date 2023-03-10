@@ -59,7 +59,7 @@ const projects = [
     website: 'https://chat-dle.vercel.app/',
     lessons:
       'I have not worked with sockets before, and I am so thankful that they exist. I have also not worked with a UI library before, and I am so thankful that they exist.',
-    imagePath: 'chatdlePic',
+    imagePath: letterPic,
     number: 4,
   },
   {
@@ -72,7 +72,7 @@ const projects = [
     github: 'github.com/bafox2/oyo-farms',
     website: 'https://oyo-farms.vercel.app/',
     lessons: 'I have not worked with a UI library before, and I am so thankful that they exist.',
-    imagePath: 'oyoPic',
+    imagePath: letterPic,
     number: 5,
   }
 ]

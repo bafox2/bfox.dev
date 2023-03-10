@@ -1,4 +1,4 @@
-import styles from "Util.module.css";
+import styles from "../styles/Util.module.css";
 
 // takes in text as a string and a color as a string
 // the color will be a little dot next to the text
