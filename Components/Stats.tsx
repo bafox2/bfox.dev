@@ -13,14 +13,16 @@ export default function Stats({
 }) {
   return (
     <div className={styles.stats__container}>
-      {stats.map((stat) => (
-        <div className={styles.stat__container}>
-          <h1 className={styles.stat__heading}>{stat.heading}</h1>
-          <h1 className={styles.stat__number}>{stat.data}</h1>
-          <p className={styles.stat__description}>{stat.description}</p>
-          {stat.joke && <p className={styles.stat__joke}>🤣</p>}
-        </div>
-      ))}
+      <div className={styles.stats__grid}>
+        {stats.map((stat) => (
+          <div className={styles.stat__container}>
+            <h2 className={styles.stat__heading}>{stat.heading}</h2>
+            <h3 className={styles.stat__number}>{stat.data}</h3>
+            <p className={styles.stat__description}>{stat.description}</p>
+            {stat.joke && <p className={styles.stat__joke}>🤣</p>}
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

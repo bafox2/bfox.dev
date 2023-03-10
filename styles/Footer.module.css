@@ -26,6 +26,7 @@
   width: var(--mainWidth);
   margin: 0 auto;
   border-bottom: 1px solid var(--white);
+  font-color: var(--white);
 }
 
 .footer__link__column {
@@ -49,10 +50,11 @@
   display: flex;
   flex-direction: row;
   gap: 1rem;
+  color: var(--white);
 }
 
 .footer__header {
-  color: var(--blue);
+  color: var(--gray);
   font-size: 1.2rem;
   font-weight: 600;
   font-family: var(--assistant-font);

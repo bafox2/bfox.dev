@@ -1,6 +1,5 @@
 .mainContent {
   margin: 0 auto;
-  width: var(--mainWidth);
   font-family: var(--assistant-font);
 }
 
