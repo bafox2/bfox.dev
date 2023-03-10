@@ -60,8 +60,18 @@ export default function Project({
           <p className={styles.project__reason__text}>{reason}</p>
         </div>
         <div className={styles.project__links}>
-          <BrandButton url={website} arrow={true} primary={true} />
-          <BrandButton url={github} arrow={false} primary={false} />
+          <BrandButton
+            url={website}
+            arrow={true}
+            primary={true}
+            text={"repo"}
+          />
+          <BrandButton
+            url={github}
+            arrow={false}
+            primary={false}
+            text={"live"}
+          />
         </div>
         <div className={styles.project__lessons}>
           <p className={styles.project__lessons__text}>{lessons}</p>

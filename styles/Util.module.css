@@ -1,8 +1,8 @@
 .brandButton__primary {
-  background-color: #000;
-  color: #fff;
-  border: 1px solid #000;
-  border-radius: 0;
+  background-color: var(--purple);
+  color: var(--white);
+  border: 1px solid var(--purple);
+  border-radius: 5px;
   padding: 10px 20px;
   font-size: 16px;
   font-weight: 600;
@@ -11,15 +11,15 @@
   transition: all 0.3s ease;
 }
 .brandButton__primary:hover {
-  background-color: #fff;
-  color: #000;
+  background-color: var(--white);
+  color: var(--purple);
 }
 
 .brandButton__secondary {
-  background-color: #fff;
-  color: #000;
-  border: 1px solid #000;
-  border-radius: 0;
+  background-color: var(--white);
+  color: var(--purple);
+  border: 1px solid var(--purple);
+  border-radius: 5px;
   padding: 10px 20px;
   font-size: 16px;
   font-weight: 600;
@@ -28,6 +28,18 @@
   transition: all 0.3s ease;
 }
 .brandButton__secondary:hover {
-  background-color: #000;
-  color: #fff;
+  background-color: var(--purple);
+  color: var(--white);
+}
+
+/* this is a tag that shows the tech stack */
+.tagTech__container {
+  background-color: var(--gray);
+  color: var(--white);
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }

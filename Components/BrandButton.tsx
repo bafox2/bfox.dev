@@ -8,10 +8,12 @@ export default function BrandButton({
   url,
   primary,
   arrow,
+  text,
 }: {
   url: string;
   primary: boolean;
   arrow: boolean;
+  text: string;
 }) {
   return (
     <a href={url} target="_blank" rel="noopener noreferrer">
@@ -25,6 +27,7 @@ export default function BrandButton({
             <Image src={"/images/up.svg"} alt="arrow" width={100} height={50} />
           </div>
         ) : null}
+        <p className={styles.brandButton__text}>{text}</p>
       </button>
     </a>
   );
