@@ -3,6 +3,7 @@ import Image from "next/image";
 import BrandButton from "./BrandButton";
 import TagTech from "./TagTech";
 import TagStatus from "./TagStatus";
+import svg from "../public/logos/art2.svg";
 import { StaticImageData } from "next/image";
 
 //a function that returns a project component with a name, description, Built With, a status, links to github/live, lessions, and an image
@@ -22,38 +23,50 @@ export default function Project({
   github,
   website,
   lessons,
-  imagePathURL,
+  imagePath,
 }: {
   name: string;
   description: string;
   reason: string;
-  builtWith: string;
-  status: string;
+  builtWith: {
+    name: string;
+    link: string;
+  }[];
+  status: {
+    text: string;
+    color: string;
+  };
   github: string;
   website: string;
   lessons: string;
-  imagePathURL: StaticImageData;
+  imagePath: {
+    url: StaticImageData;
+    width: number;
+    height: number;
+    alt: string;
+  };
 }) {
+  const techTags = builtWith.map((tech) => {
+    return <TagTech name={tech.name} link={tech.link} />;
+  });
+
   return (
     <div className={styles.project__container}>
       <div className={styles.project__left}>
         <div className={styles.project__image}>
           <Image
-            src={imagePathURL}
-            width={1060}
-            height={600}
-            blurDataURL={"true"}
-            alt={`homepage of ${name}`}
+            src={imagePath.url}
+            width={imagePath.width}
+            height={imagePath.height}
+            alt={imagePath.alt}
           />
         </div>
-        <TagTech text={builtWith} url={"https://google.com"} />
-        <TagStatus text={status} color={"red"} />
+        <TagStatus text={status.text} color={status.color} />
+        <div className={styles.project__tech}>{techTags}</div>
       </div>
       <div className={styles.project__right}>
-        <div className={styles.project__name}>
+        <div className={styles.project__basics}>
           <p className={styles.project__name__text}>{name}</p>
-        </div>
-        <div className={styles.project__description}>
           <p className={styles.project__description__text}>{description}</p>
         </div>
         <div className={styles.project__reason}>
@@ -62,7 +75,7 @@ export default function Project({
         <div className={styles.project__links}>
           <BrandButton
             url={website}
-            arrow={true}
+            arrow={false}
             primary={true}
             text={"repo"}
           />
@@ -74,6 +87,11 @@ export default function Project({
           />
         </div>
         <div className={styles.project__lessons}>
+          <div className={styles.project__lessons__pic}>
+            <div className={styles.project__lessons__picHolder}>
+              <Image src={svg} alt="arrow" width={45} height={45} />
+            </div>
+          </div>
           <p className={styles.project__lessons__text}>{lessons}</p>
         </div>
       </div>

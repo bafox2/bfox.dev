@@ -1,4 +1,12 @@
 .writingMain {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex: 1;
+  width: var(--mainWidth);
+  margin: 0 auto;
+  min-height: 100vh;
 }
 
 .postMain {
@@ -11,7 +19,6 @@
   align-items: flex-start;
   flex: 1;
   padding: 1rem;
-  margin: var(--margin);
   gap: 0.5rem;
 }
 
@@ -98,14 +105,11 @@
 }
 
 .postListHeader {
-  margin: var(--margin);
   font-size: var(--bigFont);
 }
 
 .postListDescription {
   width: fit-content;
-  margin-bottom: 1rem;
-  margin-left: 1rem;
 }
 
 .postListDescription::after {

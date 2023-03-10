@@ -1,0 +1,73 @@
+.project__container {
+  margin: 0 auto;
+  width: var(--mainWidth);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.project__left {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  gap: 0.25rem;
+}
+
+.project__right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  max-width: 600px;
+}
+
+.project__tech {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 0.25rem;
+}
+
+.project__links {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 0rem 0rem 0rem 1.5rem;
+  gap: 1.25rem;
+}
+
+.project__name__text {
+  font-size: 3rem;
+  font-weight: 600;
+  font-family: var(--bitter-font);
+}
+
+.project__lessons {
+  background-color: var(--blue);
+  color: var(--white);
+  padding: 3rem 1.5rem 1.5rem 1.5rem;
+  border-radius: 0.75rem;
+  position: relative;
+}
+
+.project__lessons__pic {
+  background-color: var(--gray);
+  width: 70px;
+  height: 70px;
+  border-radius: 3rem;
+  position: absolute;
+  top: -30px;
+  margin: auto;
+}
+
+.project__lessons__picHolder {
+  background-color: var(--blue);
+  width: 60px;
+  height: 60px;
+  border-radius: 3rem;
+  margin: auto;
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

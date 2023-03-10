@@ -22,11 +22,21 @@
   font-weight: 300;
 }
 
+.footer__logo {
+  font-size: 3rem;
+  font-weight: 1000;
+  font-family: var(--bitter-font);
+}
+
 .footer__branding {
   width: var(--mainWidth);
   margin: 0 auto;
+  padding: 2rem 0;
   border-bottom: 1px solid var(--white);
   font-color: var(--white);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .footer__link__column {

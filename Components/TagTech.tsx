@@ -1,12 +1,18 @@
 import styles from "../styles/Util.module.css";
 
-// takes in text as a string and a url as a string
+// takes in name as a string and a link as a string
 
-export default function TagTech({ text, url }: { text: string; url: string }) {
+export default function TagTech({
+  name,
+  link,
+}: {
+  name: string;
+  link: string;
+}) {
   return (
     <div className={styles.tagTech__container}>
-      <a href={url} target="_blank" rel="noopener noreferrer">
-        <p className={styles.tagTech__text}>{text}</p>
+      <a href={link} target="_blank" rel="noopener noreferrer">
+        <p className={styles.tagTech__name}>{name}</p>
       </a>
     </div>
   );

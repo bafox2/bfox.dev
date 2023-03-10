@@ -1,8 +1,9 @@
 .brandButton__primary {
+  display: flex;
   background-color: var(--purple);
   color: var(--white);
   border: 1px solid var(--purple);
-  border-radius: 5px;
+  border-radius: 1.5rem;
   padding: 10px 20px;
   font-size: 16px;
   font-weight: 600;
@@ -19,7 +20,7 @@
   background-color: var(--white);
   color: var(--purple);
   border: 1px solid var(--purple);
-  border-radius: 5px;
+  border-radius: 1.5rem;
   padding: 10px 20px;
   font-size: 16px;
   font-weight: 600;
@@ -34,6 +35,7 @@
 
 /* this is a tag that shows the tech stack */
 .tagTech__container {
+  width: fit-content;
   background-color: var(--gray);
   color: var(--white);
   border-radius: 5px;
@@ -42,4 +44,27 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
+}
+
+.tagStatus__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: fit-content;
+  background-color: var(--gray);
+  color: var(--white);
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.tagStatus__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
 }

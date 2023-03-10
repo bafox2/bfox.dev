@@ -22,12 +22,12 @@ export default function BrandButton({
           primary ? styles.brandButton__primary : styles.brandButton__secondary
         }
       >
+        <p className={styles.brandButton__text}>{text}</p>
         {arrow ? (
           <div className={styles.brandButton__arrow}>
-            <Image src={"/images/up.svg"} alt="arrow" width={100} height={50} />
+            <Image src={"/images/up.svg"} alt="arrow" width={35} height={20} />
           </div>
         ) : null}
-        <p className={styles.brandButton__text}>{text}</p>
       </button>
     </a>
   );

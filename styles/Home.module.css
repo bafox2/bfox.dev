@@ -16,12 +16,10 @@
 .returnTop {
   /* button that will return you to top of screen */
   cursor: pointer;
+  sticky: bottom;
   position: fixed;
-  bottom: 1rem;
-  right: 1rem;
   border: none;
-  border-radius: 50%;
-  font-size: 2.4rem;
+  font-size: 1rem;
   font-weight: 400;
   text-decoration: none;
   transition: all 0.2s ease-in-out;
@@ -37,6 +35,14 @@
   filter: brightness(0.95);
 }
 
-.returnTop > * {
-  transform: scaleX(-1);
+.returnTop {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+}
+
+.projects__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10rem;
 }

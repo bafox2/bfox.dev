@@ -6,8 +6,8 @@ export default function Footer() {
     //make a footer with a name, email, and a tagline
     <footer className={styles.footer__container}>
       <div className={styles.footer__branding}>
-        <p className={styles.footerName}>Ben Fox</p>
-        <p className={styles.footerName}>Ben Fox</p>
+        <p className={`${styles.footerName} ${styles.footer__logo}`}>Ben Fox</p>
+        <p className={styles.footerName}>Made with love ♡</p>
       </div>
       <div className={styles.footer__info}>
         <div className={styles.footer__links}>
@@ -57,7 +57,9 @@ export default function Footer() {
           <p className={styles.footer__copyright__text}>
             © 2021 Benjamin James Fox All Rights Reserved
           </p>
-          <p className={styles.footer__copyright__text}>Made with love</p>
+          <a href="v1.bfox.dev" className={styles.footer__copyright__text}>
+            Old, less pretty v1.bfox.dev site
+          </a>
         </div>
       </div>
     </footer>

@@ -10,7 +10,8 @@ import Project from "../Components/Project";
 import Stats from "../Components/Stats";
 import styles from "../styles/Home.module.css";
 import stats from "../stats.js";
-import projects from "../projects.js";
+import projects from "../projects";
+import { motion } from "framer-motion";
 
 const Home: NextPage = () => {
   const returnToTop = () => {
@@ -28,7 +29,7 @@ const Home: NextPage = () => {
         github={project.github}
         website={project.website}
         lessons={project.lessons}
-        imagePathURL={project.imagePath}
+        imagePath={project.imagePath}
       />
     );
   });
@@ -36,26 +37,18 @@ const Home: NextPage = () => {
   return (
     <>
       <main className={styles.mainContent}>
-        <button onClick={returnToTop} className={styles.returnTop}>
-          <div>
-            <Image
-              src="/images/up.svg"
-              height={30}
-              width={40}
-              alt="return to top"
-            />
-          </div>
-        </button>
+        {/* <button onClick={returnToTop} className={styles.returnTop}>
+          <div>↑Return to Top</div>
+        </button> */}
         <HeroSection background="'/images/hero.jpg'">
           <>
             <h1 className={styles.heroHeader}>Ben Fox</h1>
             <h2 className={styles.heroSubHeader}>Web Developer</h2>
           </>
         </HeroSection>
-        <h2 className={styles.bigHeader}>Objective</h2>
-        <Hero />
+
         <h2 className={styles.bigHeader}>Projects</h2>
-        {projectList}
+        <div className={styles.projects__container}>{projectList}</div>
 
         <HeroSection background="'/images/hero.jpg'">
           <>
@@ -66,10 +59,24 @@ const Home: NextPage = () => {
             </h3>
           </>
         </HeroSection>
-        <Stats stats={stats} />
-        <h2 className={styles.bigHeader}>Minis</h2>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          <Stats stats={stats} />
+        </motion.div>
+        <h2 className="test">Minis</h2>
         <Minis />
-        <h2 className={styles.bigHeader}>Skills</h2>
+        <HeroSection background="'/images/hero.jpg'">
+          <>
+            <h2 className={styles.heroHeader}>Toolset</h2>
+            <h3 className={styles.heroSubHeader}>
+              I am always learning new things, but these are the tools I've
+              reached for again and again
+            </h3>
+          </>
+        </HeroSection>
         <Skills />
       </main>
     </>

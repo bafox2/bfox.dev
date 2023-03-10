@@ -1,15 +1,4 @@
 :root {
-  --primary: #472423;
-  --primary-light: #907b7b;
-  --primary-dark: #2a1515;
-  --secondary: #f0ece1;
-  --secondary-light: #f6f3ed;
-  --secondary-dark: #817f7a;
-  --highlight: #242347;
-  --highlight-light: #65657e;
-  --highlight-dark: #191831;
-  --background: #f0ece1;
-
   --sand: #eeccb2;
   --green: #81e0a0;
   --yellow: #fcef7f;
@@ -55,26 +44,7 @@ li {
 
 a {
   color: inherit;
-
   text-decoration: none;
-  position: relative;
-  z-index: 1;
-}
-
-a::before {
-  content: "";
-  background-color: hsla(196, 61%, 58%, 0.75);
-  position: absolute;
-  left: 0;
-  bottom: 2px;
-  width: 100%;
-  height: 3px;
-  transition: bottom 0.3s ease-in-out, height 0.3s ease-in-out;
-}
-
-a:hover::before {
-  bottom: 0;
-  height: 45%;
 }
 
 * {
@@ -87,6 +57,10 @@ ul {
 
 main {
   flex: 1;
+}
+
+:global(.test) {
+  color: red;
 }
 
 /* hover class that extends a ling under any content like a link */
@@ -107,4 +81,30 @@ main {
     color: white;
     background: black;
   }
+} */
+
+/* 
+
+a {
+  color: inherit;
+
+  text-decoration: none;
+  position: relative;
+  z-index: 1;
+}
+
+a::before {
+  content: "";
+  background-color: hsla(196, 61%, 58%, 0.75);
+  position: absolute;
+  left: 0;
+  bottom: 2px;
+  width: 100%;
+  height: 3px;
+  transition: bottom 0.3s ease-in-out, height 0.3s ease-in-out;
+}
+
+a:hover::before {
+  bottom: 0;
+  height: 45%;
 } */

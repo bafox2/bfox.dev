@@ -1,22 +1,17 @@
-import { NextPage } from 'next'
-import Head from 'next/head'
-import styles from '../styles/Resume.module.css'
+import { NextPage } from "next";
+import Head from "next/head";
+import styles from "../styles/Resume.module.css";
 
 const Ben: NextPage = () => {
   return (
     <>
       <main className={styles.resume}>
-        <div className={styles.download}>
-          <a href="/resume.pdf" download>
-            Download more formal resume
-          </a>
-        </div>
         <h1>Resume</h1>
         <br></br>
         <div className={styles.resumeSection}>
-          <p style={{ marginTop: '-20px' }}>
-            I am a teacher turned developer looking to join a team of passionate developers to build worthwhile
-            products.
+          <p style={{ marginTop: "-20px" }}>
+            I am a teacher turned developer looking to join a team of passionate
+            developers to build worthwhile products.
           </p>
         </div>
         <section className={styles.resumeSection}>
@@ -26,19 +21,29 @@ const Ben: NextPage = () => {
               <p className={styles.date}>
                 <em>2017 - 2022</em>
               </p>
-              <h3 className={`${styles.resumePosition} ${styles.resumeCategory}`}>Business Teacher</h3>
+              <h3
+                className={`${styles.resumePosition} ${styles.resumeCategory}`}
+              >
+                Business Teacher
+              </h3>
               <p className={styles.resumeLocation}>
                 <a href="https://herndonhs.fcps.edu/">Herndon High School</a>
               </p>
               <ul className={styles.resumeList}>
-                <li> Department lead for Digital Applications, a English Language Learner tech class</li>{' '}
+                <li>
+                  {" "}
+                  Department lead for Digital Applications, a English Language
+                  Learner tech class
+                </li>{" "}
                 <li>Inaugurated Special Education Personal Finance course</li>
                 <li>
-                  Chaired the {"'"}We Are Herndon{"'"} committee integrating community into school culture.
+                  Chaired the {"'"}We Are Herndon{"'"} committee integrating
+                  community into school culture.
                 </li>
                 <li>
-                  Lead Mentor to students from nontraditional backgrounds, focusing on goalsetting in academic, social,
-                  and personal areas
+                  Lead Mentor to students from nontraditional backgrounds,
+                  focusing on goalsetting in academic, social, and personal
+                  areas
                 </li>
               </ul>
             </div>
@@ -51,7 +56,11 @@ const Ben: NextPage = () => {
               <p className={styles.date}>
                 <em>2012 - 2016</em>
               </p>
-              <h3 className={`${styles.resumePosition} ${styles.resumeCategory}`}>Master of Education</h3>
+              <h3
+                className={`${styles.resumePosition} ${styles.resumeCategory}`}
+              >
+                Master of Education
+              </h3>
               <p className={styles.resumeLocation}>
                 <a href="https://www.vt.edu/">Virginia Tech</a>
               </p>
@@ -61,7 +70,9 @@ const Ben: NextPage = () => {
               <p className={styles.date}>
                 <em>2016 - 2017</em>
               </p>
-              <h3 className={`${styles.resumePosition} ${styles.resumeCategory}`}>
+              <h3
+                className={`${styles.resumePosition} ${styles.resumeCategory}`}
+              >
                 Bachelor of Science in Business Information Technology
               </h3>
               <p className={styles.resumeLocation}>
@@ -116,14 +127,26 @@ const Ben: NextPage = () => {
               <p className={styles.date}>
                 <em>2020 - 2022</em>
               </p>
-              <h3 className={`${styles.resumePosition} ${styles.resumeCategory}`}>Trapeze Artist</h3>
+              <h3
+                className={`${styles.resumePosition} ${styles.resumeCategory}`}
+              >
+                Trapeze Artist
+              </h3>
               <p className={styles.resumeLocation}>
-                <a href="https://washingtondc.trapezeschool.com/">Trapeze School New York, DC</a>
+                <a href="https://washingtondc.trapezeschool.com/">
+                  Trapeze School New York, DC
+                </a>
               </p>
               <ul className={styles.resumeList}>
                 <li>Caught students for release tricks after a lesson</li>
-                <li>Coached students through the process of building a trick for catching</li>
-                <li>Communicated with team on student progress, rig upkeep, and personal physical status</li>
+                <li>
+                  Coached students through the process of building a trick for
+                  catching
+                </li>
+                <li>
+                  Communicated with team on student progress, rig upkeep, and
+                  personal physical status
+                </li>
               </ul>
             </div>
             <div className={styles.resumeEntry}>
@@ -131,20 +154,34 @@ const Ben: NextPage = () => {
                 <em>2020 - Present</em>
               </p>
 
-              <h3 className={`${styles.resumePosition} ${styles.resumeCategory}`}>Basketball Coach</h3>
+              <h3
+                className={`${styles.resumePosition} ${styles.resumeCategory}`}
+              >
+                Basketball Coach
+              </h3>
               <p className={styles.resumeLocation}>
-                <a href="https://www.herndonathletics.org/">Herndon High School</a>
+                <a href="https://www.herndonathletics.org/">
+                  Herndon High School
+                </a>
               </p>
               <ul className={styles.resumeList}>
-                <li>School liaison for communication between players and fellow teachers</li>
+                <li>
+                  School liaison for communication between players and fellow
+                  teachers
+                </li>
                 <li>Transportation coordinator for team travel</li>
               </ul>
             </div>
           </div>
         </section>
+        <div className={styles.download}>
+          <a href="/resume.pdf" download>
+            Download formal version
+          </a>
+        </div>
       </main>
     </>
-  )
-}
+  );
+};
 
-export default Ben
+export default Ben;

@@ -15,6 +15,14 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "Components/Mdx.jsx", "utils/mdx.js", "projects.js", "skills.js"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "Components/Mdx.jsx",
+    "utils/mdx.js",
+    "projects.ts",
+    "skills.js"
+  ],
   "exclude": ["node_modules", "pages/writing/[slug].tsx"]
 }

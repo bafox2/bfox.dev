@@ -12,20 +12,20 @@ export default function Header() {
           Fox
         </Link>
         <nav className={styles.nav}>
-          <Link href="/writing" className={styles.headerRow}>
+          <Link href="/writing" className={styles.navItem}>
             Writing
           </Link>
 
-          <Link href="/cv" className={styles.headerRow}>
+          <Link href="/cv" className={styles.navItem}>
             Resume
           </Link>
 
-          <a className={""} href="mailto:benfox11@vt.edu">
+          <a className={styles.navItem} href="mailto:benfox11@vt.edu">
             Email
           </a>
 
           <a
-            className={""}
+            className={styles.navItem}
             target="_blank"
             rel="noopener noreferrer"
             href="https://www.linkedin.com/in/ben-fox-dev/"

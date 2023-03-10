@@ -2,14 +2,14 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>localhost:3000</id>
     <title>Ben Fox Writing</title>
-    <updated>2022-12-14T15:28:30.354Z</updated>
+    <updated>2023-03-10T19:00:50.407Z</updated>
     <generator>Feed for Node.js</generator>
     <link rel="alternate" href="localhost:3000"/>
     <link rel="self" href="localhost:3000/atom.xml"/>
     <subtitle>Learn with me as I write about my time trying to become a better developer</subtitle>
     <logo>localhost:3000/logo.png</logo>
     <icon>localhost:3000/favicon.png</icon>
-    <rights>All rights reserved 2022, Ibas</rights>
+    <rights>All rights reserved 2023, Ibas</rights>
     <entry>
         <title type="html"><![CDATA[Configuring Next.js Pages With Alternate Layouts]]></title>
         <id>localhost:3000/blog/nextjsLayouts</id>

@@ -4,7 +4,7 @@
         <title>Ben Fox Writing</title>
         <link>localhost:3000</link>
         <description>Learn with me as I write about my time trying to become a better developer</description>
-        <lastBuildDate>Wed, 14 Dec 2022 15:28:30 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 10 Mar 2023 19:00:50 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -12,7 +12,7 @@
             <url>localhost:3000/logo.png</url>
             <link>localhost:3000</link>
         </image>
-        <copyright>All rights reserved 2022, Ibas</copyright>
+        <copyright>All rights reserved 2023, Ibas</copyright>
         <item>
             <title><![CDATA[Configuring Next.js Pages With Alternate Layouts]]></title>
             <link>localhost:3000/blog/nextjsLayouts</link>
