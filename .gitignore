@@ -37,8 +37,6 @@ yarn-error.log*
 next-env.d.ts
 
 # hardcoded data
-projects.ts
-skills.ts
 
 # docker
 Dockerfile
