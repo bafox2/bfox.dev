@@ -11,6 +11,10 @@ import Stats from "../Components/Stats";
 import styles from "../styles/Home.module.css";
 import stats from "../stats.js";
 import projects from "../projects";
+import ParallaxItem from "../Components/ItemParallax";
+import AppearItem from "../Components/ItemAppear";
+import { fadeInUp } from "../styles/variants";
+
 import { motion } from "framer-motion";
 
 const Home: NextPage = () => {
@@ -42,12 +46,17 @@ const Home: NextPage = () => {
         </button> */}
         <HeroSection background="'/images/hero.jpg'">
           <>
-            <h1 className={styles.heroHeader}>Ben Fox</h1>
+            <AppearItem variants={fadeInUp}>
+              <h1 className={styles.heroHeader}>Ben Fox</h1>
+            </AppearItem>
             <h2 className={styles.heroSubHeader}>Web Developer</h2>
           </>
         </HeroSection>
-
-        <h2 className={styles.bigHeader}>Projects</h2>
+        <ParallaxItem>
+          <h2 className={styles.bigHeader} style={{ paddingBottom: `${50}%` }}>
+            Projects
+          </h2>
+        </ParallaxItem>
         <div className={styles.projects__container}>{projectList}</div>
 
         <HeroSection background="'/images/hero.jpg'">
