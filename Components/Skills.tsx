@@ -1,17 +1,20 @@
-import styles from '../styles/Projects.module.css'
-import skills from '../skills'
-import Image from 'next/legacy/image'
+import styles from "../styles/Projects.module.css";
+import skills from "../skills";
+import Image from "next/legacy/image";
+import Marquee from "react-fast-marquee";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 interface Skill {
-  name: string
-  description: string
-  link: string
-  svg: string
-  number: number
+  name: string;
+  description: string;
+  link: string;
+  svg: string;
+  number: number;
+  key: number;
 }
 
 export default function Skills() {
-  const parsedSkills = JSON.parse(JSON.stringify(skills))
+  const parsedSkills = JSON.parse(JSON.stringify(skills));
 
   const skillsList = parsedSkills.map((skill: Skill) => (
     <div className={styles.skillDiv} key={skill.number}>
@@ -25,7 +28,36 @@ export default function Skills() {
         <p className={styles.skillText}>{skill.description}</p>
       </div>
     </div>
-  ))
+  ));
 
-  return <div className={styles.skillsList}>{skillsList}</div>
+  skillsList.map((skill: Skill) => {
+    console.log(skill);
+  });
+
+  return (
+    <div className={styles.skillsContainer}>
+      <Marquee
+        gradient={false}
+        speed={50}
+        direction="left"
+        pauseOnHover
+        pauseOnClick
+      >
+        {skillsList.filter((skill: Skill) => {
+          return skill.key % 2 === 0;
+        })}
+      </Marquee>
+      <Marquee
+        gradient={false}
+        speed={50}
+        direction="right"
+        pauseOnHover
+        pauseOnClick
+      >
+        {skillsList.filter((skill: Skill) => {
+          return skill.key % 2 === 1;
+        })}
+      </Marquee>
+    </div>
+  );
 }

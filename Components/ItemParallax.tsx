@@ -1,11 +1,5 @@
 import React, { useRef, useState, useLayoutEffect } from "react";
-import {
-  useTransform,
-  useSpring,
-  motion,
-  useScroll,
-  useViewportScroll,
-} from "framer-motion";
+import { useTransform, useSpring, motion, useScroll } from "framer-motion";
 
 const calculateMinHeight = (height: number, range: number) => {
   return height + height * range;
@@ -30,11 +24,10 @@ export default function ParallaxItem({
   stiffness?: number;
   mass?: number;
 }) {
-  const { scrollY } = useViewportScroll();
+  const { scrollY } = useScroll();
   const ref = useRef();
-  const [minHeight, setMinHeight] = useState("auto");
+  const [minHeight, setMinHeight] = useState<string | number>("auto");
   const [elementTop, setElementTop] = useState(0);
-  console.log(elementTop, "elementTop");
   const springConfig = {
     damping: damping,
     stiffness: stiffness,
@@ -44,9 +37,11 @@ export default function ParallaxItem({
 
   useLayoutEffect(() => {
     if (!ref.current) return;
+    console.log(`ref.current`, ref.current);
+    console.log(ref.current.offsetHeight, "offsetHeight");
     const onResize = () => {
       setElementTop(ref.current!.offsetTop);
-      setMinHeight(calculateMinHeight(ref.current.offsetHeight, range));
+      setMinHeight(calculateMinHeight(ref.current!.offsetHeight, range));
     };
 
     onResize();
@@ -63,10 +58,8 @@ export default function ParallaxItem({
     springConfig
   );
 
-  console.log("elementTop", elementTop);
-
   return (
-    <div style={{ minHeight }} className={className}>
+    <div className={className}>
       <motion.div ref={ref} initial={{ y: 0 }} style={{ y }}>
         {children}
       </motion.div>

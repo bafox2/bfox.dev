@@ -5,6 +5,7 @@ import TagTech from "./TagTech";
 import TagStatus from "./TagStatus";
 import svg from "../public/logos/art2.svg";
 import { StaticImageData } from "next/image";
+import ParallaxItem from "./ItemParallax";
 
 //a function that returns a project component with a name, description, Built With, a status, links to github/live, lessions, and an image
 
@@ -50,9 +51,16 @@ export default function Project({
     return <TagTech name={tech.name} link={tech.link} />;
   });
 
+  // topOffset?: number;
+  // bottomOffset?: number;
+  // range?: number;
+  // damping?: number;
+  // stiffness?: number;
+  // mass?: number;
+
   return (
     <div className={styles.project__container}>
-      <div className={styles.project__left}>
+      <ParallaxItem className={styles.project__left}>
         <div className={styles.project__image}>
           <Image
             src={imagePath.url}
@@ -63,8 +71,8 @@ export default function Project({
         </div>
         <TagStatus text={status.text} color={status.color} />
         <div className={styles.project__tech}>{techTags}</div>
-      </div>
-      <div className={styles.project__right}>
+      </ParallaxItem>
+      <ParallaxItem className={styles.project__right}>
         <div className={styles.project__basics}>
           <p className={styles.project__name__text}>{name}</p>
           <p className={styles.project__description__text}>{description}</p>
@@ -94,7 +102,7 @@ export default function Project({
           </div>
           <p className={styles.project__lessons__text}>{lessons}</p>
         </div>
-      </div>
+      </ParallaxItem>
     </div>
   );
 }

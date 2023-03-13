@@ -38,34 +38,44 @@ const Home: NextPage = () => {
     );
   });
 
+  // topOffset?: number;
+  // bottomOffset?: number;
+  // range?: number;
+  // damping?: number;
+  // stiffness?: number;
+  // mass?: number;
+
   return (
     <>
       <main className={styles.mainContent}>
         {/* <button onClick={returnToTop} className={styles.returnTop}>
           <div>↑Return to Top</div>
         </button> */}
-        <HeroSection background="'/images/hero.jpg'">
+        <HeroSection headerSpace={true} background="'/images/hero.jpg'">
           <>
             <AppearItem variants={fadeInUp}>
-              <h1 className={styles.heroHeader}>Ben Fox</h1>
+              <div className={styles.heroContainer}>
+                <p className={styles.heroText}>A</p>
+                <p className={styles.heroText}>Teacher</p>
+                <p className={styles.heroText}>Turned</p>
+                <p className={styles.heroText}>Developer</p>
+              </div>
             </AppearItem>
-            <h2 className={styles.heroSubHeader}>Web Developer</h2>
           </>
         </HeroSection>
         <ParallaxItem>
-          <h2 className={styles.bigHeader} style={{ paddingBottom: `${50}%` }}>
-            Projects
-          </h2>
+          <h2 className={styles.bigHeader}>Projects</h2>
         </ParallaxItem>
         <div className={styles.projects__container}>{projectList}</div>
 
         <HeroSection background="'/images/hero.jpg'">
           <>
-            <h2 className={styles.heroHeader}>Stats</h2>
-            <h3 className={styles.heroSubHeader}>
-              Some I am proud of, others are just a side effect that web
-              development has had on me
-            </h3>
+            <div className={styles.statsContainer}>
+              <p className={styles.statsText}>A</p>
+              <p className={styles.statsText}>Journey</p>
+              <p className={styles.statsText}>In</p>
+              <p className={styles.statsText}>Numbers</p>
+            </div>
           </>
         </HeroSection>
         <motion.div
@@ -78,13 +88,13 @@ const Home: NextPage = () => {
         <h2 className="test">Minis</h2>
         <Minis />
         <HeroSection background="'/images/hero.jpg'">
-          <>
-            <h2 className={styles.heroHeader}>Toolset</h2>
-            <h3 className={styles.heroSubHeader}>
-              I am always learning new things, but these are the tools I've
-              reached for again and again
-            </h3>
-          </>
+          <div className={styles.toolContainer}>
+            <p className={styles.toolText}>What's</p>
+            <p className={styles.toolText}>In</p>
+            <p className={styles.toolText}>The</p>
+            <p className={styles.toolText}>(Tool)</p>
+            <p className={styles.toolText}>Box?</p>
+          </div>
         </HeroSection>
         <Skills />
       </main>

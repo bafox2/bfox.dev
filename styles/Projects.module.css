@@ -53,71 +53,12 @@
   color: green;
 }
 
-.cardRight {
-  width: 50%;
+.skillsContainer {
+  margin: 2rem 0 2rem 0;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  padding: 1rem;
-}
-
-.cardLeft {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  padding: 1rem;
-}
-
-.rowCategory {
-  width: 30%;
-  margin: 0;
-  padding: 0;
-}
-.rowInfo {
-  margin: 0;
-  padding: 0;
-  flex: 1;
-}
-
-.projectButton {
-  border: 2px solid var(--darkGreen);
-  font-size: 1.2rem;
-  font-weight: 600;
-  text-decoration: none;
-  padding: 0.25rem 0.5rem;
-  transition: all 0.2s ease-in-out;
-  list-style: none;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-  transition: all 0.15s ease 0s;
-}
-
-.projectButton:hover {
-  transform: scale(0.95);
-  /* Scaling button to 0.98 to its original size */
-  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
-  /* Lowering the shadow */
-}
-
-.projectButton:active {
-  transform: scale(0.9);
-  /* Scaling button to 0.98 to its original size */
-  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
-  /* Lowering the shadow */
-}
-
-.projectButton:hover {
-  background-color: var(--purple);
-  color: var(--yellow);
-}
-
-.projectButton.special:hover {
-  background-color: var(--highlight-light);
-  color: var(--primary-dark);
-}
-
-.projectButton.special {
-  background-color: #f1f1f1;
+  gap: 2rem;
 }
 
 .skillsList {
@@ -142,6 +83,7 @@
   margin: var(--margin);
   box-shadow: var(--shadow);
   transition: var(--transition);
+  z-index: 800;
 
   --color: var(--darkGreen); /* the color */
   --borderLength: 0.15em; /* border length*/
@@ -192,6 +134,7 @@
   background-color: var(--secondark-light);
   color: var(--primary-dark);
   box-shadow: var(--shadow-transform);
+  z-index: 900;
 
   transform: translate(0, 0);
   clip-path: polygon(

@@ -63,69 +63,40 @@ const projects: Project[] = [
     },
     number: 1,
   },
-  {
-    name: "Letter Starter",
-    reason:
-      "You have to write a lot of cover letters when you're looking for a job, and sometimes you know what to say, but getting started is hard.",
-    description:
-      "Input a job description, your skills, a company, and their highlights, and the website will structure a letter for you.",
-    builtWith: [
-      { name: "Nextjs", link: "https://nextjs.org/" },
-      { name: "MongoDB", link: "https://mongodb.com/" },
-      { name: "GPT3", link: "https://openai.com/blog/openai-api/" },
-      { name: "Next-Auth", link: "https://next-auth.js.org/" },
-      { name: "SCSS", link: "https://sass-lang.com/" },
-      { name: "React-Hook-Form", link: "https://react-hook-form.com/" },
-    ],
+  // {
+  //   name: "Learnsplain",
+  //   reason: "Am I really a web developer if I have not made a blog website?",
+  //   description:
+  //     "Learnsplaining was one of my favorite ways to help my students learn, and ",
+  //   builtWith: [
+  //     {
+  //       name: "Express",
+  //       link: "https://expressjs.com/",
+  //     },
+  //     {
+  //       name: "JWT",
+  //       link: "https://jwt.io/",
+  //     },
+  //     { name: "Passport", link: "http://www.passportjs.org/" },
+  //     { name: "Mongoose", link: "http://www.mongoosejs.com" },
+  //     { name: "Quillj", link: "https://quilljs.com/" },
+  //     { name: "React-Router", link: "https://reactrouter.com/" },
+  //   ],
 
-    date: "July - August 2022",
-    status: { text: "Deployed and retired", color: "yellow" },
-    github: "https://github.com/bafox2/gpt-cover",
-    website: "https://bfox-coverletter.vercel.app/",
-    lessons:
-      "There are really, really powerful APIs out there. Coordinating them in a way that is useful is rewarding.",
-    imagePath: {
-      url: letterPic,
-      width: 600,
-      height: 400,
-      alt: "Letter Starter screenshot",
-    },
-    number: 2,
-  },
-  {
-    name: "Learnsplain",
-    reason: "Am I really a web developer if I have not made a blog website?",
-    description:
-      "Learnsplaining was one of my favorite ways to help my students learn, and ",
-    builtWith: [
-      {
-        name: "Express",
-        link: "https://expressjs.com/",
-      },
-      {
-        name: "JWT",
-        link: "https://jwt.io/",
-      },
-      { name: "Passport", link: "http://www.passportjs.org/" },
-      { name: "Mongoose", link: "http://www.mongoosejs.com" },
-      { name: "Quillj", link: "https://quilljs.com/" },
-      { name: "React-Router", link: "https://reactrouter.com/" },
-    ],
-
-    date: "May - June 2022",
-    status: { text: "Deployed and retired", color: "red" },
-    github: "https://github.com/bafox2/bfox-blogsite",
-    website: "https://bfoxblogwebsite.herokuapp.com/",
-    lessons:
-      "Starting from scratch really lead me to learn in the 'right' direction. Compared to vanilla JS, React makes a lot of things less painful.",
-    imagePath: {
-      url: blogPic,
-      width: 600,
-      height: 400,
-      alt: "Learnsplain screenshot",
-    },
-    number: 3,
-  },
+  //   date: "May - June 2022",
+  //   status: { text: "Deployed and retired", color: "red" },
+  //   github: "https://github.com/bafox2/bfox-blogsite",
+  //   website: "https://bfoxblogwebsite.herokuapp.com/",
+  //   lessons:
+  //     "Starting from scratch really lead me to learn in the 'right' direction. Compared to vanilla JS, React makes a lot of things less painful.",
+  //   imagePath: {
+  //     url: blogPic,
+  //     width: 600,
+  //     height: 400,
+  //     alt: "Learnsplain screenshot",
+  //   },
+  //   number: 3,
+  // },
   {
     name: "Chat-dle",
     reason:
@@ -205,6 +176,35 @@ const projects: Project[] = [
       alt: "Oyo Farms screenshot",
     },
     number: 5,
+  },
+  {
+    name: "Letter Starter",
+    reason:
+      "You have to write a lot of cover letters when you're looking for a job, and sometimes you know what to say, but getting started is hard.",
+    description:
+      "Input a job description, your skills, a company, and their highlights, and the website will structure a letter for you.",
+    builtWith: [
+      { name: "Nextjs", link: "https://nextjs.org/" },
+      { name: "MongoDB", link: "https://mongodb.com/" },
+      { name: "GPT3", link: "https://openai.com/blog/openai-api/" },
+      { name: "Next-Auth", link: "https://next-auth.js.org/" },
+      { name: "SCSS", link: "https://sass-lang.com/" },
+      { name: "React-Hook-Form", link: "https://react-hook-form.com/" },
+    ],
+
+    date: "July - August 2022",
+    status: { text: "Deployed and retired", color: "yellow" },
+    github: "https://github.com/bafox2/gpt-cover",
+    website: "https://bfox-coverletter.vercel.app/",
+    lessons:
+      "There are really, really powerful APIs out there. Coordinating them in a way that is useful is rewarding.",
+    imagePath: {
+      url: letterPic,
+      width: 600,
+      height: 400,
+      alt: "Letter Starter screenshot",
+    },
+    number: 2,
   },
 ];
 
