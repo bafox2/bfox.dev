@@ -54,11 +54,11 @@
 }
 
 .skillsContainer {
-  margin: 2rem 0 2rem 0;
+  margin: 3rem 0 3rem 0;
   padding: 1rem;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .skillsList {
@@ -191,3 +191,15 @@
     width: 100%;
   }
 }
+
+/* <div className={styles.toggle} onClick={(e) => setMotion(!motion)}>
+<input
+  type="checkbox"
+  id="toggle"
+  value={motion ? "checked" : ""}
+  className={styles.toggleInput}
+  onClick={(e) => setMotion(!motion)}
+/>
+<span className={styles.toggleButton}></span>
+<label htmlFor="toggle"></label>
+</div> */

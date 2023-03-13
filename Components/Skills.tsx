@@ -1,8 +1,10 @@
+import { useState } from "react";
 import styles from "../styles/Projects.module.css";
 import skills from "../skills";
 import Image from "next/legacy/image";
 import Marquee from "react-fast-marquee";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import BrandToggle from "./BrandToggle";
 
 interface Skill {
   name: string;
@@ -14,6 +16,7 @@ interface Skill {
 }
 
 export default function Skills() {
+  const [motion, setMotion] = useState(true);
   const parsedSkills = JSON.parse(JSON.stringify(skills));
 
   const skillsList = parsedSkills.map((skill: Skill) => (
@@ -30,34 +33,40 @@ export default function Skills() {
     </div>
   ));
 
-  skillsList.map((skill: Skill) => {
-    console.log(skill);
-  });
-
-  return (
-    <div className={styles.skillsContainer}>
-      <Marquee
-        gradient={false}
-        speed={50}
-        direction="left"
-        pauseOnHover
-        pauseOnClick
-      >
-        {skillsList.filter((skill: Skill) => {
-          return skill.key % 2 === 0;
-        })}
-      </Marquee>
-      <Marquee
-        gradient={false}
-        speed={50}
-        direction="right"
-        pauseOnHover
-        pauseOnClick
-      >
-        {skillsList.filter((skill: Skill) => {
-          return skill.key % 2 === 1;
-        })}
-      </Marquee>
-    </div>
-  );
+  if (motion) {
+    return (
+      <div className={styles.skillsContainer}>
+        <BrandToggle value={motion} setValue={setMotion} />
+        <Marquee
+          gradient={false}
+          speed={50}
+          direction="left"
+          pauseOnHover
+          pauseOnClick
+        >
+          {skillsList.filter((skill: Skill) => {
+            return skill.key % 2 === 0;
+          })}
+        </Marquee>
+        <Marquee
+          gradient={false}
+          speed={50}
+          direction="right"
+          pauseOnHover
+          pauseOnClick
+        >
+          {skillsList.filter((skill: Skill) => {
+            return skill.key % 2 === 1;
+          })}
+        </Marquee>
+      </div>
+    );
+  } else {
+    return (
+      <div className={styles.skillsContainer}>
+        <BrandToggle value={motion} setValue={setMotion} />
+        <div className={styles.skillsList}>{skillsList}</div>
+      </div>
+    );
+  }
 }

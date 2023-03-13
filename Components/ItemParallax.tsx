@@ -59,10 +59,13 @@ export default function ParallaxItem({
   );
 
   return (
-    <div className={className}>
-      <motion.div ref={ref} initial={{ y: 0 }} style={{ y }}>
-        {children}
-      </motion.div>
-    </div>
+    <motion.div
+      ref={ref}
+      initial={{ y: 0 }}
+      style={{ y }}
+      className={className}
+    >
+      {children}
+    </motion.div>
   );
 }
