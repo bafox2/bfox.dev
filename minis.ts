@@ -20,7 +20,7 @@ type Mini = {
     width: number;
     height: number;
     alt: string;
-  };
+  }[];
   date?: string;
   number?: number;
 };
@@ -48,12 +48,14 @@ const minis: Mini[] = [
       "https://addons.mozilla.org/en-US/firefox/addon/twitch-spoiler-avoider",
     lessons:
       "Extensions make the web one of the coolest places, building off of monolithic websites is rewarding",
-    imagePath: {
-      url: spoilerPic,
-      width: 300,
-      height: 500,
-      alt: "Twitch Spoiler Avoider screenshot",
-    },
+    imagePath: [
+      {
+        url: spoilerPic,
+        width: 300,
+        height: 500,
+        alt: "Twitch Spoiler Avoider screenshot",
+      },
+    ],
     number: 1,
   },
 ];

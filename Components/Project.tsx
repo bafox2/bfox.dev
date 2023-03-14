@@ -45,7 +45,7 @@ export default function Project({
     width: number;
     height: number;
     alt: string;
-  };
+  }[];
 }) {
   const techTags = builtWith.map((tech) => {
     return <TagTech name={tech.name} link={tech.link} />;
@@ -58,15 +58,17 @@ export default function Project({
   // stiffness?: number;
   // mass?: number;
 
+  console.log(imagePath[0]);
+
   return (
     <div className={styles.project__container}>
       <ParallaxItem className={styles.project__left}>
         <div className={styles.project__image}>
           <Image
-            src={imagePath.url}
-            width={imagePath.width}
-            height={imagePath.height}
-            alt={imagePath.alt}
+            src={imagePath[0].url}
+            width={imagePath[0].width}
+            height={imagePath[0].height}
+            alt={imagePath[0].alt}
           />
         </div>
         <TagStatus text={status.text} color={status.color} />

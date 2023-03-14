@@ -1,6 +1,12 @@
 import letterPic from "./public/images/letter.png";
 import trackficPic from "./public/images/trackfic.png";
 import blogPic from "./public/images/blog.png";
+import letterLogin from "./public/images/LetterLogin.png";
+import letterHero from "./public/images/LetterHero.png";
+import chatdle from "./public/images/ChatdleUI.png";
+import trackficHero from "./public/images/TrackficHero.png";
+import trackficDash from "./public/images/TrackficDash.png";
+import trackficForm from "./public/images/TrackficForm.png";
 import { StaticImageData } from "next/image";
 
 type Project = {
@@ -24,7 +30,7 @@ type Project = {
     width: number;
     height: number;
     alt: string;
-  };
+  }[];
   number?: number;
 };
 
@@ -55,12 +61,14 @@ const projects: Project[] = [
     website: "trackfic-client.vercel.app/",
     lessons:
       "I had not worked much with cron before, and I am so thankful that it exists. Working with a UI library did save more time than I thought it would have. Having some parts of the models interact with the data felt a bit new, but it was a good learning experience.",
-    imagePath: {
-      url: trackficPic,
-      width: 600,
-      height: 400,
-      alt: "Trackfic screenshot",
-    },
+    imagePath: [
+      {
+        url: trackficPic,
+        width: 600,
+        height: 400,
+        alt: "Trackfic screenshot",
+      },
+    ],
     number: 1,
   },
   // {
@@ -133,12 +141,14 @@ const projects: Project[] = [
     website: "https://chat-dle.vercel.app/",
     lessons:
       "I have not worked with sockets before, and I am so thankful that they exist. I have also not worked with a UI library before, and I am so thankful that they exist.",
-    imagePath: {
-      url: letterPic,
-      width: 600,
-      height: 400,
-      alt: "Chat-dle screenshot",
-    },
+    imagePath: [
+      {
+        url: letterPic,
+        width: 600,
+        height: 400,
+        alt: "Chat-dle screenshot",
+      },
+    ],
     number: 4,
   },
   {
@@ -169,12 +179,14 @@ const projects: Project[] = [
     website: "https://oyo-farms.vercel.app/",
     lessons:
       "I have not worked with a UI library before, and I am so thankful that they exist.",
-    imagePath: {
-      url: letterPic,
-      width: 600,
-      height: 400,
-      alt: "Oyo Farms screenshot",
-    },
+    imagePath: [
+      {
+        url: letterPic,
+        width: 600,
+        height: 400,
+        alt: "Oyo Farms screenshot",
+      },
+    ],
     number: 5,
   },
   {
@@ -198,12 +210,14 @@ const projects: Project[] = [
     website: "https://bfox-coverletter.vercel.app/",
     lessons:
       "There are really, really powerful APIs out there. Coordinating them in a way that is useful is rewarding.",
-    imagePath: {
-      url: letterPic,
-      width: 600,
-      height: 400,
-      alt: "Letter Starter screenshot",
-    },
+    imagePath: [
+      {
+        url: letterPic,
+        width: 600,
+        height: 400,
+        alt: "Letter Starter screenshot",
+      },
+    ],
     number: 2,
   },
 ];

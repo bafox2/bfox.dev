@@ -5,11 +5,9 @@ import styles from "../styles/HeroSection.module.css";
 
 export default function HeroSection({
   children,
-  background,
   headerSpace,
 }: {
   children: ReactNode;
-  background: string;
   headerSpace?: boolean;
 }) {
   return (
@@ -17,7 +15,6 @@ export default function HeroSection({
       className={`${styles.heroSection} ${
         headerSpace ? styles.headerSpace : ""
       }`}
-      style={{ backgroundImage: `background` }}
     >
       {children}
     </div>

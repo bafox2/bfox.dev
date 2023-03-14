@@ -51,7 +51,7 @@ const Home: NextPage = () => {
         {/* <button onClick={returnToTop} className={styles.returnTop}>
           <div>↑Return to Top</div>
         </button> */}
-        <HeroSection headerSpace={true} background="'/images/hero.jpg'">
+        <HeroSection headerSpace={true}>
           <>
             <AppearItem variants={fadeInUp}>
               <div className={styles.heroContainer}>
@@ -68,13 +68,22 @@ const Home: NextPage = () => {
         </ParallaxItem>
         <div className={styles.projects__container}>{projectList}</div>
 
-        <HeroSection background="'/images/hero.jpg'">
+        <HeroSection>
           <>
             <div className={styles.statsContainer}>
               <p className={styles.statsText}>A</p>
               <p className={styles.statsText}>Journey</p>
               <p className={styles.statsText}>In</p>
-              <p className={styles.statsText}>Numbers</p>
+              <div>
+                <p className={styles.statsText}>Numbers</p>
+                <p className={styles.statsText}>MDN</p>
+                <p className={styles.statsText}>Podcasts</p>
+                <p className={styles.statsText}>Docs</p>
+                <p className={styles.statsText}>Codesandbox Examples</p>
+                <p className={styles.statsText}>Stack Overflow</p>
+                <p className={styles.statsText}>YouTube</p>
+                <p className={styles.statsText}>LinkedIn</p>
+              </div>
             </div>
           </>
         </HeroSection>
@@ -87,7 +96,7 @@ const Home: NextPage = () => {
         </motion.div>
         <h2 className="test">Minis</h2>
         <Minis />
-        <HeroSection background="'/images/hero.jpg'">
+        <HeroSection>
           <div className={styles.toolContainer}>
             <p className={styles.toolText}>What's</p>
             <p className={styles.toolText}>In</p>

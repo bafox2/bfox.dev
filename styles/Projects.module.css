@@ -168,6 +168,12 @@
   flex-direction: column;
   justify-content: center;
 }
+
+.marquee {
+  margin: 3rem;
+  overflow-y: hidden;
+}
+
 @media (max-width: 768px) {
   /* .skillDiv {
     max-width: 100%;

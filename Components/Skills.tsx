@@ -38,6 +38,7 @@ export default function Skills() {
       <div className={styles.skillsContainer}>
         <BrandToggle value={motion} setValue={setMotion} />
         <Marquee
+          className={styles.marquee}
           gradient={false}
           speed={50}
           direction="left"
@@ -49,6 +50,7 @@ export default function Skills() {
           })}
         </Marquee>
         <Marquee
+          className={styles.marquee}
           gradient={false}
           speed={50}
           direction="right"
