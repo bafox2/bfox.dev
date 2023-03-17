@@ -9,7 +9,11 @@ export default function HeroSkills() {
   return (
     <div className={`${styles.heroSection} ${styles.sand}`}>
       <div className={styles.svgContainer}>
-        <Image src={toolbox} alt="toolbox" style={{ fill: "red" }} />
+        <Image
+          src={toolbox}
+          alt="toolbox"
+          style={{ stroke: "red", fill: "red" }}
+        />
       </div>
 
       <div className={styles.tools__Container}>

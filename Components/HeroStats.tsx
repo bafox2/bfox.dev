@@ -1,7 +1,9 @@
 import AppearItem from "./ItemAppear";
 import {} from "../styles/variants";
 import styles from "../styles/HeroSection.module.css";
+import bg from "../public/assets/bgs/BG-yel-orng.svg";
 import HeroSection from "./HeroSection";
+import Image from "next/image";
 
 const fadeInUp = {
   hidden: {
@@ -36,6 +38,15 @@ const journeys: string[] = [
 export default function HeroProjects() {
   return (
     <div className={`${styles.heroSection} ${styles.purple}`}>
+      <div className={styles.svgContainer}>
+        <Image
+          src={bg}
+          fill={true}
+          alt={"yellow orange ambiance"}
+          className={styles.bg}
+        />
+      </div>
+
       <div className={styles.statsContainer}>
         <p className={styles.statsText}>A</p>
         <p className={styles.statsText}>Journey</p>

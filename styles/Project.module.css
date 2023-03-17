@@ -79,13 +79,69 @@
   padding: 1.5rem 1.5rem 1.5rem 1.5rem;
   border-radius: 0.75rem;
   background-color: var(--darkGreen);
+  gap: 0.5rem;
+}
+
+.impaetus__header {
+  margin: 0 0 0.25rem 0;
+  background-color: var(--white);
+  position: relative;
+}
+
+.impaetus__header::after {
+  content: " ";
+  position: absolute;
+  width: 10%;
+  height: 0.7rem;
+  bottom: -0.7rem;
+  left: 10px;
+  background-color: var(--red);
+}
+
+.impaetus__header::after {
+  content: " ";
+  position: absolute;
+  width: 10%;
+  height: 1rem;
+  bottom: -0.9rem;
+  left: 25px;
+  background-color: var(--white);
+}
+
+.reason__header {
+  border-radius: 0.39rem 0rem 0rem 0rem;
+  padding: 0.5rem;
+}
+
+.solution__header {
+  border-radius: 0rem 0.39rem 0rem 0rem;
+  padding: 0.5rem;
 }
 
 .reason,
 .solution {
   width: 50%;
-  color: var(--white);
-  position: relative;
+  color: var(--black);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.solution__text,
+.reason__text {
+  background-color: var(--white);
+  flex: 1;
+}
+
+.reason__text {
+  border-radius: 0rem 0rem 0rem 0.39rem;
+  padding: 0.5rem;
+}
+
+.solution__text {
+  border-radius: 0rem 0rem 0.39rem 0rem;
+  padding: 0.5rem;
 }
 
 .marquee-container {

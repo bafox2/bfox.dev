@@ -1,6 +1,6 @@
 import styles from "../styles/Project.module.css";
 import minis from "../minis";
-import Project from "./Project";
+import Project from "../public/assets/Project";
 
 export default function Minis() {
   //return a list of all the minis like how Projects.tsx returns a list of all the projects

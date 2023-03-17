@@ -5,7 +5,7 @@ import Image from "next/legacy/image";
 import Minis from "../Components/Minis";
 import Skills from "../Components/Skills";
 import HeroSection from "../Components/HeroSection";
-import Project from "../Components/Project";
+import Project from "../public/assets/Project";
 import Stats from "../Components/Stats";
 import styles from "../styles/Home.module.css";
 import stats from "../stats.js";

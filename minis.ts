@@ -51,8 +51,8 @@ const minis: Mini[] = [
     imagePath: [
       {
         url: spoilerPic,
-        width: 300,
-        height: 500,
+        width: 362,
+        height: 334,
         alt: "Twitch Spoiler Avoider screenshot",
       },
     ],
