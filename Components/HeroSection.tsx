@@ -5,16 +5,18 @@ import styles from "../styles/HeroSection.module.css";
 
 export default function HeroSection({
   children,
+  className,
   headerSpace,
 }: {
   children: ReactNode;
   headerSpace?: boolean;
+  className?: string;
 }) {
   return (
     <div
       className={`${styles.heroSection} ${
         headerSpace ? styles.headerSpace : ""
-      }`}
+      } ${className}`}
     >
       {children}
     </div>

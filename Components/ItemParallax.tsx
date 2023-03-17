@@ -2,7 +2,8 @@ import React, { useRef, useState, useLayoutEffect } from "react";
 import { useTransform, useSpring, motion, useScroll } from "framer-motion";
 
 const calculateMinHeight = (height: number, range: number) => {
-  return height + height * range;
+  //here is where I changed it
+  return height;
 };
 
 export default function ParallaxItem({
@@ -62,7 +63,7 @@ export default function ParallaxItem({
     <motion.div
       ref={ref}
       initial={{ y: 0 }}
-      style={{ y }}
+      style={{ y, minHeight }}
       className={className}
     >
       {children}

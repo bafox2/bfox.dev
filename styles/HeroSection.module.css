@@ -19,3 +19,36 @@
 .opener {
   height: calc(100vh - var(--navHeight));
 }
+
+.stats__container {
+  background-color: var(--orange);
+}
+
+.tools__container {
+  background-color: var(--red);
+}
+
+.darkGreen {
+  background-color: var(--darkGreen);
+}
+
+.orange {
+  background-color: var(--orange);
+}
+
+.red {
+  background-color: var(--red);
+}
+
+.blue {
+  background-color: var(--blue);
+}
+
+.purple {
+  background-color: var(--purple);
+  color: var(--black);
+}
+
+.sand {
+  background-color: var(--sand);
+}

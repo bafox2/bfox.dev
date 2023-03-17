@@ -3,17 +3,15 @@
   max-width: var(--mainWidth);
   position: sticky;
   top: 0;
-  grid-area: header;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid var(--darkGreen);
   transition: all 0.4s ease-in-out;
-  font-family: var(--bitter-font);
-  z-index: 1000;
   height: var(--navHeight);
   font-family: var(--assistant-font);
+  z-index: 1;
 }
 
 .header:after {

@@ -2,7 +2,6 @@ import type { NextPage } from "next";
 import Hero from "../Components/Hero";
 import Head from "next/head";
 import Image from "next/legacy/image";
-import Projects from "../Components/Projects";
 import Minis from "../Components/Minis";
 import Skills from "../Components/Skills";
 import HeroSection from "../Components/HeroSection";
@@ -13,9 +12,13 @@ import stats from "../stats.js";
 import projects from "../projects";
 import ParallaxItem from "../Components/ItemParallax";
 import AppearItem from "../Components/ItemAppear";
-import { fadeInUp } from "../styles/variants";
+import { fadeInUp, animationContainer } from "../styles/variants";
+import toolbox from "../public/assets/toolbox.svg";
+import HeroStats from "../Components/HeroStats";
+import HeroProjects from "../Components/HeroProjects";
 
 import { motion } from "framer-motion";
+import HeroSkills from "../Components/HeroSkills";
 
 const Home: NextPage = () => {
   const returnToTop = () => {
@@ -38,55 +41,16 @@ const Home: NextPage = () => {
     );
   });
 
-  // topOffset?: number;
-  // bottomOffset?: number;
-  // range?: number;
-  // damping?: number;
-  // stiffness?: number;
-  // mass?: number;
-
   return (
     <>
       <main className={styles.mainContent}>
-        {/* <button onClick={returnToTop} className={styles.returnTop}>
-          <div>↑Return to Top</div>
-        </button> */}
-        <HeroSection headerSpace={true}>
-          <>
-            <AppearItem variants={fadeInUp}>
-              <div className={styles.heroContainer}>
-                <p className={styles.heroText}>A</p>
-                <p className={styles.heroText}>Teacher</p>
-                <p className={styles.heroText}>Turned</p>
-                <p className={styles.heroText}>Developer</p>
-              </div>
-            </AppearItem>
-          </>
-        </HeroSection>
-        <ParallaxItem>
+        <HeroProjects />
+        {/* <ParallaxItem>
           <h2 className={styles.bigHeader}>Projects</h2>
-        </ParallaxItem>
+        </ParallaxItem> */}
         <div className={styles.projects__container}>{projectList}</div>
 
-        <HeroSection>
-          <>
-            <div className={styles.statsContainer}>
-              <p className={styles.statsText}>A</p>
-              <p className={styles.statsText}>Journey</p>
-              <p className={styles.statsText}>In</p>
-              <div>
-                <p className={styles.statsText}>Numbers</p>
-                <p className={styles.statsText}>MDN</p>
-                <p className={styles.statsText}>Podcasts</p>
-                <p className={styles.statsText}>Docs</p>
-                <p className={styles.statsText}>Codesandbox Examples</p>
-                <p className={styles.statsText}>Stack Overflow</p>
-                <p className={styles.statsText}>YouTube</p>
-                <p className={styles.statsText}>LinkedIn</p>
-              </div>
-            </div>
-          </>
-        </HeroSection>
+        <HeroStats />
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -96,15 +60,7 @@ const Home: NextPage = () => {
         </motion.div>
         <h2 className="test">Minis</h2>
         <Minis />
-        <HeroSection>
-          <div className={styles.toolContainer}>
-            <p className={styles.toolText}>What's</p>
-            <p className={styles.toolText}>In</p>
-            <p className={styles.toolText}>The</p>
-            <p className={styles.toolText}>(Tool)</p>
-            <p className={styles.toolText}>Box?</p>
-          </div>
-        </HeroSection>
+        <HeroSkills />
         <Skills />
       </main>
     </>

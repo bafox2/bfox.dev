@@ -51,6 +51,20 @@ export default function Project({
     return <TagTech name={tech.name} link={tech.link} />;
   });
 
+  console.log(imagePath);
+  const picGroup = imagePath.map((pic) => {
+    return (
+      <div className={styles.image}>
+        <Image
+          src={pic.url}
+          width={pic.width}
+          height={pic.height}
+          alt={pic.alt}
+        />
+      </div>
+    );
+  });
+
   // topOffset?: number;
   // bottomOffset?: number;
   // range?: number;
@@ -58,31 +72,26 @@ export default function Project({
   // stiffness?: number;
   // mass?: number;
 
-  console.log(imagePath[0]);
-
   return (
-    <div className={styles.project__container}>
-      <ParallaxItem className={styles.project__left}>
-        <div className={styles.project__image}>
-          <Image
-            src={imagePath[0].url}
-            width={imagePath[0].width}
-            height={imagePath[0].height}
-            alt={imagePath[0].alt}
-          />
-        </div>
+    <div className={styles.container}>
+      <ParallaxItem className={styles.left}>
+        <div className={styles.image}>{picGroup}</div>
         <TagStatus text={status.text} color={status.color} />
-        <div className={styles.project__tech}>{techTags}</div>
+        <div className={styles.tech}>{techTags}</div>
       </ParallaxItem>
-      <ParallaxItem className={styles.project__right}>
-        <div className={styles.project__basics}>
-          <p className={styles.project__name__text}>{name}</p>
-          <p className={styles.project__description__text}>{description}</p>
+      <ParallaxItem className={styles.right}>
+        <p className={styles.name__text}>{name}</p>
+        <div className={styles.impaetus__container}>
+          <div className={styles.reason}>
+            <p className={styles.reason__setup}>Problem</p>
+            <p className={styles.reason__text}>{reason}</p>
+          </div>
+          <div className={styles.solution}>
+            <p className={styles.solution__setup}>Solution</p>
+            <p className={styles.solution__text}>{description}</p>
+          </div>
         </div>
-        <div className={styles.project__reason}>
-          <p className={styles.project__reason__text}>{reason}</p>
-        </div>
-        <div className={styles.project__links}>
+        <div className={styles.links}>
           <BrandButton
             url={website}
             arrow={false}
@@ -96,13 +105,13 @@ export default function Project({
             text={"live"}
           />
         </div>
-        <div className={styles.project__lessons}>
-          <div className={styles.project__lessons__pic}>
-            <div className={styles.project__lessons__picHolder}>
+        <div className={styles.lessons}>
+          <div className={styles.lessons__pic}>
+            <div className={styles.lessons__picHolder}>
               <Image src={svg} alt="arrow" width={45} height={45} />
             </div>
           </div>
-          <p className={styles.project__lessons__text}>{lessons}</p>
+          <p className={styles.lessons__text}>{lessons}</p>
         </div>
       </ParallaxItem>
     </div>

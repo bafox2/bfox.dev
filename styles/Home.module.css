@@ -46,3 +46,11 @@
   justify-content: center;
   gap: 10rem;
 }
+
+.statsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10rem;
+  background-color: var(--orange);
+}
