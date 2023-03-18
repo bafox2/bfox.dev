@@ -1,11 +1,11 @@
 import styles from "../styles/Project.module.css";
 import Image from "next/image";
-import BrandButton from "../../Components/BrandButton";
-import TagTech from "../../Components/TagTech";
-import TagStatus from "../../Components/TagStatus";
+import BrandButton from "./BrandButton";
+import TagTech from "./TagTech";
+import TagStatus from "./TagStatus";
 import svg from "../public/logos/art2.svg";
 import { StaticImageData } from "next/image";
-import ParallaxItem from "../../Components/ItemParallax";
+import ParallaxItem from "./ItemParallax";
 
 //a function that returns a project component with a name, description, Built With, a status, links to github/live, lessions, and an image
 
