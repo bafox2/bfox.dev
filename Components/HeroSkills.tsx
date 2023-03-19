@@ -1,13 +1,14 @@
 import AppearItem from "./ItemAppear";
 import { fadeInUp } from "../styles/variants";
 import styles from "../styles/HeroSection.module.css";
-import HeroSection from "./HeroSection";
 import Image from "next/image";
 import toolbox from "../public/assets/toolbox.svg";
 
 export default function HeroSkills() {
   return (
-    <div className={`${styles.heroSection} ${styles.sand}`}>
+    <div
+      className={`${styles.heroSection} ${styles.skills__container} ${styles.sand}`}
+    >
       <div className={styles.svgContainer}>
         <Image
           src={toolbox}

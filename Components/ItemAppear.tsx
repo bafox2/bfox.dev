@@ -7,11 +7,13 @@ const ItemAppear = ({
   variants,
   delay = 0,
   duration = 0.5,
+  className,
 }: {
   children: ReactNode;
   variants: any;
   delay?: number;
   duration?: number;
+  className?: string;
 }) => {
   const ref = useRef(null);
   const controls = useAnimation();
@@ -30,6 +32,7 @@ const ItemAppear = ({
       animate={controls}
       variants={variants}
       transition={{ duration, delay }}
+      className={className}
     >
       {children}
     </motion.div>

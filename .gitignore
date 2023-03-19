@@ -39,8 +39,4 @@ next-env.d.ts
 # hardcoded data
 
 # docker
-Dockerfile
-docker-compose.yml
-caddy/Caddyfile
-config/
-data/
+

@@ -2,7 +2,6 @@ import AppearItem from "./ItemAppear";
 import {} from "../styles/variants";
 import styles from "../styles/HeroSection.module.css";
 import bg from "../public/assets/bgs/BG-yel-orng.svg";
-import HeroSection from "./HeroSection";
 import Image from "next/image";
 
 const fadeInUp = {
@@ -35,19 +34,21 @@ const journeys: string[] = [
   "Git Rebases",
 ];
 
-export default function HeroProjects() {
+export default function HeroStats() {
   return (
-    <div className={`${styles.heroSection} ${styles.purple}`}>
+    <div
+      className={`${styles.heroSection} ${styles.stats__container} ${styles.purple}`}
+    >
       <div className={styles.svgContainer}>
         <Image
           src={bg}
           fill={true}
           alt={"yellow orange ambiance"}
-          className={styles.bg}
+          className={styles.med}
         />
       </div>
 
-      <div className={styles.statsContainer}>
+      <div className={styles.stats__hero}>
         <p className={styles.statsText}>A</p>
         <p className={styles.statsText}>Journey</p>
         <p className={styles.statsText}>In</p>

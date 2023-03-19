@@ -1,7 +1,6 @@
 import AppearItem from "./ItemAppear";
 import {} from "../styles/variants";
 import styles from "../styles/HeroSection.module.css";
-import HeroSection from "./HeroSection";
 
 const fadeInUp = {
   hidden: {
@@ -19,14 +18,19 @@ const fadeInUp = {
 
 export default function HeroProjects() {
   return (
-    <div className={`${styles.heroSection} ${styles.blue}`}>
-      <AppearItem variants={fadeInUp}>
-        <div className={styles.heroContainer}>
-          <p className={styles.heroText}>A</p>
-          <p className={styles.heroText}>Teacher</p>
-          <p className={styles.heroText}>Turned</p>
-          <p className={styles.heroText}>Developer</p>
-        </div>
+    <div className={`${styles.heroSection} ${styles.blue} ${styles.opener}`}>
+      <AppearItem variants={fadeInUp} className={styles.projects__hero}>
+        <>
+          <p className={`${styles.heroText} ${styles.projects__line1}`}>
+            Teacher
+          </p>
+          <p className={`${styles.heroText} ${styles.projects__line2}`}>
+            Turned
+          </p>
+          <p className={`${styles.heroText} ${styles.projects__line3}`}>
+            Developer
+          </p>
+        </>
       </AppearItem>
     </div>
   );

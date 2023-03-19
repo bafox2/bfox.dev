@@ -7,7 +7,7 @@ import Image from "next/image";
 export default function Header() {
   return (
     <>
-      <div className={styles.header}>
+      <header className={styles.header}>
         <Link href="/" className={`${styles.logo} ${styles.hoverable}`}>
           Fox
         </Link>
@@ -50,7 +50,7 @@ export default function Header() {
             <div className={styles.folderTabText}>Github</div>
           </a>
         </div>
-      </div>
+      </header>
       <div className={styles.headerMask} />
     </>
   );

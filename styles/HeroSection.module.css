@@ -5,8 +5,8 @@
   background: #000;
   color: #fff;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  /* justify-content: center;
+  align-items: center; */
   text-align: center;
   font-size: 2rem;
   font-weight: 700;
@@ -18,15 +18,44 @@
 }
 
 .opener {
-  height: calc(100vh - var(--navHeight));
+  min-height: calc(100vh - var(--navHeight));
 }
 
-.stats__container {
-  background-color: var(--orange);
+.projects__hero {
+  width: var(--mainWidth);
+  /* min-height: inherit;
+  width: var(--mainWidth); */
+  display: grid;
+  /* 4x4 grid */
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  /* grid items should start left */
+  justify-items: start;
+  /* grid items should start in middle */
+  align-items: center;
+}
+
+.projects__line1 {
+  grid-column: 3 / 6;
+  grid-row: 1 / 2;
+  align-self: end;
+}
+
+.projects__line2 {
+  grid-column: 4 / 6;
+  grid-row: 2 / 3;
+}
+
+.projects__line3 {
+  grid-column: 5 / 6;
+  grid-row: 3 / 4;
+  align-self: start;
+}
+
+.stats__hero {
 }
 
 .tools__container {
-  background-color: var(--red);
 }
 
 .darkGreen {

@@ -50,7 +50,7 @@
   color: var(--primary-dark);
   transition: all 0.4s ease-in-out;
   font-family: var(--bitter-font);
-  /* light box shadow */
+  /* spacing: -0.231rem; */
 }
 
 .nav {
