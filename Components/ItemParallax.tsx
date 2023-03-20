@@ -9,8 +9,8 @@ const calculateMinHeight = (height: number, range: number) => {
 export default function ParallaxItem({
   children,
   className,
-  topOffset = -100,
-  bottomOffset = 100,
+  topOffset = -10,
+  bottomOffset = 10,
   range = 1.5,
   damping = 50,
   stiffness = 250,

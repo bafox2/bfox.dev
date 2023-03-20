@@ -1,6 +1,8 @@
 import AppearItem from "./ItemAppear";
 import {} from "../styles/variants";
 import styles from "../styles/HeroSection.module.css";
+import Image from "next/image";
+import toolbox from "../public/assets/bgs/bluecube.svg";
 
 const fadeInUp = {
   hidden: {
@@ -32,6 +34,9 @@ export default function HeroProjects() {
           </p>
         </>
       </AppearItem>
+      <div className={styles.svgContainer}>
+        <Image src={toolbox} alt="toolbox" fill={true} />
+      </div>
     </div>
   );
 }

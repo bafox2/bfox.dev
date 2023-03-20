@@ -2,7 +2,7 @@ import AppearItem from "./ItemAppear";
 import { fadeInUp } from "../styles/variants";
 import styles from "../styles/HeroSection.module.css";
 import Image from "next/image";
-import toolbox from "../public/assets/toolbox.svg";
+import toolbox from "../public/assets/bgs/bluecube.svg";
 
 export default function HeroSkills() {
   return (

@@ -92,6 +92,30 @@ const skills = [
     svg: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg',
     number: 12,
   },
+  {
+  name: 'Tailwind',
+  description:
+    'Tailwind CSS is a utility-first CSS framework for rapidly building custom user interfaces.',
+  link: 'https://tailwindcss.com/',
+  svg: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg',
+  number: 13,
+  },
+  {
+    name: 'Figma',
+    description:
+      'Figma is a vector graphics editor and prototyping tool which is primarily web-based, with additional offline features enabled by desktop applications for macOS and Windows.',
+    link: 'https://www.figma.com/',
+    svg: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg',
+    number: 14,
+  },
+  {
+    name: 'Inkscape',
+    description:
+      'Inkscape is a free and open-source vector graphics editor. It can be used to create or edit vector graphics such as illustrations, diagrams, line arts, charts, logos and complex paintings.',
+    link: 'https://inkscape.org/',
+    svg: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/inkscape/inkscape-original.svg',
+    number: 15,
+  },
 ]
 
 export default skills
