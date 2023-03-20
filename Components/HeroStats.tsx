@@ -25,14 +25,12 @@ const journeys: string[] = [
   "W3Schools",
   "Pluralsight",
   "The-Odin-Project",
-  "Level-Up-Tutorials",
   "YouTube   ",
 ];
 
 const journeys2: string[] = [
   "CodeSandbox",
   "Dev.to",
-  "Stack-Overflow",
   "CSS-Tricks",
   "Medium",
   "JS-Party",
@@ -47,10 +45,16 @@ const journeys3: string[] = [
   "CodePen",
   "SyntaxFM",
   "Coding-Blocks",
-  "Smashing-Magazine",
   "Log-Rocket-Tutorials",
   "LinkedIn",
   "CodeNewbie   ",
+];
+
+const journeys4: string[] = [
+  "Level-Up-Tutorials",
+  "Stack-Overflow",
+  "Smashing-Magazine",
+  "Gpt-3   ",
 ];
 
 const journeyString = (arr: string[]) => arr.join("   ");
@@ -94,9 +98,12 @@ export default function HeroStats() {
         <p className={styles.statsText}>Through</p>
         <p className={styles.statsText}>Code</p>
         <p className={styles.statsText}>By</p>
-        <TextRing side={1.2}>{journeyString(journeys)}</TextRing>
-        <TextRing side={1.4}>{journeyString(journeys2)}</TextRing>
-        <TextRing side={1.3}>{journeyString(journeys3)}</TextRing>
+      </div>
+      <div className={styles.stats__rings}>
+        <TextRing side={0.8}>{journeyString(journeys)}</TextRing>
+        <TextRing side={0.9}>{journeyString(journeys2)}</TextRing>
+        <TextRing side={1.4}>{journeyString(journeys3)}</TextRing>
+        <TextRing side={1.9}>{journeyString(journeys4)}</TextRing>
       </div>
     </div>
   );
