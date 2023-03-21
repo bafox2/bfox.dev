@@ -70,6 +70,36 @@ const stats = [
     data: '100',
     description: 'I have a lot of work to do',
     joke: true,
+  },  
+  {
+    heading: 'Average Number of Browser Tabs Open',
+    data: '100',
+    description: 'I have a lot of work to do',
+    joke: true,
+  },
+  {
+    heading: 'Cups of Coffee Consumed',
+    data: '100',
+    description: 'I have a lot of work to do',
+    joke: true,
+  },
+  {
+    heading: 'All Nighters',
+    data: '100',
+    description: 'I have a lot of work to do',
+    joke: true,
+  },
+  {
+    heading: 'Students Helped',
+    data: '100',
+    description: 'I have a lot of work to do',
+    joke: true,
+  },
+  {
+    heading: 'Rubber Duckies Purchased',
+    data: '100',
+    description: 'I have a lot of work to do',
+    joke: true,
   },
 ];
 

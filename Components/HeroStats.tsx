@@ -17,10 +17,8 @@ const fadeInUp = {
 };
 
 const journeys: string[] = [
-  "MDN",
   "Hackerrank",
   "JavaScriptJabber",
-  "Udemy",
   "r/WebDev",
   "W3Schools",
   "Pluralsight",
@@ -52,6 +50,9 @@ const journeys3: string[] = [
 
 const journeys4: string[] = [
   "Level-Up-Tutorials",
+  "MDN",
+  "Udemy",
+  "CS50",
   "Stack-Overflow",
   "Smashing-Magazine",
   "Gpt-3   ",
@@ -100,10 +101,10 @@ export default function HeroStats() {
         <p className={styles.statsText}>By</p>
       </div>
       <div className={styles.stats__rings}>
-        <TextRing side={0.8}>{journeyString(journeys)}</TextRing>
-        <TextRing side={0.9}>{journeyString(journeys2)}</TextRing>
-        <TextRing side={1.4}>{journeyString(journeys3)}</TextRing>
-        <TextRing side={1.9}>{journeyString(journeys4)}</TextRing>
+        <TextRing side={0.9}>{journeyString(journeys)}</TextRing>
+        <TextRing side={1.0}>{journeyString(journeys2)}</TextRing>
+        <TextRing side={1.5}>{journeyString(journeys3)}</TextRing>
+        <TextRing side={1.6}>{journeyString(journeys4)}</TextRing>
       </div>
     </div>
   );

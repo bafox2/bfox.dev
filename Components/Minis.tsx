@@ -7,22 +7,20 @@ export default function Minis() {
 
   return (
     <div className={styles.container}>
-      <div className={styles.miniList}>
-        {minis.map((mini) => (
-          <Project
-            key={mini.name}
-            name={mini.name}
-            description={mini.description}
-            reason={mini.reason}
-            builtWith={mini.builtWith}
-            status={mini.status}
-            github={mini.github}
-            website={mini.website}
-            lessons={mini.lessons}
-            imagePath={mini.imagePath}
-          />
-        ))}
-      </div>
+      {minis.map((mini) => (
+        <Project
+          key={mini.name}
+          name={mini.name}
+          description={mini.description}
+          reason={mini.reason}
+          builtWith={mini.builtWith}
+          status={mini.status}
+          github={mini.github}
+          website={mini.website}
+          lessons={mini.lessons}
+          imagePath={mini.imagePath}
+        />
+      ))}
     </div>
   );
 }

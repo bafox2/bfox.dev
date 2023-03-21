@@ -23,6 +23,8 @@
   --bigFont: 10vw;
   --mainWidth: 1440px;
   --navHeight: 75px;
+
+  --panelWidth: 700px;
 }
 
 html,
@@ -69,7 +71,7 @@ main {
 /* transition: transform 1s cubic-bezier(.16,1.08,.38,.98),-webkit-transform 1s cubic-bezier(.16,1.08,.38,.98); */
 
 /* make it reponsive */
-@media (max-width: 768px) {
+@media (max-width: 375px) {
   :root {
     --mainWidth: 95vw;
   }

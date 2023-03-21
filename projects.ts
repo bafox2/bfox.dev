@@ -194,7 +194,19 @@ const projects: Project[] = [
     imagePath: [
       {
         url: letterPic,
+        width: 500,
+        height: 400,
+        alt: "Oyo Farms screenshot",
+      },
+      {
+        url: letterPic,
         width: 600,
+        height: 400,
+        alt: "Oyo Farms screenshot",
+      },
+      {
+        url: letterPic,
+        width: 650,
         height: 400,
         alt: "Oyo Farms screenshot",
       },

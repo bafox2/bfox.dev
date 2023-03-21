@@ -116,6 +116,14 @@ const skills = [
     svg: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/inkscape/inkscape-original.svg',
     number: 15,
   },
+  {
+    name: 'Docker',
+    description:
+      'Docker is a set of platform as a service products that use OS-level virtualization to deliver software in packages called containers.',
+    link: 'https://www.docker.com/',
+    svg: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg',
+    number: 16,
+  },
 ]
 
 export default skills

@@ -10,6 +10,7 @@ import Stats from "../Components/Stats";
 import styles from "../styles/Home.module.css";
 import stats from "../stats.js";
 import projects from "../projects";
+import minis from "../minis";
 import ParallaxItem from "../Components/ItemParallax";
 import AppearItem from "../Components/ItemAppear";
 import { fadeInUp, animationContainer } from "../styles/variants";
@@ -41,6 +42,22 @@ const Home: NextPage = () => {
     );
   });
 
+  const miniList = minis.map((mini) => {
+    return (
+      <Project
+        name={mini.name}
+        description={mini.description}
+        reason={mini.reason}
+        builtWith={mini.builtWith}
+        status={mini.status}
+        github={mini.github}
+        website={mini.website}
+        lessons={mini.lessons}
+        imagePath={mini.imagePath}
+      />
+    );
+  });
+
   return (
     <>
       <main className={styles.mainContent}>
@@ -58,8 +75,8 @@ const Home: NextPage = () => {
         >
           <Stats stats={stats} />
         </motion.div>
-        <h2 className="test">Minis</h2>
-        <Minis />
+
+        <div className={styles.projects__container}>{miniList}</div>
         <HeroSkills />
         <Skills />
       </main>

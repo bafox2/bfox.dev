@@ -1,16 +1,16 @@
-import React, { useRef, useState, useLayoutEffect } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { useTransform, useSpring, motion, useScroll } from "framer-motion";
 
 const calculateMinHeight = (height: number, range: number) => {
   //here is where I changed it
-  return height;
+  return height * range * 0.05;
 };
 
 export default function ParallaxItem({
   children,
   className,
-  topOffset = -10,
-  bottomOffset = 10,
+  topOffset = -200,
+  bottomOffset = 200,
   range = 1.5,
   damping = 50,
   stiffness = 250,
@@ -36,10 +36,8 @@ export default function ParallaxItem({
     // mass: rand(1, 3)
   };
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (!ref.current) return;
-    console.log(`ref.current`, ref.current);
-    console.log(ref.current.offsetHeight, "offsetHeight");
     const onResize = () => {
       setElementTop(ref.current!.offsetTop);
       setMinHeight(calculateMinHeight(ref.current!.offsetHeight, range));

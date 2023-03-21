@@ -51,35 +51,68 @@ export default function Project({
     return <TagTech name={tech.name} link={tech.link} />;
   });
 
-  console.log(imagePath);
-  const picGroup = imagePath.map((pic) => {
+  const num = (min: number, max: number) => {
+    return Math.random() * (max - min + 1) + min;
+  };
+
+  const picCounter = () => {
+    //write a function that will return the right css module styles for the number of pictures in the array
+    //if there is only one picture, return styles.one
+    const num = imagePath.length;
+    if (num === 1) {
+      return `${styles.pics__container} ${styles.onePic}`;
+    } else if (num === 2) {
+      return `${styles.pics__container} ${styles.twoPic}`;
+    } else if (num === 3) {
+      return `${styles.pics__container} ${styles.threePic}`;
+    } else if (num === 4) {
+      return `${styles.pics__container} ${styles.fourPic}`;
+    } else if (num === 5) {
+      return `${styles.pics__container} ${styles.fivePic}`;
+    }
+    return;
+  };
+
+  const picClassName = (i: number) => {
+    if (i === 0) {
+      return `${styles.pic} ${styles.pic1}`;
+    }
+    if (i === 1) {
+      return `${styles.pic} ${styles.pic2}`;
+    }
+    if (i === 2) {
+      return `${styles.pic} ${styles.pic3}`;
+    }
+    if (i === 3) {
+      return `${styles.pic} ${styles.pic4}`;
+    }
+    if (i === 4) {
+      return `${styles.pic} ${styles.pic5}`;
+    }
+    return;
+  };
+
+  const picGroup = imagePath.map((pic, i) => {
+    //return an image component with a src, width, height, alt, and className that includes the index of the image in the array
     return (
-      <div className={styles.image}>
-        <Image
-          src={pic.url}
-          width={pic.width}
-          height={pic.height}
-          alt={pic.alt}
-        />
-      </div>
+      <Image
+        src={pic.url}
+        width={pic.width}
+        height={pic.height}
+        alt={pic.alt}
+        className={picClassName(i)}
+      />
     );
   });
 
-  // topOffset?: number;
-  // bottomOffset?: number;
-  // range?: number;
-  // damping?: number;
-  // stiffness?: number;
-  // mass?: number;
-
   return (
     <div className={styles.container}>
-      <ParallaxItem range={3.4} className={styles.left}>
-        <div className={styles.image}>{picGroup}</div>
+      <ParallaxItem range={num(0, 3)} className={styles.left}>
+        <div className={picCounter()}>{picGroup}</div>
         <TagStatus text={status.text} color={status.color} />
         <div className={styles.tech}>{techTags}</div>
       </ParallaxItem>
-      <ParallaxItem className={styles.right}>
+      <ParallaxItem range={num(1, 3)} className={styles.right}>
         <p className={styles.name__text}>{name}</p>
         <div className={styles.impaetus__container}>
           <div className={styles.reason}>
