@@ -2,7 +2,8 @@ import AppearItem from "./ItemAppear";
 import { fadeInUp } from "../styles/variants";
 import styles from "../styles/HeroSection.module.css";
 import Image from "next/image";
-import toolbox from "../public/assets/bgs/bluecube.svg";
+import toolbox from "../public/assets/toolbox.svg";
+import wrench from "../public/assets/wrench.svg";
 
 export default function HeroSkills() {
   return (
@@ -12,6 +13,13 @@ export default function HeroSkills() {
       <div className={styles.svgContainer}>
         <Image
           src={toolbox}
+          alt="toolbox"
+          style={{ stroke: "red", fill: "red" }}
+        />
+      </div>
+      <div className={styles.svgContainer}>
+        <Image
+          src={wrench}
           alt="toolbox"
           style={{ stroke: "red", fill: "red" }}
         />

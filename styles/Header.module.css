@@ -109,4 +109,85 @@
   /* light box shadow on bottom and right */
   box-shadow: 2px 1px 8px 0px rgba(0, 0, 0, 0.24);
   border-radius: 0.5rem 0.5rem 0 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.burger {
+  display: none;
+}
+
+.burgerMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.burgerMenuContent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--white);
+  width: 300px;
+  height: 300px;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+@media (max-width: 500px) {
+  .folderTab {
+    width: 100px;
+    height: 50px;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .nav {
+    font-size: 1rem;
+  }
+
+  .folderTab {
+    display: none;
+  }
+
+  .burger {
+    display: block;
+    font-size: 1.5rem;
+    color: var(--primary-dark);
+    cursor: pointer;
+    margin-right: 1rem;
+  }
+}
+
+@media (max-width: 1000px) {
+  .folderTab {
+    width: 100px;
+    height: 50px;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .nav {
+    font-size: 1rem;
+  }
+
+  .folderTab {
+    visibility: none;
+  }
 }

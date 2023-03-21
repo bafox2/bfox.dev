@@ -1,6 +1,8 @@
 import AppearItem from "./ItemAppear";
 import {} from "../styles/variants";
 import styles from "../styles/HeroSection.module.css";
+import wheel from "../public/assets/wheel.svg";
+import wheelshadow from "../public/assets/wheelshadow.svg";
 import bg from "../public/assets/bgs/BG-yel-orng.svg";
 import Image from "next/image";
 import { ReactNode } from "react";
@@ -27,7 +29,7 @@ const journeys: string[] = [
 ];
 
 const journeys2: string[] = [
-  "CodeSandbox",
+  "  CodeSandbox",
   "Dev.to",
   "CSS-Tricks",
   "Medium",
@@ -36,16 +38,16 @@ const journeys2: string[] = [
   "Web.dev",
   "Fireship",
   "LinkedIn",
-  "CodeNewbie   ",
+  "CodeNewbie",
 ];
 
 const journeys3: string[] = [
-  "CodePen",
+  "  CodePen",
   "SyntaxFM",
   "Coding-Blocks",
   "Log-Rocket-Tutorials",
   "LinkedIn",
-  "CodeNewbie   ",
+  "CodeNewbie ",
 ];
 
 const journeys4: string[] = [
@@ -100,7 +102,22 @@ export default function HeroStats() {
         <p className={styles.statsText}>Code</p>
         <p className={styles.statsText}>By</p>
       </div>
+
       <div className={styles.stats__rings}>
+        <Image
+          src={wheel}
+          width={500}
+          height={500}
+          alt={"wheel of code"}
+          className={styles.wheel}
+        />
+        <Image
+          src={wheelshadow}
+          width={500}
+          height={500}
+          alt={"wheel of code"}
+          className={styles.wheelshadow}
+        />
         <TextRing side={0.9}>{journeyString(journeys)}</TextRing>
         <TextRing side={1.0}>{journeyString(journeys2)}</TextRing>
         <TextRing side={1.5}>{journeyString(journeys3)}</TextRing>

@@ -114,24 +114,27 @@ export default function Project({
       </ParallaxItem>
       <ParallaxItem range={num(1, 3)} className={styles.right}>
         <p className={styles.name__text}>{name}</p>
-        <div className={styles.impaetus__container}>
-          <div className={styles.reason}>
-            <p
-              className={`${styles.impaetus__header} ${styles.reason__header}`}
-            >
-              Problem
-            </p>
-            <p className={styles.reason__text}>{reason}</p>
+        <div className={styles.probSol}>
+          <div className={`${styles.lessons} ${styles.red}`}>
+            <div className={styles.lessons__pic}>
+              <div className={styles.lessons__picHolder}>
+                <Image src={svg} alt="arrow" width={45} height={45} />
+              </div>
+              <p className={styles.probSol__header}>Problem</p>
+            </div>
+            <p className={styles.lessons__text}>{reason}</p>
           </div>
-          <div className={styles.solution}>
-            <p
-              className={`${styles.impaetus__header} ${styles.solution__header}`}
-            >
-              Solution
-            </p>
-            <p className={styles.solution__text}>{description}</p>
+          <div className={`${styles.lessons} ${styles.green}`}>
+            <div className={styles.lessons__pic}>
+              <div className={styles.lessons__picHolder}>
+                <Image src={svg} alt="arrow" width={45} height={45} />
+              </div>
+              <p className={styles.probSol__header}>Solution</p>
+            </div>
+            <p className={styles.lessons__text}>{description}</p>
           </div>
         </div>
+
         <div className={styles.links}>
           <BrandButton
             url={website}

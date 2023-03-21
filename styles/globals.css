@@ -63,6 +63,19 @@ main {
   flex: 1;
 }
 
+pre {
+  white-space: pre-wrap;
+  background-color: #f6f8fa;
+  padding: 1rem;
+  border-radius: 0px;
+}
+
+code {
+  background-color: #f6f8fa;
+  padding: 0.2rem;
+  border-radius: 0px;
+}
+
 :global(.test) {
   color: red;
 }

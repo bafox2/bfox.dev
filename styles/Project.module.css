@@ -53,12 +53,13 @@
 
 .lessons__pic {
   background-color: var(--gray);
-  width: 70px;
+  width: 210px;
   height: 70px;
   border-radius: 3rem;
   position: absolute;
   top: -30px;
-  margin: auto;
+  display: flex;
+  justify-content: flex-start;
 }
 
 .lessons__picHolder {
@@ -66,11 +67,18 @@
   width: 60px;
   height: 60px;
   border-radius: 3rem;
-  margin: auto;
-  margin-top: 5px;
+
+  margin: 0.25rem 0 0 0.25rem;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.probSol {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 0.5rem;
 }
 
 .impaetus__container {
@@ -147,7 +155,6 @@
 
 .pics__container {
   max-width: var(--panelWidth);
-  max-height: 1200px;
   overflow: scroll;
 }
 
@@ -236,4 +243,38 @@
   flex-direction: row;
   gap: 0.5rem;
   animation: marquee 10s linear infinite;
+}
+
+.green {
+  background-color: var(--green);
+}
+
+.red {
+  background-color: var(--red);
+}
+
+@media (max-width: 500px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .onePic,
+  .twoPic,
+  .threePic,
+  .fourPic {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .pics__container {
+    max-height: 100%;
+  }
+
+  .probSol {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
 }

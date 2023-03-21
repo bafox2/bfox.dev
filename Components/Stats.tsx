@@ -1,5 +1,9 @@
 import styles from "../styles/Stats.module.css";
+import Image from "next/image";
 import stats from "../stats.js";
+import abacus from "../public/assets/abacus.svg";
+import files from "../public/assets/files.svg";
+import counter from "../public/assets/counter.svg";
 
 export default function Stats({
   stats = [],
@@ -22,6 +26,33 @@ export default function Stats({
             {stat.joke && <p className={styles.stat__joke}>🤣</p>}
           </div>
         ))}
+        <div className={styles.stat__container}>
+          <Image
+            src={abacus}
+            width={100}
+            height={100}
+            alt={"abacus"}
+            className={styles.stat__icon}
+          />
+        </div>{" "}
+        <div className={styles.stat__container}>
+          <Image
+            src={files}
+            width={100}
+            height={100}
+            alt={"abacus"}
+            className={styles.stat__icon}
+          />
+        </div>{" "}
+        <div className={styles.stat__container}>
+          <Image
+            src={counter}
+            width={100}
+            height={100}
+            alt={"abacus"}
+            className={styles.stat__icon}
+          />
+        </div>
       </div>
     </div>
   );

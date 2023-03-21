@@ -83,7 +83,7 @@
   margin: var(--margin);
   box-shadow: var(--shadow);
   transition: var(--transition);
-  z-index: 800;
+  z-index: 99;
 
   --color: var(--darkGreen); /* the color */
   --borderLength: 0.15em; /* border length*/
@@ -134,7 +134,7 @@
   background-color: var(--secondark-light);
   color: var(--primary-dark);
   box-shadow: var(--shadow-transform);
-  z-index: 900;
+  z-index: 99;
 
   transform: translate(0, 0);
   clip-path: polygon(

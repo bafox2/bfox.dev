@@ -70,6 +70,9 @@
   font-size: 1.2rem;
   font-weight: 600;
   font-family: var(--assistant-font);
+  border-bottom: 1px solid var(--darkGreen);
+  margin-bottom: -1rem;
+  display: none;
 }
 
 .footer__link {
@@ -87,4 +90,19 @@
   font-weight: 300;
   font-family: var(--assistant-font);
   color: var(--gray);
+}
+
+@media (max-width: 500px) {
+  .footer__branding {
+    flex-direction: column;
+  }
+  .footer__info {
+    flex-direction: column;
+  }
+  .footer__copyright {
+    align-self: center;
+  }
+  .footer__copyright {
+    align-items: center;
+  }
 }

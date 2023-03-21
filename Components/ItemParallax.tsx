@@ -68,3 +68,5 @@ export default function ParallaxItem({
     </motion.div>
   );
 }
+
+//can consider removing the minheight

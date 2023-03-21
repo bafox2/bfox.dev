@@ -1,10 +1,9 @@
 import type { NextPage } from "next";
 import Hero from "../Components/Hero";
 import Head from "next/head";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import Minis from "../Components/Minis";
 import Skills from "../Components/Skills";
-import HeroSection from "../Components/HeroSection";
 import Project from "../Components/Project";
 import Stats from "../Components/Stats";
 import styles from "../styles/Home.module.css";
@@ -65,7 +64,11 @@ const Home: NextPage = () => {
         {/* <ParallaxItem>
           <h2 className={styles.bigHeader}>Projects</h2>
         </ParallaxItem> */}
-        <div className={styles.projects__container}>{projectList}</div>
+        <div className={styles.projects__container}>
+          <Image src={toolbox} alt="toolbox" fill={true} />
+
+          {projectList}
+        </div>
 
         <HeroStats />
         <motion.div

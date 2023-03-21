@@ -7,9 +7,13 @@
   width: var(--mainWidth);
   margin: 0 auto;
   min-height: 100vh;
+  font-family: var(--assistant-font);
 }
 
 .postMain {
+  width: var(--mainWidth);
+  font-family: var(--assistant-font);
+  margin: 0 auto;
 }
 
 .postContent {
