@@ -52,7 +52,8 @@
 }
 
 .lessons__pic {
-  background-color: var(--gray);
+  background-color: var(--white);
+  border: 0.5rem solid var(--blue);
   width: 210px;
   height: 70px;
   border-radius: 3rem;
@@ -60,15 +61,16 @@
   top: -30px;
   display: flex;
   justify-content: flex-start;
+  align-items: center;
 }
 
 .lessons__picHolder {
-  background-color: var(--blue);
-  width: 60px;
-  height: 60px;
+  background-color: var(--green);
+  width: 54px;
+  height: 54px;
   border-radius: 3rem;
 
-  margin: 0.25rem 0 0 0.25rem;
+  margin: -0rem 0.8rem 0 -0.1rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -78,7 +80,17 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   gap: 0.5rem;
+}
+
+.probSol__header {
+  flex: 1;
+  padding: 0.1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-family: var(--assistant-font);
+  color: var(--black);
 }
 
 .impaetus__container {
@@ -276,5 +288,10 @@
     display: flex;
     flex-direction: column;
     gap: 2.5rem;
+  }
+
+  .pic {
+    max-width: 100%;
+    max-height: 100%;
   }
 }

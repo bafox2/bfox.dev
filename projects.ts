@@ -10,6 +10,7 @@ import trackficForm from "./public/images/TrackficForm.png";
 import { StaticImageData } from "next/image";
 
 type Project = {
+  category: "proud" | "beginner" | "mini";
   name: string;
   description: string;
   reason: string;
@@ -36,6 +37,7 @@ type Project = {
 
 const projects: Project[] = [
   {
+    category: "proud",
     name: "Trackfic",
     reason: "Google maps projection into the future is not good",
     description:
@@ -118,6 +120,7 @@ const projects: Project[] = [
   //   number: 3,
   // },
   {
+    category: "proud",
     name: "Chat-dle",
     reason:
       "I have watched twitch all my life and I wanted to give back to all the chats that have given me joy through my years.",
@@ -164,6 +167,7 @@ const projects: Project[] = [
     number: 4,
   },
   {
+    category: "proud",
     name: "Oyo Farms",
     reason: "I wanted to help my friend with his business.",
     description: "A website for a local farm.",
@@ -214,6 +218,7 @@ const projects: Project[] = [
     number: 5,
   },
   {
+    category: "beginner",
     name: "Letter Starter",
     reason:
       "You have to write a lot of cover letters when you're looking for a job, and sometimes you know what to say, but getting started is hard.",

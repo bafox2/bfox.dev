@@ -100,7 +100,7 @@ export default function Project({
         width={pic.width}
         height={pic.height}
         alt={pic.alt}
-        className={picClassName(i)}
+        className={`${picClassName(i)}`}
       />
     );
   });
@@ -140,13 +140,13 @@ export default function Project({
             url={website}
             arrow={false}
             primary={true}
-            text={"repo"}
+            text={"Live"}
           />
           <BrandButton
             url={github}
             arrow={false}
             primary={false}
-            text={"live"}
+            text={"Repo"}
           />
         </div>
         <div className={styles.lessons}>
@@ -154,6 +154,7 @@ export default function Project({
             <div className={styles.lessons__picHolder}>
               <Image src={svg} alt="arrow" width={45} height={45} />
             </div>
+            <p className={styles.probSol__header}>Lessons</p>
           </div>
           <p className={styles.lessons__text}>{lessons}</p>
         </div>

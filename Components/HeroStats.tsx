@@ -103,6 +103,13 @@ export default function HeroStats() {
         <p className={styles.statsText}>By</p>
       </div>
 
+      <div className={styles.stats__hero__bottom}>
+        <p className={styles.statsText}>Journeying</p>
+        <p className={styles.statsText}>Through</p>
+        <p className={styles.statsText}>Code</p>
+        <p className={styles.statsText}>By</p>
+      </div>
+
       <div className={styles.stats__rings}>
         <Image
           src={wheel}

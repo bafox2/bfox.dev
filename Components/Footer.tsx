@@ -41,14 +41,14 @@ export default function Footer() {
 
           <div className={styles.footer__link__column}>
             <p className={styles.footer__header}>Site Map</p>
-            <Link href="/resume" className={styles.footer__link}>
+            <Link href="/cv" className={styles.footer__link}>
               Resume
             </Link>
             <Link href="/projects" className={styles.footer__link}>
               Projects
             </Link>
-            <Link href="/contact" className={styles.footer__link}>
-              Contact
+            <Link href="/writing" className={styles.footer__link}>
+              Writing
             </Link>
           </div>
         </div>

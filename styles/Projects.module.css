@@ -71,7 +71,7 @@
 }
 
 .skillDiv {
-  max-width: 450px;
+  max-width: 500px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

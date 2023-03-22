@@ -83,7 +83,8 @@
   grid-row: 1 / 4;
 }
 
-.stats__hero {
+.stats__hero,
+.stats__hero__bottom {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -93,6 +94,13 @@
   left: 0;
   top: 0;
   font-size: 5rem;
+}
+
+.stats__hero__bottom {
+  align-items: flex-end;
+  justify-content: flex-end;
+  right: 0;
+  bottom: 0;
 }
 
 .stats__rings {

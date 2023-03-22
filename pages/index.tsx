@@ -26,19 +26,37 @@ const Home: NextPage = () => {
   };
 
   const projectList = projects.map((project) => {
-    return (
-      <Project
-        name={project.name}
-        description={project.description}
-        reason={project.reason}
-        builtWith={project.builtWith}
-        status={project.status}
-        github={project.github}
-        website={project.website}
-        lessons={project.lessons}
-        imagePath={project.imagePath}
-      />
-    );
+    if (project.category === "proud")
+      return (
+        <Project
+          name={project.name}
+          description={project.description}
+          reason={project.reason}
+          builtWith={project.builtWith}
+          status={project.status}
+          github={project.github}
+          website={project.website}
+          lessons={project.lessons}
+          imagePath={project.imagePath}
+        />
+      );
+  });
+
+  const beginnerList = projects.map((project) => {
+    if (project.category === "beginner")
+      return (
+        <Project
+          name={project.name}
+          description={project.description}
+          reason={project.reason}
+          builtWith={project.builtWith}
+          status={project.status}
+          github={project.github}
+          website={project.website}
+          lessons={project.lessons}
+          imagePath={project.imagePath}
+        />
+      );
   });
 
   const miniList = minis.map((mini) => {
@@ -64,13 +82,12 @@ const Home: NextPage = () => {
         {/* <ParallaxItem>
           <h2 className={styles.bigHeader}>Projects</h2>
         </ParallaxItem> */}
-        <div className={styles.projects__container}>
-          <Image src={toolbox} alt="toolbox" fill={true} />
-
+        <div className={styles.projects__container} id="projects">
           {projectList}
         </div>
-
         <HeroStats />
+
+        <div className={styles.projects__container}>{beginnerList}</div>
         <motion.div
           initial="hidden"
           whileInView="visible"
