@@ -13,8 +13,11 @@ export default function Header() {
     setShowBurger(!showBurger);
   };
 
-  const burgerMenu = () => (
-    <div className={styles.burgerMenu} onClick={() => setShowBurger(false)}>
+  const burgerMenu = (
+    <div
+      className={styles.burgerMenu}
+      onClick={(e) => (e.preventDefault(), setShowBurger(false))}
+    >
       <div
         className={styles.burgerMenuContent}
         // onClick={() => setShowBurger(showBurger)}
@@ -101,7 +104,7 @@ export default function Header() {
             <Image src={menu} alt="Menu Icon" width={24} height={24} />
           )}
         </div>
-        {showBurger && burgerMenu()}
+        {showBurger && burgerMenu}
       </header>
       <div className={styles.headerMask} />
     </>

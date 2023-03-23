@@ -3,7 +3,9 @@ import Image from "next/image";
 import BrandButton from "./BrandButton";
 import TagTech from "./TagTech";
 import TagStatus from "./TagStatus";
-import svg from "../public/logos/art2.svg";
+import leaf from "../public/assets/leaf.svg";
+import exclaimation from "../public/assets/exclaimation.svg";
+import light from "../public/assets/light.svg";
 import { StaticImageData } from "next/image";
 import ParallaxItem from "./ItemParallax";
 
@@ -118,7 +120,7 @@ export default function Project({
           <div className={`${styles.lessons} ${styles.red}`}>
             <div className={styles.lessons__pic}>
               <div className={styles.lessons__picHolder}>
-                <Image src={svg} alt="arrow" width={45} height={45} />
+                <Image src={exclaimation} alt="arrow" width={45} height={45} />
               </div>
               <p className={styles.probSol__header}>Problem</p>
             </div>
@@ -127,7 +129,7 @@ export default function Project({
           <div className={`${styles.lessons} ${styles.green}`}>
             <div className={styles.lessons__pic}>
               <div className={styles.lessons__picHolder}>
-                <Image src={svg} alt="arrow" width={45} height={45} />
+                <Image src={light} alt="arrow" width={45} height={45} />
               </div>
               <p className={styles.probSol__header}>Solution</p>
             </div>
@@ -152,7 +154,7 @@ export default function Project({
         <div className={styles.lessons}>
           <div className={styles.lessons__pic}>
             <div className={styles.lessons__picHolder}>
-              <Image src={svg} alt="arrow" width={45} height={45} />
+              <Image src={leaf} alt="arrow" width={37} height={37} />
             </div>
             <p className={styles.probSol__header}>Lessons</p>
           </div>
