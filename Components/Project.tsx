@@ -8,6 +8,7 @@ import exclaimation from "../public/assets/exclaimation.svg";
 import light from "../public/assets/light.svg";
 import { StaticImageData } from "next/image";
 import ParallaxItem from "./ItemParallax";
+import { Carousel } from "react-responsive-carousel";
 
 //a function that returns a project component with a name, description, Built With, a status, links to github/live, lessions, and an image
 
@@ -99,18 +100,51 @@ export default function Project({
     return (
       <Image
         src={pic.url}
-        width={pic.width}
-        height={pic.height}
+        sizes="(max-width: 1440px) 500px,
+              (max-width: 786px) 200px,
+              100px"
+        quality={100}
         alt={pic.alt}
         className={`${picClassName(i)}`}
       />
     );
   });
 
+  const imageCarousel = (
+    <Carousel
+      showThumbs={false}
+      showStatus={true}
+      showIndicators={false}
+      dynamicHeight={true}
+      emulateTouch={true}
+      autoPlay={true}
+      className={styles.carousel}
+    >
+      {imagePath.map((pic, i) => {
+        return (
+          <div>
+            <Image
+              src={pic.url}
+              sizes="(max-width: 1440px) 500px,
+              (max-width: 786px) 200px,
+              100px"
+              quality={100}
+              alt={pic.alt}
+              // className={`${picClassName(i)}`}
+            />
+          </div>
+        );
+      })}
+    </Carousel>
+  );
+
   return (
     <div className={styles.container}>
       <ParallaxItem range={num(0, 3)} className={styles.left}>
-        <div className={picCounter()}>{picGroup}</div>
+        {imagePath.length !== 1 && imageCarousel}
+        {imagePath.length === 1 && (
+          <div className={picCounter()}>{picGroup}</div>
+        )}
         <TagStatus text={status.text} color={status.color} />
         <div className={styles.tech}>{techTags}</div>
       </ParallaxItem>

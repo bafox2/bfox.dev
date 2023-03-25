@@ -19,6 +19,24 @@ const skills = [
       'React is an open-source, front end, JavaScript library for building user interfaces or UI components.',
     link: 'https://reactjs.org/',
     svg: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
+    resources: [
+      {
+        name: 'React Docs',
+        link: 'https://reactjs.org/docs/getting-started.html',
+      },
+      {
+        name: 'React Hooks',
+        link: 'https://reactjs.org/docs/hooks-intro.html',
+      },
+      {
+        name: 'React Router',
+        link: 'https://reactrouter.com/web/guides/quick-start',
+      },
+      {
+        name: 'React Testing Library',
+        link: 'https://testing-library.com/docs/react-testing-library/intro',
+      },
+    ],
     number: 3,
   },
   {
