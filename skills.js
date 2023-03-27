@@ -45,6 +45,16 @@ const skills = [
       'Cascading Style Sheets is a style sheet language used for describing the presentation of a document written in a markup language.',
     link: 'https://developer.mozilla.org/en-US/docs/Web/CSS',
     svg: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg',
+    resources: [
+      {
+        name: 'CSS Tricks',
+        link: 'https://css-tricks.com/',
+      },
+      {
+        name: 'MDN CSS Docs',
+        link: 'https://developer.mozilla.org/en-US/docs/Web/CSS',
+      },
+    ],
     number: 4,
   },
   {

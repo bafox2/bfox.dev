@@ -98,7 +98,7 @@ const Home: NextPage = () => {
 
         <div className={styles.projects__container}>{miniList}</div>
         <HeroSkills />
-        <Skills />
+        {/* <Skills /> */}
       </main>
     </>
   );

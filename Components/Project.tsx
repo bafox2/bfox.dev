@@ -113,7 +113,7 @@ export default function Project({
   const imageCarousel = (
     <Carousel
       showThumbs={false}
-      showStatus={true}
+      showStatus={false}
       showIndicators={false}
       dynamicHeight={true}
       emulateTouch={true}
@@ -122,17 +122,15 @@ export default function Project({
     >
       {imagePath.map((pic, i) => {
         return (
-          <div>
-            <Image
-              src={pic.url}
-              sizes="(max-width: 1440px) 500px,
-              (max-width: 786px) 200px,
-              100px"
-              quality={100}
-              alt={pic.alt}
-              // className={`${picClassName(i)}`}
-            />
-          </div>
+          <Image
+            src={pic.url}
+            sizes={`(max-width: 1440px) ${pic.width}px,
+              (max-width: 786px) ${pic.width / 2}px,
+              ${pic.width / 3}px}`}
+            quality={100}
+            alt={pic.alt}
+            // className={`${picClassName(i)}`}
+          />
         );
       })}
     </Carousel>

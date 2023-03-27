@@ -23,7 +23,7 @@ export default function HeroSkills() {
   const parsedSkills = JSON.parse(JSON.stringify(skills));
 
   const skillsList = parsedSkills.map((skill: Skill) => (
-    <div className={styles.skillDiv} key={skill.number}>
+    <div className={styles.skill__card} key={skill.number}>
       <div className={styles.skillHeader}>
         <h2 className={styles.skillTitle}>{skill.name}</h2>
         <div className={styles.skillPic}>
@@ -56,7 +56,7 @@ export default function HeroSkills() {
             style={{ stroke: "red", fill: "red" }}
           />
         </div>
-        <div className={styles.svgContainer}>
+        <div className={styles.toolbox__card}>
           <Image
             src={toolbox}
             alt="toolbox"
